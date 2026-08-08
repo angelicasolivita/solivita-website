@@ -2,9 +2,9 @@
 <html class="d desktop landscape" lang=""><head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Solivita | Assisted Living in Otay Lakes, San Diego</title>
+    <title>Care & Services | Solivita Assisted Living</title>
       <link rel="icon" type="image/svg+xml" href="images/logo/solivita-submark-black.svg">
-      <meta name="description" content="Solivita is a residential assisted living home in the Otay Lakes community of Southern San Diego, built on peace, purpose, and connection.">
+      <meta name="description" content="Personalized care, daily living assistance, and enrichment programming at Solivita Assisted Living in Otay Lakes, San Diego.">
           
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
@@ -395,20 +395,24 @@ html.d {background-color:rgba(248,248,244,1);}
 .m .sib-parallax-with-logo.sb-nm-dH .sc {height:294px;}
 .d .sib-parallax-with-logo.sb-nd-dH .sc {height:694px;}
 .m .sib-two-features {height:800px;}
-.d .sib-our-approach {height:390px;}
-.d .sie-our-approach_title {left:0px;top:0px;width:1200px;height:100px;}
-.d .sie-our-approach_title-text {text-align:center;font-size:110px;color:rgba(0,0,0,0.06);letter-spacing:0em;line-height:1;font-family:'KT Quantum Light';font-weight:400;}
-.d .sie-our-approach_0 {left:100px;top:180px;width:1000px;height:100px;}
+.d .sib-our-approach {height:620px;}
+.d .sie-our-approach_title {left:0px;top:60px;width:1200px;height:45px;}
+.d .sie-our-approach_title-text {text-align:center;}
+.d .sie-our-approach_0 {left:100px;top:150px;width:1000px;height:60px;}
 .d .sie-our-approach_0-text {text-align:center;}
-.d .sie-our-approach_1 {left:100px;top:300px;width:1000px;height:70px;}
+.d .sie-our-approach_1 {left:100px;top:230px;width:1000px;height:130px;}
 .d .sie-our-approach_1-text {text-align:center;}
-.m .sib-our-approach {height:640px;}
-.m .sie-our-approach_title {left:10px;top:20px;width:301px;height:60px;}
-.m .sie-our-approach_title-text {text-align:center;font-size:56px;color:rgba(0,0,0,0.06);letter-spacing:0em;line-height:1;font-family:'KT Quantum Light';font-weight:400;}
-.m .sie-our-approach_0 {left:20px;top:170px;width:281px;height:260px;}
+.d .sie-our-approach_2 {left:100px;top:390px;width:1000px;height:160px;}
+.d .sie-our-approach_2-text {text-align:center;}
+.m .sib-our-approach {height:900px;}
+.m .sie-our-approach_title {left:10px;top:30px;width:301px;height:35px;}
+.m .sie-our-approach_title-text {text-align:center;}
+.m .sie-our-approach_0 {left:20px;top:90px;width:281px;height:90px;}
 .m .sie-our-approach_0-text {text-align:center;}
-.m .sie-our-approach_1 {left:20px;top:440px;width:281px;height:180px;}
+.m .sie-our-approach_1 {left:20px;top:200px;width:281px;height:250px;}
 .m .sie-our-approach_1-text {text-align:center;}
+.m .sie-our-approach_2 {left:20px;top:470px;width:281px;height:300px;}
+.m .sie-our-approach_2-text {text-align:center;}
 .d .sib-two-features {height:610px;}
 .m .sib-two-features .ss-bg {background-color:rgba(248,248,244,1);}
 .d .sib-two-features .ss-bg {background-color:rgba(248,248,244,1);}
@@ -937,10 +941,22 @@ html.d {background-color:rgba(248,248,244,1);}
 -moz-osx-font-smoothing:grayscale;
 }
     </style>
-
+    
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
+
   <style>
+/* ---- Hero: text left, layered photo composition right ----
+   Matches pressandpalm.com/contact exactly: bg image 624x691, fg image
+   216x257 offset up-left over it, no box-shadow, cream background,
+   z-index: auto (default).
+   Pin mechanism verified live against the real site (Playwright, scrolling
+   + reading computed styles): Showit does NOT use position:sticky. It
+   writes an inline `position: fixed; top: 0.01px` on the hero once you
+   scroll past it, and never releases it — the hero stays fixed behind
+   everything for the rest of the page. The next section (higher z-index,
+   opaque background) scrolls normally over it, creating the "lift" look.
+   See #cs-hero-spacer + the scroll listener at the bottom of body. ---- */
 /* ---- Site nav: fixed, transparent over the hero, glass (blurred
    translucent card) once scrolled past it. Submark logo left, About /
    Services & Amenities / Book a Tour right. Same markup on every page. ---- */
@@ -958,95 +974,50 @@ html.d {background-color:rgba(248,248,244,1);}
   .site-nav-links a { font-size: 11px; }
 }
 
-/* ---- Care & Services: editorial numbered index, matching the site's
-   understated coastal-editorial voice (no cards, no photo backdrop).
-   Merged with the category list: "Our Approach" copy on the left, a
-   compact quick-glance list of the six Care & Services categories on the
-   right against a blue backdrop. Single section, no repeated giant
-   heading — links through to care-services.html for full detail. ---- */
-.cs-h2 { font-family: 'KT Quantum Light'; font-weight: 400; font-size: 32px; color: rgba(0,0,0,1); margin: 0; }
-.cs-body { font-family: 'DM Sans'; font-weight: 300; font-size: 16px; line-height: 1.7; color: rgba(0,0,0,0.8); margin: 0; }
-.cs-approach-section { position: relative; background: rgba(248,248,244,1); padding: 90px 60px; box-sizing: border-box; }
-.cs-approach-grid { max-width: 1200px; margin: 0 auto; display: flex; align-items: stretch; gap: 70px; }
-.cs-approach-col { flex: 1 1 50%; display: flex; flex-direction: column; justify-content: center; }
-.cs-approach-col .cs-h2 { text-align: left; margin: 0 0 20px; }
-.cs-approach-col .cs-body { text-align: left; margin: 0 0 16px; }
-.cs-services-panel { flex: 1 1 50%; background: #b0c4d8; border-radius: 4px; padding: 50px 55px; box-sizing: border-box; display: flex; flex-direction: column; justify-content: center; }
-.cs-services-eyebrow { font-family: 'DM Sans'; font-weight: 300; font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(0,0,0,0.55); margin: 0 0 20px; }
-.cs-services-list { list-style: none; margin: 0 0 28px; padding: 0; }
-.cs-services-list li { border-bottom: 1px solid rgba(0,0,0,0.15); }
-.cs-services-list li:first-child { border-top: 1px solid rgba(0,0,0,0.15); }
-.cs-services-list a { display: block; padding: 16px 2px; font-family: 'KT Quantum Light'; font-weight: 400; font-size: 19px; color: rgba(0,0,0,1); text-decoration: none; transition: opacity 0.25s ease; }
-.cs-services-list a:hover { opacity: 0.6; }
-.cs-services-link { display: inline-block; font-family: 'DM Sans'; font-weight: 300; font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(0,0,0,1); text-decoration: none; border-bottom: 1px solid rgba(0,0,0,0.5); padding-bottom: 2px; }
+#si-sp.sp { overflow: visible !important; }
+.cs-hero-stage { position: relative; }
+.cs-hero { position: relative; top: 0; left: 0; width: 100%; z-index: auto; display: flex; align-items: center; min-height: 785px; height: 785px; padding-top: 90px; background: rgba(248,248,244,1); overflow: hidden; }
+.cs-hero.cs-hero-fixed { position: fixed; }
+#cs-hero-spacer { display: none; height: 785px; }
+#cs-hero-spacer.cs-hero-spacer-active { display: block; }
+.cs-hero-text { flex: 0 0 43%; padding: 0 60px 0 70px; box-sizing: border-box; }
+.cs-hero-image { position: relative; flex: 1 1 auto; height: 691px; }
+.cs-hero-img-bg { position: absolute; top: 0; right: 0; width: 624px; height: 691px; object-fit: cover; }
+.cs-hero-img-fg { position: absolute; top: 67px; left: calc(100% - 624px - 95px); width: 216px; height: 257px; object-fit: cover; }
+.cs-h1 { font-family: 'KT Quantum Light'; font-weight: 400; font-size: 55px; text-transform: uppercase; letter-spacing: 0.02em; color: rgba(0,0,0,1); margin: 0 0 24px; }
+.cs-intro-text { font-family: 'DM Sans'; font-weight: 300; font-size: 17px; line-height: 1.7; color: rgba(0,0,0,1); max-width: 420px; }
 
-/* ---- Trust strip: quick reassurance stats (ratio, supervision, setting,
-   hospice-friendly) — separate from the service categories above, since
-   these are proof points, not services. Thin row under the approach grid. ---- */
-.cs-trust-strip { max-width: 1200px; margin: 60px auto 0; display: flex; justify-content: space-between; gap: 24px; padding-top: 40px; border-top: 1px solid rgba(0,0,0,0.12); }
-.cs-trust-item { flex: 1 1 0; text-align: center; }
-.cs-trust-stat { display: block; font-family: 'KT Quantum Light'; font-weight: 400; font-size: 24px; color: rgba(0,0,0,1); margin-bottom: 6px; }
-.cs-trust-label { display: block; font-family: 'DM Sans'; font-weight: 300; font-size: 12px; letter-spacing: 0.04em; color: rgba(0,0,0,0.6); }
+/* ---- The "lift" section: sits right after hero in normal flow, higher
+   z-index (matches Press & Palm's .sib-form { z-index:201 }) so it visually
+   overlaps/rises over the hero's bottom edge as it scrolls into view. No
+   animation library — pure CSS stacking order. Background matches the hero
+   (cream) since the category rows below are full-bleed color/photo splits. ---- */
+.cs-lift { position: relative; z-index: 10; background: rgba(248,248,244,1); }
 
-@media (max-width: 900px) {
-  .cs-approach-section { padding: 60px 24px; }
-  .cs-approach-grid { flex-direction: column; gap: 40px; }
-  .cs-services-panel { padding: 36px 28px; }
-  .cs-trust-strip { flex-wrap: wrap; margin-top: 40px; padding-top: 30px; }
-  .cs-trust-item { flex: 1 1 45%; }
-}
+/* ---- Category rows: full-bleed 50/50 split, one side solid color, the
+   other a full-height photo — no gutter, no contained max-width, edge to
+   edge — matching the Serene Collective reference. Every row is the same
+   fixed height so image and text sides always match exactly, and rows
+   sit flush with zero gap between them (seamless, no stagger). ---- */
+.cs-cat-row { display: flex; align-items: stretch; height: 364px; }
+.cs-cat-row:nth-child(even) { flex-direction: row-reverse; }
+.cs-cat-image { flex: 0 0 50%; position: relative; overflow: hidden; }
+.cs-cat-image img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.cs-cat { flex: 0 0 50%; display: flex; flex-direction: column; justify-content: center; text-align: left; padding: 40px 90px; box-sizing: border-box; background: rgba(248,248,244,1); overflow: auto; }
 
-/* ---- Rooms carousel: horizontal-scroll glass cards, following standard
-   senior-living / assisted-living room-listing conventions — photo,
-   room name, occupancy + bathroom badges, short description. Glass
-   (frosted, translucent) card treatment matches the nav. Background photo
-   sits behind the whole strip so the blur has something to read against. ---- */
-.cs-rooms-section { position: relative; padding: 100px 0 120px; box-sizing: border-box; background-size: cover; background-position: center; }
-.cs-rooms-section::before { content: ''; position: absolute; inset: 0; background: rgba(20,24,28,0.35); }
-.cs-rooms-title { position: relative; z-index: 1; text-align: center; font-family: 'KT Quantum Light'; font-weight: 400; font-size: 31px; color: rgba(255,255,255,1); margin: 0 0 12px; }
-.cs-rooms-sub { position: relative; z-index: 1; text-align: center; font-family: 'DM Sans'; font-weight: 300; font-size: 15px; color: rgba(255,255,255,0.85); margin: 0 0 50px; }
-.cs-rooms-track { position: relative; z-index: 1; display: flex; gap: 24px; overflow-x: auto; padding: 4px 60px 20px; scroll-snap-type: x proximity; scrollbar-width: thin; }
-.cs-room-card { scroll-snap-align: start; flex: 0 0 320px; background: rgba(248,248,244,0.22); backdrop-filter: blur(18px); -webkit-backdrop-filter: blur(18px); border: 1px solid rgba(255,255,255,0.35); border-radius: 4px; overflow: hidden; }
-.cs-room-photo { height: 190px; display: flex; align-items: center; justify-content: center; font-family: 'KT Quantum Light'; font-weight: 400; font-size: 15px; letter-spacing: 0.05em; text-transform: uppercase; color: rgba(255,255,255,0.5); }
-.cs-room-body { padding: 24px 24px 28px; }
-.cs-room-name { font-family: 'KT Quantum Light'; font-weight: 400; font-size: 21px; color: rgba(255,255,255,1); margin: 0 0 10px; }
-.cs-room-tags { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 14px; }
-.cs-room-tag { font-family: 'DM Sans'; font-weight: 300; font-size: 11px; letter-spacing: 0.06em; text-transform: uppercase; color: rgba(255,255,255,0.9); border: 1px solid rgba(255,255,255,0.4); border-radius: 2px; padding: 5px 10px; }
-.cs-room-desc { font-family: 'DM Sans'; font-weight: 300; font-size: 14px; line-height: 1.6; color: rgba(255,255,255,0.85); margin: 0; }
-@media (max-width: 900px) {
-  .cs-rooms-section { padding: 60px 0 80px; }
-  .cs-rooms-title { font-size: 24px; }
-  .cs-rooms-track { padding: 4px 24px 16px; gap: 16px; }
-  .cs-room-card { flex: 0 0 260px; }
-}
+/* ---- Title overlaid on the photo instead of living in the text column
+   (used for the first category row, on top of the wave pattern image).
+   Centered both horizontally and vertically within the image's fixed
+   height (not the row's full stretched height). ---- */
+.cs-h2-overlay { position: absolute; top: 0; left: 0; right: 0; bottom: 0; margin: 0; display: flex; align-items: center; justify-content: center; text-align: center; color: rgba(255,255,255,1); z-index: 1; }
+.cs-h2 { font-family: 'KT Quantum Light'; font-weight: 400; font-size: 32px; text-align: left; color: rgba(0,0,0,1); margin: 0 0 20px; }
+.cs-body { font-family: 'DM Sans'; font-weight: 300; font-size: 16px; line-height: 1.55; color: rgba(0,0,0,1); text-align: left; margin: 0 0 14px; }
+.cs-body-note { font-style: italic; }
+.cs-list { list-style: disc; margin: 0; padding: 0 0 0 20px; font-family: 'DM Sans'; font-weight: 300; font-size: 15px; line-height: 1.55; color: rgba(0,0,0,1); text-align: left; }
+.cs-list li { margin-bottom: 3px; }
 
-/* ---- FAQ: accordion, matching the editorial index-list treatment used
-   by Care & Services (hairline dividers, watermark heading, cream bg).
-   Native <details>/<summary> — accessible, no JS required. ---- */
-.cs-faq-section { position: relative; padding: 120px 60px 140px; box-sizing: border-box; background: rgba(248,248,244,1); }
-.cs-faq-title { text-align: center; font-family: 'KT Quantum Light'; font-weight: 400; font-size: 110px; color: rgba(0,0,0,0.06); letter-spacing: 0em; line-height: 1; margin: 0 0 60px; }
-.cs-faq-list { max-width: 800px; margin: 0 auto; }
-.cs-faq-item { border-bottom: 1px solid rgba(0,0,0,0.12); }
-.cs-faq-item:first-child { border-top: 1px solid rgba(0,0,0,0.12); }
-.cs-faq-item summary { list-style: none; cursor: pointer; display: flex; align-items: center; justify-content: space-between; gap: 24px; padding: 26px 0; font-family: 'KT Quantum Light'; font-weight: 400; font-size: 20px; color: rgba(0,0,0,1); }
-.cs-faq-item summary::-webkit-details-marker { display: none; }
-.cs-faq-icon { flex: 0 0 auto; position: relative; width: 16px; height: 16px; }
-.cs-faq-icon::before, .cs-faq-icon::after { content: ''; position: absolute; background: rgba(0,0,0,0.6); transition: transform 0.25s ease; }
-.cs-faq-icon::before { top: 50%; left: 0; width: 16px; height: 1px; transform: translateY(-50%); }
-.cs-faq-icon::after { left: 50%; top: 0; width: 1px; height: 16px; transform: translateX(-50%); }
-.cs-faq-item[open] .cs-faq-icon::after { transform: translateX(-50%) rotate(90deg); opacity: 0; }
-.cs-faq-answer { padding: 0 0 26px; margin: 0; max-width: 680px; font-family: 'DM Sans'; font-weight: 300; font-size: 16px; line-height: 1.65; color: rgba(0,0,0,0.75); }
-@media (max-width: 900px) {
-  .cs-faq-section { padding: 70px 24px 90px; }
-  .cs-faq-title { font-size: 56px; margin-bottom: 40px; }
-  .cs-faq-item summary { font-size: 18px; padding: 20px 0; }
-  .cs-faq-answer { padding-bottom: 20px; }
-}
+.cs-section { max-width: 700px; margin: 0 auto; text-align: center; padding: 100px 40px 110px; box-sizing: border-box; }
 
-/* ---- CTA band: matches pressandpalm.com/aurea's tan band exactly —
-   small uppercase eyebrow, large muted-cream headline (soft, low-contrast
-   on purpose against the tan), bordered button below. Restyled with
-   Solivita copy. ---- */
 .cs-cta { position: relative; z-index: 20; text-align: center; background: rgba(208,201,189,1); padding: 130px 40px; }
 .cs-cta-eyebrow { font-family: 'DM Sans'; font-weight: 300; font-size: 13px; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(248,248,244,0.8); margin: 0 0 20px; }
 .cs-cta-text { font-family: 'KT Quantum Light'; font-weight: 400; font-size: 42px; text-transform: uppercase; line-height: 1.25; color: rgba(248,248,244,1); margin: 0 auto 40px; max-width: 680px; }
@@ -1055,13 +1026,24 @@ html.d {background-color:rgba(248,248,244,1);}
 .cs-btn:hover { letter-spacing: 0.2em; }
 
 @media (max-width: 900px) {
+  .cs-hero-stage { height: auto; }
+  .cs-hero, .cs-hero.cs-hero-fixed { position: relative !important; flex-direction: column; min-height: auto; height: auto; padding-top: 70px; }
+  #cs-hero-spacer { display: none !important; }
+  .cs-hero-text { flex: 1 1 auto; padding: 40px 24px; }
+  .cs-hero-image { flex: 1 1 auto; height: 400px; width: 100%; }
+  .cs-hero-img-bg { top: 0; left: 0; right: 0; width: 100%; height: 100%; }
+  .cs-hero-img-fg { display: none; }
+  .cs-h1 { font-size: 38px; }
+  .cs-cat-row, .cs-cat-row:nth-child(even) { flex-direction: column; height: auto; }
+  .cs-cat-image { flex: 1 1 auto; width: 100%; height: 260px; }
+  .cs-cat { flex: 1 1 auto; width: 100%; padding: 50px 24px; }
+  .cs-h2 { font-size: 26px; }
   .cs-cta { padding: 80px 24px; }
   .cs-cta-text { font-size: 26px; }
 }
-  </style>
-
-  </head>
-  <body>
+</style>
+</head>
+  <body>    
     
     <div id="si-sp" class="sp" style=""><nav class="site-nav" id="site-nav">
   <a href="/" class="site-nav-logo"><img src="images/logo/solivita-submark-black.svg" alt="Solivita"></a>
@@ -1070,133 +1052,78 @@ html.d {background-color:rgba(248,248,244,1);}
     <a href="care-services.html">Services &amp; Amenities</a>
     <a href="/contact">Book a Tour</a>
   </div>
-</nav><div id="client-spotlight" data-bid="client-spotlight" class="sb sib-client-spotlight" style="height: 844px;"><div class="ss-s ss-bg"><div class="sc" style="width:1200px"><div data-sid="client-spotlight_0" class="sie-client-spotlight_0 se" style="width: 687px; transform: scale(1, 1) translate(0px, 0px);"><div data-sie="client-spotlight_0" class="sg-s sig-client-spotlight_0 sg-sc-1" style="width: 100%; height: 100%; position: relative;"><div style="width: 100%; height: 100%; background-image: url(&quot;images/emboss-Ly9zdGF0.png&quot;); position: static; top: 0px; left: 0px; z-index: 99; opacity: 1; display: block; visibility: hidden;" class="se-img cycle-slide cycle-sentinel" data-slide-index="0"></div><div style="width: 100%; height: 100%; background-image: url(&quot;images/emboss-Ly9zdGF0.png&quot;); position: absolute; top: 0px; left: 0px; z-index: 100; opacity: 0; display: block; visibility: hidden;" class="se-img cycle-slide" data-slide-index="0"></div><div style="width: 100%; height: 100%; background-image: url(&quot;images/solivita-hero-sign.png&quot;); position: absolute; top: 0px; left: 0px; z-index: 99; visibility: visible; opacity: 0.86; display: block;" class="se-img cycle-slide cycle-slide-active" data-slide-index="1"></div></div><div></div></div><div data-sid="client-spotlight_1" class="sie-client-spotlight_1 se" style="transform: scale(1, 1) translate(0px, 0px);"><img src="images/logo/solivita-primary-black.svg" alt="Solivita" style="width:100%; height:auto; display:block;"></div><div data-sid="client-spotlight_2" class="sie-client-spotlight_2 se" style="transform: scale(1, 1) translate(0px, 0px);"><p class="se-t sie-client-spotlight_2-text st-m-paragraph st-d-paragraph se-rc">Assisted Living in the Otay Lakes community of Southern San Diego, built on the standard of care our founder spent her career enforcing.<br><br>Solivita is a senior living home where peace, purpose, and connection come together under one roof. Designed to feel like a breath of fresh air, every detail of our home is curated to support residents in living this next chapter fully. We believe that transitioning into this new stage of life is the start of something meaningful, because there's still so much life to live.<br></p></div><div data-sid="client-spotlight_6" class="sie-client-spotlight_6 se" style="transform: scale(1, 1) translate(0px, 0px);"><h3 class="se-t sie-client-spotlight_6-text st-m-subheading st-d-subheading se-rc">a bright new chapter of life</h3></div><a href="/contact" target="_self" class="sie-client-spotlight_7 se" data-sid="client-spotlight_7" style="display:inline-flex; align-items:center; justify-content:center; padding:16px; border:1px solid rgba(0,0,0,1); border-radius:2px;"><p class="se-t sie-client-spotlight_7-text st-m-subheading st-d-subheading" style="position:relative; width:auto; height:auto; margin:0; padding:0; line-height:1; text-align:center; white-space:nowrap;">LEARN MORE</p></a></div></div></div><div id="parallax-with-logo" data-bid="parallax-with-logo" class="sb sib-parallax-with-logo sb-nm-dH sb-nd-dH" style="height: 694px;"><div class="ss-s ss-bg"><div class="sb-m ssp-d" style="opacity: 1;"><img class="sb-mc sbg-i slzy" data-src="images/solivita-gift-backdrop-8.png" width="1200" height="1200" alt="" src="images/solivita-gift-backdrop-8.png" style="width: 100%; height: 1008px; inset: 0px auto auto; transform: translateY(-528.001px);"></div><div class="sc" style="width:1200px"></div></div></div><section class="cs-approach-section">
-  <div class="cs-approach-grid">
-    <div class="cs-approach-col">
-      <h2 class="cs-h2">Our Approach</h2>
-      <p class="cs-body">The name Solivita means sun and life, chosen to reflect the belief that senior living can be a bright new chapter. Our founder created Solivita with a clear vision for what senior living should feel like. Intentionally small, with a maximum of six residents, so every person receives the kind of personalized care that larger facilities simply cannot provide.</p>
-      <p class="cs-body">From the coastal-inspired rooms to the enrichment programming designed around our residents, every part of Solivita is built with the same level of thought and intention as the care.</p>
+</nav><div class="cs-hero-stage">
+  <div class="cs-hero" id="cs-hero" data-bid="cs-hero">
+    <div class="cs-hero-text">
+      <h1 class="cs-h1">Care &amp; Services</h1>
+      <p class="cs-intro-text">At Solivita, care is personal. With a maximum of six residents and a 1:3 caregiver-to-resident ratio, our team has the time and attention to provide support that is truly tailored to each person.</p>
     </div>
-    <div class="cs-services-panel">
-      <p class="cs-services-eyebrow">What We Offer</p>
-      <ul class="cs-services-list">
-        <li><a href="care-services.html">Personalized Care Plans</a></li>
-        <li><a href="care-services.html">Daily Living Assistance</a></li>
-        <li><a href="care-services.html">Health &amp; Wellness</a></li>
-        <li><a href="care-services.html">Dining</a></li>
-        <li><a href="care-services.html">Enrichment &amp; Activities</a></li>
-      </ul>
-      <a href="care-services.html" class="cs-services-link">View All Services &amp; Amenities</a>
+    <div class="cs-hero-image">
+      <img class="cs-hero-img-bg" src="images/solivita-hero-sign.png" alt="" />
+      <!-- PLACEHOLDER: swap for a real Solivita portrait/lifestyle photo -->
+      <img class="cs-hero-img-fg" src="images/solivita-gift-backdrop-8.png" alt="" />
     </div>
   </div>
-  <div class="cs-trust-strip">
-    <div class="cs-trust-item">
-      <span class="cs-trust-stat">1:3</span>
-      <span class="cs-trust-label">Caregiver-to-Resident Ratio</span>
+  <div id="cs-hero-spacer"></div>
+</div>
+
+<section class="cs-lift" data-bid="cs-lift">
+
+    <div class="cs-cat-row">
+      <div class="cs-cat-image">
+        <img src="images/solivita-wave-pattern.png" alt="Solivita wave mark" />
+        <h2 class="cs-h2 cs-h2-overlay">Personalized Care Plans</h2>
+      </div>
+      <div class="cs-cat">
+        <p class="cs-body">Tailored to each resident's needs, preferences, and routines. Our dedicated caregivers provide consistent, one-on-one support with the same team every day.</p>
+        <ul class="cs-list">
+          <li>All-inclusive monthly rate</li>
+          <li>1:3 caregiver-to-resident ratio</li>
+          <li>Round-the-clock care team, including overnight</li>
+          <li>Choice of solo or shared rooms</li>
+        </ul>
+      </div>
     </div>
-    <div class="cs-trust-item">
-      <span class="cs-trust-stat">24/7</span>
-      <span class="cs-trust-label">Care &amp; Supervision</span>
+
+    <div class="cs-cat-row">
+      <div class="cs-cat-image">
+        <img src="images/solivita-wave-pattern-2.png" alt="Solivita wave mark" />
+        <h2 class="cs-h2 cs-h2-overlay">Daily Living Assistance</h2>
+      </div>
+      <div class="cs-cat">
+        <p class="cs-body">Support with medication management, grooming, dressing, and day-to-day needs, delivered with dignity, patience, and respect for independence.</p>
+        <ul class="cs-list">
+          <li>Medication management</li>
+          <li>Hospice approved</li>
+          <li>3 daily meals, prepared fresh</li>
+          <li>Weekly housekeeping, laundry, and trash service</li>
+        </ul>
+      </div>
     </div>
-    <div class="cs-trust-item">
-      <span class="cs-trust-stat">Safe</span>
-      <span class="cs-trust-label">Beautiful, Coastal-Inspired Setting</span>
+
+    <div class="cs-cat-row">
+      <div class="cs-cat-image">
+        <img src="images/solivita-wave-pattern-3.png" alt="Solivita wave mark" />
+        <h2 class="cs-h2 cs-h2-overlay">Enrichment &amp; Activities</h2>
+      </div>
+      <div class="cs-cat">
+        <p class="cs-body">Planned weekly programming with scheduled activities, group outings, and social events. Every day at Solivita is active, social, and full of life.</p>
+        <ul class="cs-list">
+          <li>Planned weekly enrichment programming</li>
+          <li>Scheduled transportation for outings and appointments</li>
+          <li>Group social events and community outings</li>
+        </ul>
+      </div>
     </div>
-    <div class="cs-trust-item">
-      <span class="cs-trust-stat">Hospice</span>
-      <span class="cs-trust-label">Friendly</span>
+
+    <div class="cs-section">
+      <h2 class="cs-h2">Who Solivita Is Right For</h2>
+      <p class="cs-body">Solivita serves ambulatory adults ages 59 and older who benefit from daily companionship, structured support, and personalized care in a safe home environment. Our home is designed for aging in place, providing the support residents need while respecting their independence.</p>
+      <p class="cs-body cs-body-note">We do not currently accept residents with advanced dementia or who are non-ambulatory.</p>
     </div>
-  </div>
+
 </section>
-<section class="cs-rooms-section" style="background-image: url('images/solivita-gift-backdrop-8.png');">
-  <h2 class="cs-rooms-title">Our Rooms</h2>
-  <p class="cs-rooms-sub">Five coastal-inspired rooms, each with their own character</p>
-  <div class="cs-rooms-track">
-    <div class="cs-room-card">
-      <div class="cs-room-photo">Photo Placeholder</div>
-      <div class="cs-room-body">
-        <h3 class="cs-room-name">La Jolla Room</h3>
-        <div class="cs-room-tags">
-          <span class="cs-room-tag">Shared Room</span>
-          <span class="cs-room-tag">Shared Bathroom</span>
-        </div>
-        <p class="cs-room-desc">A bright room for two, with an adjoining bathroom just steps away.</p>
-      </div>
-    </div>
-    <div class="cs-room-card">
-      <div class="cs-room-photo">Photo Placeholder</div>
-      <div class="cs-room-body">
-        <h3 class="cs-room-name">Mission Room A</h3>
-        <div class="cs-room-tags">
-          <span class="cs-room-tag">Jack &amp; Jill</span>
-          <span class="cs-room-tag">Shared Bathroom</span>
-        </div>
-        <p class="cs-room-desc">A private room connected to Mission Room B by a shared Jack-and-Jill bathroom.</p>
-      </div>
-    </div>
-    <div class="cs-room-card">
-      <div class="cs-room-photo">Photo Placeholder</div>
-      <div class="cs-room-body">
-        <h3 class="cs-room-name">Mission Room B</h3>
-        <div class="cs-room-tags">
-          <span class="cs-room-tag">Jack &amp; Jill</span>
-          <span class="cs-room-tag">Shared Bathroom</span>
-        </div>
-        <p class="cs-room-desc">A private room connected to Mission Room A by a shared Jack-and-Jill bathroom.</p>
-      </div>
-    </div>
-    <div class="cs-room-card">
-      <div class="cs-room-photo">Photo Placeholder</div>
-      <div class="cs-room-body">
-        <h3 class="cs-room-name">Pacific Room</h3>
-        <div class="cs-room-tags">
-          <span class="cs-room-tag">Solo Room</span>
-          <span class="cs-room-tag">No Bathroom</span>
-        </div>
-        <p class="cs-room-desc">A quiet private room with the nearest full bathroom just down the hall.</p>
-      </div>
-    </div>
-    <div class="cs-room-card">
-      <div class="cs-room-photo">Photo Placeholder</div>
-      <div class="cs-room-body">
-        <h3 class="cs-room-name">Sunset Cliffs Room</h3>
-        <div class="cs-room-tags">
-          <span class="cs-room-tag">Solo Room</span>
-          <span class="cs-room-tag">Private Bathroom</span>
-        </div>
-        <p class="cs-room-desc">A private room with its own en-suite bathroom for maximum comfort and independence.</p>
-      </div>
-    </div>
-  </div>
-</section>
-<section class="cs-faq-section">
-  <h2 class="cs-faq-title">FAQ</h2>
-  <div class="cs-faq-list">
-    <details class="cs-faq-item">
-      <summary>What type of care does Solivita provide?<span class="cs-faq-icon"></span></summary>
-      <p class="cs-faq-answer">Solivita is a licensed Residential Care Facility for the Elderly (RCFE) in California. We provide non-medical residential care including 24/7 supervision, medication management, daily living assistance, meals, housekeeping, and enrichment activities. We are not a medical facility and we do not provide nursing care.</p>
-    </details>
-    <details class="cs-faq-item">
-      <summary>Who is Solivita right for?<span class="cs-faq-icon"></span></summary>
-      <p class="cs-faq-answer">We serve ambulatory adults ages 59 and older who benefit from daily companionship, structured support, and personalized care plans in a safe home environment. Solivita is designed for aging in place, providing the support residents need while respecting their independence. We do not currently accept residents with advanced dementia or who are non-ambulatory.</p>
-    </details>
-    <details class="cs-faq-item">
-      <summary>How many residents live at Solivita?<span class="cs-faq-icon"></span></summary>
-      <p class="cs-faq-answer">A maximum of six. Our intentionally small community allows us to provide truly individualized care with a 1:3 caregiver-to-resident ratio that large facilities cannot match.</p>
-    </details>
-    <details class="cs-faq-item">
-      <summary>What does the monthly cost include?<span class="cs-faq-icon"></span></summary>
-      <p class="cs-faq-answer">Our all-inclusive monthly rate covers personalized care, 24/7 supervision, three chef-prepared meals daily, medication management, housekeeping, laundry, activities, and all comfort amenities. Pricing is based on an initial care needs assessment.</p>
-    </details>
-    <details class="cs-faq-item">
-      <summary>How do I schedule a tour?<span class="cs-faq-icon"></span></summary>
-      <p class="cs-faq-answer">Click &quot;Book a Tour&quot; anywhere on our site. We'll ask a few quick questions to make sure Solivita is the right fit, then schedule a time for you to visit in person.</p>
-    </details>
-  </div>
-</section>
-<!-- PLACEHOLDER: scroll-parallax image is a placeholder (from Press & Palm's
-     Aurea portfolio work) — swap for a real Solivita photo once available. -->
-<div id="parallax-with-design" data-bid="parallax-with-design" class="sb sib-parallax-with-design sb-nm-dH sb-nd-dH" style="height: 694px;"><div class="ss-s ss-bg"><div class="sb-m ssp-d" style="opacity: 0.34;"><img class="sb-mc sbg-i slzy" data-src="images/design-01js5rmag4-1745025688-2-Ly9zdGF0.jpg" width="1200" height="1200" alt="" src="images/design-01js5rmag4-1745025688-2-Ly9zdGF0.jpg" style="width: 100%; height: 960px; inset: 0px auto auto; transform: translateY(24.548px);"></div><div class="sc" style="width:1200px"></div></div></div>
+
 <section class="cs-cta">
   <p class="cs-cta-eyebrow">Visit Us</p>
   <p class="cs-cta-text">We'd love to show you what life is like at Solivita.</p>
@@ -1205,17 +1132,40 @@ html.d {background-color:rgba(248,248,244,1);}
     <a href="/contact" class="cs-btn">Get in Touch</a>
   </div>
 </section>
+<div id="footer" data-bid="footer" class="sb sib-footer" style="height: 431px;"><div class="ss-s ss-bg"><div class="sc" style="width:1200px"><div data-sid="footer_1" class="sie-footer_1 se" style="transform: scale(1, 1) translate(0px, 0px);"><p class="se-t sie-footer_1-text st-m-paragraph st-d-paragraph">&copy; Solivita Assisted Living<br></p></div><div data-sid="footer_2" class="sie-footer_2 se" style="display: none;"><svg class="se-line"><line data-d-strokelinecap="butt" data-d-linestyle="solid" data-d-thickness="1" data-d-rotatedwidth="1200" data-d-rotatedheight="0" data-d-widthoffset="0" data-d-heightoffset="0" data-d-isround="false" data-d-rotation="0" data-d-roundedsolid="false" data-d-dotted="false" data-d-length="1200" data-d-mirrorline="false" data-d-dashwidth="21" data-d-spacing="15" data-d-dasharrayvalue="none" data-m-strokelinecap="butt" data-m-linestyle="solid" data-m-thickness="1" data-m-rotatedwidth="330" data-m-rotatedheight="0" data-m-widthoffset="0" data-m-heightoffset="0" data-m-isround="false" data-m-rotation="0" data-m-roundedsolid="false" data-m-dotted="false" data-m-length="330" data-m-mirrorline="false" data-m-dashwidth="21" data-m-spacing="15" data-m-dasharrayvalue="none" x1="0" y1="0" x2="100%" y2="100%"></line></svg></div><div class="sie-footer_3 se" data-sid="footer_3" style="transform: scale(1, 1) translate(0px, 0px);"><h3 class="se-t sie-footer_3-text st-m-subheading st-d-subheading">1655 View Park Way, Chula Vista, CA 91913</h3></div><a href="mailto:Solivitaassistedliving@gmail.com" target="_self" class="sie-footer_4 se" data-sid="footer_4" style="transform: scale(1, 1) translate(0px, 0px);"><h3 class="se-t sie-footer_4-text st-m-subheading st-d-subheading">Solivitaassistedliving@gmail.com</h3></a><div class="sie-footer_5 se" data-sid="footer_5" style="transform: scale(1, 1) translate(0px, 0px);"><h3 class="se-t sie-footer_5-text st-m-subheading st-d-subheading">License #374605053</h3></div><div data-sid="footer_7" class="sie-footer_7 se" style="width: 1px; transform: scale(1, 1) translate(0px, 0px); top: 79px; left: 828px; height: 1px;"><svg class="se-line" style="width: 1px; height: 220px;"><line data-d-strokelinecap="butt" data-d-linestyle="solid" data-d-thickness="1" data-d-rotatedwidth="0" data-d-rotatedheight="220" data-d-widthoffset="110" data-d-heightoffset="110" data-d-isround="false" data-d-rotation="90" data-d-roundedsolid="false" data-d-dotted="false" data-d-length="220" data-d-mirrorline="false" data-d-dashwidth="21" data-d-spacing="15" data-d-dasharrayvalue="none" data-m-strokelinecap="butt" data-m-linestyle="solid" data-m-thickness="1" data-m-rotatedwidth="327" data-m-rotatedheight="0" data-m-widthoffset="0" data-m-heightoffset="0" data-m-isround="false" data-m-rotation="0" data-m-roundedsolid="false" data-m-dotted="false" data-m-length="327" data-m-mirrorline="false" data-m-dashwidth="21" data-m-spacing="15" data-m-dasharrayvalue="none" x1="0" y1="0" x2="0" y2="100%" style="stroke-width: 1px; stroke-dasharray: 0px;"></line></svg></div><div data-sid="footer_11" class="sie-footer_11 se" style="transform: scale(1, 1) translate(0px, 0px);"><p class="se-t sie-footer_11-text st-m-paragraph st-d-paragraph se-rc">Solivita is a licensed Residential Care Facility for the Elderly in Chula Vista, California.</p></div><div data-sid="footer_12" class="sie-footer_12 se" style="width: 1px; transform: scale(1, 1) translate(0px, 0px); top: 79px; left: 370px; height: 1px;"><svg class="se-line" style="width: 1px; height: 220px;"><line data-d-strokelinecap="butt" data-d-linestyle="solid" data-d-thickness="1" data-d-rotatedwidth="0" data-d-rotatedheight="220" data-d-widthoffset="110" data-d-heightoffset="110" data-d-isround="false" data-d-rotation="90" data-d-roundedsolid="false" data-d-dotted="false" data-d-length="220" data-d-mirrorline="false" data-d-dashwidth="21" data-d-spacing="15" data-d-dasharrayvalue="none" data-m-strokelinecap="butt" data-m-linestyle="solid" data-m-thickness="1" data-m-rotatedwidth="0" data-m-rotatedheight="208" data-m-widthoffset="104" data-m-heightoffset="104" data-m-isround="false" data-m-rotation="90" data-m-roundedsolid="false" data-m-dotted="false" data-m-length="208" data-m-mirrorline="false" data-m-dashwidth="21" data-m-spacing="15" data-m-dasharrayvalue="none" x1="0" y1="0" x2="0" y2="100%" style="stroke-width: 1px; stroke-dasharray: 0px;"></line></svg></div><a href="care-services.html" target="_self" class="sie-footer_16 se" data-sid="footer_16" style="transform: scale(1, 1) translate(0px, 0px);"><h3 class="se-t sie-footer_16-text st-m-subheading st-d-subheading">Services &amp; Amenities</h3></a><a href="about.html" target="_self" class="sie-footer_17 se" data-sid="footer_17" style="transform: scale(1, 1) translate(0px, 0px);"><h3 class="se-t sie-footer_17-text st-m-subheading st-d-subheading">About</h3></a><a href="/" target="_self" class="sie-footer_18 se" data-sid="footer_18" style="transform: scale(1, 1) translate(0px, 0px);"><h3 class="se-t sie-footer_18-text st-m-subheading st-d-subheading">Home</h3></a><div data-sid="footer_20" class="sie-footer_20 se" style="transform: scale(1, 1) translate(0px, 0px);"><div class="se-simple"></div></div><a href="care-services.html" target="_self" class="sie-footer_21 se" data-sid="footer_21" style="transform: scale(1, 1) translate(0px, 0px);"><h3 class="se-t sie-footer_21-text st-m-subheading st-d-subheading">view services &amp; amenities</h3></a><div data-sid="footer_22" class="sie-footer_22 se" style="transform: scale(1, 1) translate(0px, 0px); display:flex; align-items:center; justify-content:center;"><img src="images/logo/solivita-submark-black.svg" alt="Solivita" style="height:70px; width:auto;"></div></div></div></div></div></div>
+    
+    
+    <!-- vqyynrij7jcav9lqf1il6q/20260625131421Sbb236q/-ReYNIbwZ -->
+  
 
-<div id="footer" data-bid="footer" class="sb sib-footer" style="height: 431px;"><div class="ss-s ss-bg"><div class="sc" style="width:1200px"><div data-sid="footer_1" class="sie-footer_1 se" style="transform: scale(1, 1) translate(0px, 0px);"><p class="se-t sie-footer_1-text st-m-paragraph st-d-paragraph">&copy; Solivita Assisted Living<br></p></div><div data-sid="footer_2" class="sie-footer_2 se" style="display: none;"><svg class="se-line"><line data-d-strokelinecap="butt" data-d-linestyle="solid" data-d-thickness="1" data-d-rotatedwidth="1200" data-d-rotatedheight="0" data-d-widthoffset="0" data-d-heightoffset="0" data-d-isround="false" data-d-rotation="0" data-d-roundedsolid="false" data-d-dotted="false" data-d-length="1200" data-d-mirrorline="false" data-d-dashwidth="21" data-d-spacing="15" data-d-dasharrayvalue="none" data-m-strokelinecap="butt" data-m-linestyle="solid" data-m-thickness="1" data-m-rotatedwidth="330" data-m-rotatedheight="0" data-m-widthoffset="0" data-m-heightoffset="0" data-m-isround="false" data-m-rotation="0" data-m-roundedsolid="false" data-m-dotted="false" data-m-length="330" data-m-mirrorline="false" data-m-dashwidth="21" data-m-spacing="15" data-m-dasharrayvalue="none" x1="0" y1="0" x2="100%" y2="100%"></line></svg></div><div class="sie-footer_3 se" data-sid="footer_3" style="transform: scale(1, 1) translate(0px, 0px);"><h3 class="se-t sie-footer_3-text st-m-subheading st-d-subheading">1655 View Park Way, Chula Vista, CA 91913</h3></div><a href="mailto:Solivitaassistedliving@gmail.com" target="_self" class="sie-footer_4 se" data-sid="footer_4" style="transform: scale(1, 1) translate(0px, 0px);"><h3 class="se-t sie-footer_4-text st-m-subheading st-d-subheading">Solivitaassistedliving@gmail.com</h3></a><div class="sie-footer_5 se" data-sid="footer_5" style="transform: scale(1, 1) translate(0px, 0px);"><h3 class="se-t sie-footer_5-text st-m-subheading st-d-subheading">License #374605053</h3></div><div data-sid="footer_7" class="sie-footer_7 se" style="width: 1px; transform: scale(1, 1) translate(0px, 0px); top: 79px; left: 828px; height: 1px;"><svg class="se-line" style="width: 1px; height: 220px;"><line data-d-strokelinecap="butt" data-d-linestyle="solid" data-d-thickness="1" data-d-rotatedwidth="0" data-d-rotatedheight="220" data-d-widthoffset="110" data-d-heightoffset="110" data-d-isround="false" data-d-rotation="90" data-d-roundedsolid="false" data-d-dotted="false" data-d-length="220" data-d-mirrorline="false" data-d-dashwidth="21" data-d-spacing="15" data-d-dasharrayvalue="none" data-m-strokelinecap="butt" data-m-linestyle="solid" data-m-thickness="1" data-m-rotatedwidth="327" data-m-rotatedheight="0" data-m-widthoffset="0" data-m-heightoffset="0" data-m-isround="false" data-m-rotation="0" data-m-roundedsolid="false" data-m-dotted="false" data-m-length="327" data-m-mirrorline="false" data-m-dashwidth="21" data-m-spacing="15" data-m-dasharrayvalue="none" x1="0" y1="0" x2="0" y2="100%" style="stroke-width: 1px; stroke-dasharray: 0px;"></line></svg></div><div data-sid="footer_11" class="sie-footer_11 se" style="transform: scale(1, 1) translate(0px, 0px);"><p class="se-t sie-footer_11-text st-m-paragraph st-d-paragraph se-rc">Solivita is a licensed Residential Care Facility for the Elderly in Chula Vista, California.</p></div><div data-sid="footer_12" class="sie-footer_12 se" style="width: 1px; transform: scale(1, 1) translate(0px, 0px); top: 79px; left: 370px; height: 1px;"><svg class="se-line" style="width: 1px; height: 220px;"><line data-d-strokelinecap="butt" data-d-linestyle="solid" data-d-thickness="1" data-d-rotatedwidth="0" data-d-rotatedheight="220" data-d-widthoffset="110" data-d-heightoffset="110" data-d-isround="false" data-d-rotation="90" data-d-roundedsolid="false" data-d-dotted="false" data-d-length="220" data-d-mirrorline="false" data-d-dashwidth="21" data-d-spacing="15" data-d-dasharrayvalue="none" data-m-strokelinecap="butt" data-m-linestyle="solid" data-m-thickness="1" data-m-rotatedwidth="0" data-m-rotatedheight="208" data-m-widthoffset="104" data-m-heightoffset="104" data-m-isround="false" data-m-rotation="90" data-m-roundedsolid="false" data-m-dotted="false" data-m-length="208" data-m-mirrorline="false" data-m-dashwidth="21" data-m-spacing="15" data-m-dasharrayvalue="none" x1="0" y1="0" x2="0" y2="100%" style="stroke-width: 1px; stroke-dasharray: 0px;"></line></svg></div><a href="care-services.html" target="_self" class="sie-footer_16 se" data-sid="footer_16" style="transform: scale(1, 1) translate(0px, 0px);"><h3 class="se-t sie-footer_16-text st-m-subheading st-d-subheading">Services &amp; Amenities</h3></a><a href="about.html" target="_self" class="sie-footer_17 se" data-sid="footer_17" style="transform: scale(1, 1) translate(0px, 0px);"><h3 class="se-t sie-footer_17-text st-m-subheading st-d-subheading">About</h3></a><a href="/" target="_self" class="sie-footer_18 se" data-sid="footer_18" style="transform: scale(1, 1) translate(0px, 0px);"><h3 class="se-t sie-footer_18-text st-m-subheading st-d-subheading">Home</h3></a><div data-sid="footer_20" class="sie-footer_20 se" style="transform: scale(1, 1) translate(0px, 0px);"><div class="se-simple"></div></div><a href="care-services.html" target="_self" class="sie-footer_21 se" data-sid="footer_21" style="transform: scale(1, 1) translate(0px, 0px);"><h3 class="se-t sie-footer_21-text st-m-subheading st-d-subheading">view services &amp; amenities</h3></a><div data-sid="footer_22" class="sie-footer_22 se" style="transform: scale(1, 1) translate(0px, 0px); display:flex; align-items:center; justify-content:center;"><img src="images/logo/solivita-submark-black.svg" alt="Solivita" style="height:70px; width:auto;"></div></div></div></div></div>
-
-<script src="/mirror.js"></script>
+<div class="sig-gallery-grid_1-stg-slider stg-slider" style="display: none;"><div class="stg-slider-tray" style="touch-action: none; user-select: none; -webkit-user-drag: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);"><div class="stg-slider-ph stg-slider-ph-left" style="left:-100%"><div class="stg-slider-loader"></div><div class="stg-slider-image-box"><img class="stg-slider-image" src=""></div></div><div class="stg-slider-ph stg-slider-ph-center"><div class="stg-slider-loader"></div><div class="stg-slider-image-box"><img class="stg-slider-image" src=""></div></div><div class="stg-slider-ph stg-slider-ph-right" style="left:100%"><div class="stg-slider-loader"></div><div class="stg-slider-image-box"><img class="stg-slider-image" src=""></div></div><div class="stg-slider-close-btn stg-slider-controls"><svg width="100%" height="100%"><path d="M27.12,25l8.94-8.94a1.5,1.5,0,0,0-2.12-2.12L25,22.88l-8.94-8.94a1.5,1.5,0,0,0-2.12,2.12L22.88,25l-8.94,8.94a1.5,1.5,0,1,0,2.12,2.12L25,27.12l8.94,8.94a1.5,1.5,0,0,0,2.12-2.12Z"></path></svg></div><a class="stg-slider-arrow stg-slider-next-arrow stg-slider-controls"><svg width="100%" height="100%"><path d="M19.64,41.44a1.5,1.5,0,0,1-1.06-2.56L32.46,25,18.58,11.12A1.5,1.5,0,1,1,20.7,9L35.64,23.94a1.5,1.5,0,0,1,0,2.12L20.7,41A1.5,1.5,0,0,1,19.64,41.44Z"></path></svg></a><a class="stg-slider-arrow stg-slider-prev-arrow stg-slider-controls"><svg width="100%" height="100%"><path d="M30.36,41.44A1.5,1.5,0,0,1,29.3,41L14.36,26.06a1.5,1.5,0,0,1,0-2.12L29.3,9a1.5,1.5,0,1,1,2.12,2.12L17.54,25,31.42,38.88a1.5,1.5,0,0,1-1.06,2.56Z"></path></svg></a></div></div><script src="/mirror.js"></script>
 <script>
+// Pins the hero to the viewport once you scroll past it, matching
+// pressandpalm.com/contact's behavior (verified live: Showit writes an
+// inline `position: fixed; top: 0.01px` on scroll and never releases it —
+// the next section's higher z-index + opaque bg scrolls up over the pinned hero).
+(function () {
+  var hero = document.getElementById('cs-hero');
+  var spacer = document.getElementById('cs-hero-spacer');
+  if (!hero || !spacer) return;
+
+  function onScroll() {
+    if (window.matchMedia('(max-width: 900px)').matches) return;
+    var pinned = window.scrollY > 0;
+    hero.classList.toggle('cs-hero-fixed', pinned);
+    spacer.classList.toggle('cs-hero-spacer-active', pinned);
+  }
+
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+})();
+
 // Nav goes glass (blurred translucent card) once scrolled past the hero;
 // transparent while it's still over the hero. Same script/threshold logic
 // on every page — reads whichever hero section exists on that page.
 (function () {
   var nav = document.getElementById('site-nav');
-  var hero = document.querySelector('.cs-hero-stage, #hero, #client-spotlight');
+  var hero = document.querySelector('.cs-hero-stage, #hero');
   if (!nav) return;
   var threshold = hero ? hero.offsetHeight : 400;
 

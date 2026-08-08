@@ -47,18 +47,19 @@
     const targets = sections.map(section => {
       const img = section.querySelector('.sb-mc.sbg-i, img.slzy')
       if (!img) return null
-      return { section, img, baseOffset: 0 }
+      const baseOffset = section.id === 'parallax-with-logo' ? -150 : 0
+      return { section, img, baseOffset }
     }).filter(Boolean)
 
     if (!targets.length) return
 
     function update() {
       const vh = window.innerHeight
-      targets.forEach(({ section, img }) => {
+      targets.forEach(({ section, img, baseOffset }) => {
         const rect = section.getBoundingClientRect()
         // Distance of section center from viewport center, used to drive the offset.
         const centerDelta = rect.top + rect.height / 2 - vh / 2
-        const y = -centerDelta * RATIO
+        const y = -centerDelta * RATIO + baseOffset
         img.style.transform = `translateY(${y.toFixed(2)}px)`
       })
     }
