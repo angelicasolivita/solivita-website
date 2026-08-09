@@ -976,15 +976,15 @@ html.d {background-color:rgba(248,248,244,1);}
 
 #si-sp.sp { overflow: visible !important; }
 .cs-hero-stage { position: relative; }
-.cs-hero { position: relative; top: 0; left: 0; width: 100%; z-index: auto; display: flex; align-items: center; min-height: 785px; height: 785px; padding-top: 90px; background: rgba(248,248,244,1); overflow: hidden; }
+.cs-hero { position: relative; top: 0; left: 0; width: 100%; z-index: auto; display: flex; align-items: flex-start; min-height: 785px; height: 785px; background: rgba(248,248,244,1); overflow: hidden; }
 .cs-hero.cs-hero-fixed { position: fixed; }
 #cs-hero-spacer { display: none; height: 785px; }
 #cs-hero-spacer.cs-hero-spacer-active { display: block; }
-.cs-hero-text { flex: 0 0 43%; padding: 0 60px 0 70px; box-sizing: border-box; }
-.cs-hero-image { position: relative; flex: 1 1 auto; height: 691px; }
-.cs-hero-img-bg { position: absolute; top: 0; right: 0; width: 624px; height: 691px; object-fit: cover; }
+.cs-hero-text { flex: 0 0 43%; padding: 140px 60px 0 70px; box-sizing: border-box; }
+.cs-hero-image { position: relative; flex: 1 1 auto; align-self: stretch; }
+.cs-hero-img-bg { position: absolute; top: 0; right: 0; width: 624px; height: 100%; object-fit: cover; }
 .cs-hero-img-fg { position: absolute; top: 67px; left: calc(100% - 624px - 95px); width: 216px; height: 257px; object-fit: cover; }
-.cs-h1 { font-family: 'KT Quantum Light'; font-weight: 400; font-size: 55px; text-transform: uppercase; letter-spacing: 0.02em; color: rgba(0,0,0,1); margin: 0 0 24px; }
+.cs-h1 { font-family: 'KT Quantum Light'; font-weight: 400; font-size: 55px; text-transform: none; letter-spacing: 0.02em; color: rgba(0,0,0,1); margin: 0 0 24px; }
 .cs-intro-text { font-family: 'DM Sans'; font-weight: 300; font-size: 17px; line-height: 1.7; color: rgba(0,0,0,1); max-width: 420px; }
 
 /* ---- The "lift" section: sits right after hero in normal flow, higher
@@ -1010,19 +1010,19 @@ html.d {background-color:rgba(248,248,244,1);}
    Centered both horizontally and vertically within the image's fixed
    height (not the row's full stretched height). ---- */
 .cs-h2-overlay { position: absolute; top: 0; left: 0; right: 0; bottom: 0; margin: 0; display: flex; align-items: center; justify-content: center; text-align: center; color: rgba(255,255,255,1); z-index: 1; }
-.cs-h2 { font-family: 'KT Quantum Light'; font-weight: 400; font-size: 32px; text-align: left; color: rgba(0,0,0,1); margin: 0 0 20px; }
-.cs-body { font-family: 'DM Sans'; font-weight: 300; font-size: 16px; line-height: 1.55; color: rgba(0,0,0,1); text-align: left; margin: 0 0 14px; }
+.cs-h2 { font-family: 'KT Quantum Light'; font-weight: 400; font-size: 31px; text-align: left; color: rgba(0,0,0,1); margin: 0 0 20px; }
+.cs-body { font-family: 'DM Sans'; font-weight: 300; font-size: 17px; line-height: 1.55; color: rgba(0,0,0,1); text-align: left; margin: 0 0 14px; }
 .cs-body-note { font-style: italic; }
-.cs-list { list-style: disc; margin: 0; padding: 0 0 0 20px; font-family: 'DM Sans'; font-weight: 300; font-size: 15px; line-height: 1.55; color: rgba(0,0,0,1); text-align: left; }
+.cs-list { list-style: disc; margin: 0; padding: 0 0 0 20px; font-family: 'DM Sans'; font-weight: 300; font-size: 17px; line-height: 1.55; color: rgba(0,0,0,1); text-align: left; }
 .cs-list li { margin-bottom: 3px; }
 
 .cs-section { max-width: 700px; margin: 0 auto; text-align: center; padding: 100px 40px 110px; box-sizing: border-box; }
 
 .cs-cta { position: relative; z-index: 20; text-align: center; background: rgba(208,201,189,1); padding: 130px 40px; }
 .cs-cta-eyebrow { font-family: 'DM Sans'; font-weight: 300; font-size: 13px; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(248,248,244,0.8); margin: 0 0 20px; }
-.cs-cta-text { font-family: 'KT Quantum Light'; font-weight: 400; font-size: 42px; text-transform: uppercase; line-height: 1.25; color: rgba(248,248,244,1); margin: 0 auto 40px; max-width: 680px; }
+.cs-cta-text { font-family: 'KT Quantum Light'; font-weight: 400; font-size: 31px; text-transform: none; line-height: 1.35; color: rgba(248,248,244,1); margin: 0 auto 40px; max-width: 680px; }
 .cs-btn-row { display: flex; gap: 18px; flex-wrap: wrap; justify-content: center; }
-.cs-btn { display: inline-block; padding: 15px 32px; border: 1px solid rgba(248,248,244,1); border-radius: 2px; font-family: 'DM Sans'; font-weight: 300; font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(248,248,244,1); text-decoration: none; transition: letter-spacing 0.5s ease; }
+.cs-btn { display: inline-block; padding: 15px 32px; border: 1px solid rgba(248,248,244,1); border-radius: 2px; font-family: 'DM Sans'; font-weight: 300; font-size: 14px; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(248,248,244,1); text-decoration: none; transition: letter-spacing 0.5s ease; }
 .cs-btn:hover { letter-spacing: 0.2em; }
 
 @media (max-width: 900px) {
@@ -1091,7 +1091,7 @@ html.d {background-color:rgba(248,248,244,1);}
 </nav><div class="cs-hero-stage">
   <div class="cs-hero" id="cs-hero" data-bid="cs-hero">
     <div class="cs-hero-text">
-      <h1 class="cs-h1">Care &amp; Services</h1>
+      <h1 class="cs-h1">Services &amp; Amenities</h1>
       <p class="cs-intro-text">At Solivita, care is personal. With a maximum of six residents and a 1:3 caregiver-to-resident ratio, our team has the time and attention to provide support that is truly tailored to each person.</p>
     </div>
     <div class="cs-hero-image">

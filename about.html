@@ -49,17 +49,17 @@ margin: 0;
    Text + intro + "we bring that belief to life by" bullets on the left,
    image on the right — same 43%/auto split as Care & Services' hero. ---- */
 .cs-hero-stage { position: relative; }
-.cs-hero { position: relative; top: 0; left: 0; width: 100%; z-index: auto; display: flex; align-items: center; min-height: 785px; height: 785px; padding-top: 90px; background: rgba(248,248,244,1); overflow: hidden; }
+.cs-hero { position: relative; top: 0; left: 0; width: 100%; z-index: auto; display: flex; align-items: flex-start; min-height: 785px; height: 785px; background: rgba(248,248,244,1); overflow: hidden; }
 .cs-hero.cs-hero-fixed { position: fixed; }
 #cs-hero-spacer { display: none; height: 785px; }
 #cs-hero-spacer.cs-hero-spacer-active { display: block; }
-.cs-hero-text { flex: 0 0 43%; padding: 0 60px 0 70px; box-sizing: border-box; }
-.cs-hero-image { position: relative; flex: 1 1 auto; height: 691px; }
-.cs-hero-img-bg { position: absolute; top: 0; right: 0; width: 624px; height: 691px; object-fit: cover; }
+.cs-hero-text { flex: 0 0 43%; padding: 140px 60px 0 70px; box-sizing: border-box; }
+.cs-hero-image { position: relative; flex: 1 1 auto; align-self: stretch; }
+.cs-hero-img-bg { position: absolute; top: 0; right: 0; width: 624px; height: 100%; object-fit: cover; }
 .cs-hero-img-fg { position: absolute; top: 67px; left: calc(100% - 624px - 95px); width: 216px; height: 257px; object-fit: cover; }
-.cs-h1 { font-family: 'KT Quantum Light'; font-weight: 400; font-size: 55px; text-transform: uppercase; letter-spacing: 0.02em; color: rgba(0,0,0,1); margin: 0 0 24px; }
+.cs-h1 { font-family: 'KT Quantum Light'; font-weight: 400; font-size: 55px; text-transform: none; letter-spacing: 0.02em; color: rgba(0,0,0,1); margin: 0 0 24px; }
 .cs-intro-text { font-family: 'DM Sans'; font-weight: 300; font-size: 17px; line-height: 1.7; color: rgba(0,0,0,1); max-width: 420px; margin: 0 0 24px; }
-.cs-hero-list { list-style: disc; margin: 0; padding: 0 0 0 20px; font-family: 'DM Sans'; font-weight: 300; font-size: 15px; line-height: 1.6; color: rgba(0,0,0,1); max-width: 420px; }
+.cs-hero-list { list-style: disc; margin: 0; padding: 0 0 0 20px; font-family: 'DM Sans'; font-weight: 300; font-size: 17px; line-height: 1.6; color: rgba(0,0,0,1); max-width: 420px; }
 .cs-hero-list li { margin-bottom: 8px; }
 
 /* ---- The "lift" section: sits right after hero in normal flow, scrolls
@@ -72,9 +72,9 @@ margin: 0;
 .cs-section { max-width: 1200px; margin: 0 auto; text-align: center; padding: 110px 60px; box-sizing: border-box; }
 .cs-section-tight { padding-top: 0; }
 .cs-section-inner { max-width: 760px; margin: 0 auto; }
-.cs-h2 { font-family: 'KT Quantum Light'; font-weight: 400; font-size: 32px; text-align: center; color: rgba(0,0,0,1); margin: 0 0 28px; }
-.cs-body { font-family: 'DM Sans'; font-weight: 300; font-size: 16px; line-height: 1.7; color: rgba(0,0,0,0.8); text-align: left; margin: 0 0 20px; }
-.cs-list { list-style: disc; margin: 0 0 20px; padding: 0 0 0 22px; font-family: 'DM Sans'; font-weight: 300; font-size: 16px; line-height: 1.7; color: rgba(0,0,0,0.8); text-align: left; }
+.cs-h2 { font-family: 'KT Quantum Light'; font-weight: 400; font-size: 31px; text-align: center; color: rgba(0,0,0,1); margin: 0 0 28px; }
+.cs-body { font-family: 'DM Sans'; font-weight: 300; font-size: 17px; line-height: 1.7; color: rgba(0,0,0,0.8); text-align: left; margin: 0 0 20px; }
+.cs-list { list-style: disc; margin: 0 0 20px; padding: 0 0 0 22px; font-family: 'DM Sans'; font-weight: 300; font-size: 17px; line-height: 1.7; color: rgba(0,0,0,0.8); text-align: left; }
 .cs-list li { margin-bottom: 10px; }
 
 /* ---- Our Values: same editorial index-list treatment used by Care &
@@ -83,8 +83,8 @@ margin: 0;
 .cs-values-list { max-width: 1160px; margin: 0 auto; }
 .cs-value-row { display: flex; align-items: baseline; gap: 60px; padding: 32px 0; border-bottom: 1px solid rgba(0,0,0,0.12); text-align: left; }
 .cs-value-row:first-child { border-top: 1px solid rgba(0,0,0,0.12); }
-.cs-value-name { flex: 0 0 220px; font-family: 'KT Quantum Light'; font-weight: 400; font-size: 22px; color: rgba(0,0,0,1); margin: 0; }
-.cs-value-desc { flex: 1 1 auto; max-width: 760px; font-family: 'DM Sans'; font-weight: 300; font-size: 16px; line-height: 1.7; color: rgba(0,0,0,0.75); margin: 0; }
+.cs-value-name { flex: 0 0 220px; font-family: 'KT Quantum Light'; font-weight: 400; font-size: 20px; color: rgba(0,0,0,1); margin: 0; }
+.cs-value-desc { flex: 1 1 auto; max-width: 760px; font-family: 'DM Sans'; font-weight: 300; font-size: 17px; line-height: 1.7; color: rgba(0,0,0,0.75); margin: 0; }
 
 /* ---- Team: placeholder band until photos/bios are ready ---- */
 .cs-team-section { position: relative; z-index: 10; background: rgb(233,239,243); padding: 110px 40px; text-align: center; }
@@ -92,9 +92,9 @@ margin: 0;
 
 .cs-cta { position: relative; z-index: 20; text-align: center; background: rgba(208,201,189,1); padding: 130px 40px; }
 .cs-cta-eyebrow { font-family: 'DM Sans'; font-weight: 300; font-size: 13px; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(248,248,244,0.8); margin: 0 0 20px; }
-.cs-cta-text { font-family: 'KT Quantum Light'; font-weight: 400; font-size: 42px; text-transform: uppercase; line-height: 1.25; color: rgba(248,248,244,1); margin: 0 auto 40px; max-width: 680px; }
+.cs-cta-text { font-family: 'KT Quantum Light'; font-weight: 400; font-size: 31px; text-transform: none; line-height: 1.35; color: rgba(248,248,244,1); margin: 0 auto 40px; max-width: 680px; }
 .cs-btn-row { display: flex; gap: 18px; flex-wrap: wrap; justify-content: center; }
-.cs-btn { display: inline-block; padding: 15px 32px; border: 1px solid rgba(248,248,244,1); border-radius: 2px; font-family: 'DM Sans'; font-weight: 300; font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(248,248,244,1); text-decoration: none; transition: letter-spacing 0.5s ease; }
+.cs-btn { display: inline-block; padding: 15px 32px; border: 1px solid rgba(248,248,244,1); border-radius: 2px; font-family: 'DM Sans'; font-weight: 300; font-size: 14px; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(248,248,244,1); text-decoration: none; transition: letter-spacing 0.5s ease; }
 .cs-btn:hover { letter-spacing: 0.2em; }
 
 @media (max-width: 900px) {
@@ -319,8 +319,8 @@ margin: 0;
 </nav><div class="cs-hero-stage">
   <div class="cs-hero" id="cs-hero" data-bid="cs-hero">
     <div class="cs-hero-text">
-      <h1 class="cs-h1">Mission</h1>
-      <p class="cs-intro-text">At Solivita, we believe that every stage of life deserves to be lived fully, with peace, purpose, and connection. We bring that belief to life by:</p>
+      <h1 class="cs-h1">Our Mission</h1>
+      <p class="cs-intro-text">At Solivita, we believe that every stage of life deserves to be lived fully, with peace, purpose, and connection. Our mission is to bring that belief to life by:</p>
       <ul class="cs-hero-list">
         <li>Providing personalized care in a home designed to feel like a breath of fresh air for up to six Southern California residents.</li>
         <li>Dedicating ourselves to the standard of care our founder spent her career enforcing, where every detail is intentional and nothing is bare-minimum.</li>
@@ -342,8 +342,7 @@ margin: 0;
     <div class="cs-section-inner">
       <h2 class="cs-h2">Our Story</h2>
       <p class="cs-body">Angelica Medina is the founder of Solivita. She spent her career as an Investigator at the Community Care Licensing Investigations Bureau, a law enforcement role where she responded to priority 1 and 2 elder abuse cases across Southern California. She saw what happens when care falls short and knew she could provide the level of care she spent her career enforcing.</p>
-      <p class="cs-body">Using her eye for detail and her expertise in what it means to provide exceptional care at this stage of life, Angelica created Solivita to be the gold standard of what residential care can look like. A home designed to prove that senior living can be beautiful, dignified, and full of life, where residents feel at home and families feel at ease. Built to the standard she would want for her own loved ones.</p>
-      <p class="cs-body" style="margin-bottom:0;">The name Solivita means sun and life, chosen to reflect the belief that senior living can be a bright new chapter, full of peace, purpose, and genuine connection.</p>
+      <p class="cs-body" style="margin-bottom:0;">Using her eye for detail and her expertise in what it means to provide exceptional care at this stage of life, Angelica created Solivita to be the gold standard of what residential care can look like. A home designed to prove that senior living can be beautiful, dignified, and full of life, where residents feel at home and families feel at ease. Built to the standard she would want for her own loved ones.</p>
     </div>
   </div>
 
