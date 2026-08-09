@@ -269,6 +269,42 @@ margin: 0;
 .m .sie-footer_22 {left:12px;top:14px;width:293px;height:76px;}
 .d .sie-footer_22 .se-img {background-repeat:no-repeat;background-size:contain;background-position:50%;border-radius:inherit;}
 .m .sie-footer_22 .se-img {background-repeat:no-repeat;background-size:contain;background-position:50%;border-radius:inherit;}
+/* ---- Mobile footer override: the footer still uses Showit's legacy
+   .d/.m absolute-position system, which relied on Showit's own runtime JS
+   to swap <html class="d"> to <html class="m"> at the mobile breakpoint.
+   That JS was stripped when this site was captured as a static mirror, so
+   .m rules are dead code — mobile always rendered the 1200px-wide .d
+   layout, pushing most of the footer off-screen. Rather than resurrect
+   the fragile per-element .m positioning (tuned for different content
+   than what's here now), override the whole footer to a real flex stack
+   under a real media query. ---- */
+@media (max-width: 900px) {
+  #si-sp.sp { overflow-x: hidden; }
+  #footer.sib-footer { height: auto !important; }
+  #footer .ss-s.ss-bg { position: static !important; height: auto !important; }
+  #footer .sc { width: 100% !important; height: auto !important; padding: 60px 24px 40px; box-sizing: border-box; display: flex; flex-direction: column; align-items: center; }
+  #footer .se { position: static !important; transform: none !important; width: auto !important; height: auto !important; }
+  #footer .se-t { position: static !important; width: auto !important; height: auto !important; }
+  #footer .sie-footer_2, #footer .sie-footer_7, #footer .sie-footer_12 { display: none !important; }
+
+  #footer .sie-footer_22 { order: 1; display: flex !important; justify-content: center; margin: 0 0 24px; }
+  #footer .sie-footer_11 { order: 2; text-align: center; max-width: 320px; margin: 0 0 32px; }
+
+  #footer .sie-footer_20 { order: 3; position: static !important; display: block; width: 240px !important; margin: 0; }
+  #footer .sie-footer_20 .se-simple { position: static !important; width: 100% !important; height: 56px !important; }
+  #footer .sie-footer_21 { order: 4; position: static !important; width: 240px !important; height: 56px !important; display: flex; align-items: center; justify-content: center; text-align: center; pointer-events: none; margin: -56px 0 40px; }
+  #footer .sie-footer_21 .se-t { color: rgba(248,248,244,1); }
+
+  #footer .sie-footer_16 { order: 5; text-align: center; padding: 8px 0; }
+  #footer .sie-footer_17 { order: 6; text-align: center; padding: 8px 0; }
+  #footer .sie-footer_18 { order: 7; text-align: center; padding: 8px 0; }
+
+  #footer .sie-footer_5 { order: 8; text-align: center; padding: 6px 0; margin-top: 24px; }
+  #footer .sie-footer_4 { order: 9; text-align: center; padding: 6px 0; }
+  #footer .sie-footer_3 { order: 10; text-align: center; padding: 6px 0; }
+
+  #footer .sie-footer_1 { order: 11; text-align: center; margin-top: 24px; padding-top: 24px; border-top: 1px solid rgba(0,0,0,0.12); width: 100%; }
+}
 </style>
 </head>
   <body>
