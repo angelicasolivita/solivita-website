@@ -5,9 +5,14 @@ Static HTML/CSS/JS site for Solivita Assisted Living. Deployed via Vercel as a s
 ## Status: work in progress — placeholder content still in use
 
 **Before this ships to production, replace:**
-- Room photos in `images/rooms/` — the "Our Rooms" carousel on the homepage currently shows text placeholders. Each card comments the exact filename it expects (e.g. `room-la-jolla.jpg`); drop the photo in and swap the placeholder `<div class="cs-room-photo">` for an `<img>` pointing at that file.
 - Team photos in `images/about/` — the About page's Team section is a placeholder note until founder/caregiver photos and bios are available.
 - The homepage's second parallax band uses a Solivita photo (`images/hero/hero-greenroom.jpg`); confirm it's the final choice before launch.
+
+Room names, dimensions, and bathroom details in the "Our Rooms" carousel are
+sourced from the facility's licensing spec sheet (Google Sheet, not in this repo)
+and the floor plan sketch submitted with the facility license application. If
+either changes, update the room cards in `index.html` to match — the source of
+truth is the spec sheet, not this file.
 
 ## Structure
 
@@ -23,8 +28,8 @@ solivita-website/
 │                               About/Care sticky-pin hero, parallax bands
 ├── images/
 │   ├── hero/                  hero section photos, per page
-│   ├── rooms/                 room carousel photos (sparse — placeholders
-│   │                           in index.html until real photos are added)
+│   ├── rooms/                 room carousel photos — Coronado, Del Mar,
+│   │                           The Cove, La Jolla, Torrey Pines
 │   ├── services/              Care & Services category photos
 │   ├── about/                 founder/team photos (sparse, none yet)
 │   ├── brand/                 logo (primary + submark SVGs)
