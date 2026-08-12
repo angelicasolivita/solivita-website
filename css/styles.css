@@ -182,6 +182,20 @@ a { color: inherit; }
 .cs-list li { margin-bottom: 10px; }
 .cs-body-note { font-style: italic; }
 
+/* ---- Our Story (about): photo left in an organic blob shape, text
+   right. The blob uses an asymmetric border-radius (a common CSS trick
+   for an irregular, rounded "abstract" frame — not a true SVG shape,
+   just four very different corner radii). The blob's own aspect ratio
+   matches the source photo's (1206x1487) so object-fit: cover only
+   trims empty sky/road at top and bottom — never the family at the
+   sides, who fill nearly the photo's full width. ---- */
+.cs-story-section { max-width: 1200px; margin: 0 auto; padding: 110px 60px; display: flex; align-items: center; gap: 70px; }
+.cs-story-photo-wrap { flex: 0 0 437px; }
+.cs-story-photo-blob { position: relative; width: 437px; height: 538px; border-radius: 62% 38% 55% 45% / 45% 55% 45% 55%; overflow: hidden; }
+.cs-story-photo-blob img { width: 100%; height: 100%; object-fit: cover; object-position: center 15%; }
+.cs-story-text { flex: 1 1 auto; text-align: left; }
+.cs-story-text .cs-h2 { text-align: left; }
+
 /* ---- Our Approach (index) --------------------------------------- */
 .cs-approach-section { position: relative; background: #F8F8F4; padding: 110px 60px; }
 .cs-approach-inner { max-width: 820px; margin: 0 auto; text-align: center; }
@@ -333,6 +347,13 @@ a { color: inherit; }
 
   .cs-section { padding: 70px 24px; }
   .cs-h2 { font-size: 26px; }
+
+  .cs-story-section { flex-direction: column; padding: 70px 24px; gap: 32px; text-align: center; }
+  .cs-story-photo-wrap { flex: 0 0 auto; }
+  .cs-story-photo-blob { width: 322px; height: 397px; margin: 0 auto; }
+  .cs-story-text { text-align: center; }
+  .cs-story-text .cs-h2 { text-align: center; }
+  .cs-story-text .cs-body { text-align: center; }
 
   .cs-approach-section { padding: 70px 24px 90px; }
 
