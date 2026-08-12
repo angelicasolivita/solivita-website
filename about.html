@@ -1,435 +1,118 @@
 <!DOCTYPE html>
-<html class="d desktop landscape" lang=""><head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>About | Solivita Assisted Living</title>
-      <link rel="icon" type="image/svg+xml" href="images/logo/solivita-submark-black.svg">
-      <meta name="description" content="Meet the founder and mission behind Solivita Assisted Living in Otay Lakes, San Diego.">
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-<link href="css/css-L2Nzcz" rel="stylesheet" type="text/css">
-<link rel="stylesheet" type="text/css" href="css/showit-engine.css">
-<style>
-@font-face{font-family:KT Quantum Light;src:url('images/ktquantum-light-webfont-Ly9zdGF0.woff');}
-@font-face{font-family:Mattone;src:url('images/mattone-150-Ly9zdGF0.woff');}
- </style>
-
-  <style>
-body {
--webkit-font-smoothing:antialiased;
--moz-osx-font-smoothing:grayscale;
-margin: 0;
-}
-
-/* ---- Site nav: fixed, transparent over the hero, glass (blurred
-   translucent card) once scrolled past it. Submark logo left, About /
-   Services & Amenities / Book a Tour right. Same markup on every page. ---- */
-.site-nav { position: fixed; top: 0; left: 0; right: 0; z-index: 500; display: flex; align-items: center; justify-content: space-between; padding: 28px 60px; box-sizing: border-box; background: transparent; transition: background-color 0.4s ease, backdrop-filter 0.4s ease, box-shadow 0.4s ease; }
-.site-nav.site-nav-glass { background: rgba(248,248,244,0.6); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); box-shadow: 0 1px 0 rgba(0,0,0,0.06); }
-.site-nav-logo { display: flex; align-items: center; }
-.site-nav-logo img { height: 46px; width: auto; display: block; }
-.site-nav-links { display: flex; align-items: center; gap: 40px; }
-.site-nav-links a { font-family: 'DM Sans'; font-weight: 300; font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(0,0,0,1); text-decoration: none; transition: opacity 0.3s ease; }
-.site-nav-links a:hover { opacity: 0.6; }
-@media (max-width: 900px) {
-  .site-nav { padding: 20px 24px; }
-  .site-nav-logo img { height: 36px; }
-  .site-nav-links { gap: 20px; }
-  .site-nav-links a { font-size: 11px; }
-}
-
-#si-sp.sp { overflow: visible !important; }
-
-/* ---- Hero: sticky-pinned, same mechanism as Care & Services ----
-   Hero starts in normal flow, then switches to position:fixed once you
-   scroll past it and never releases — it stays pinned behind everything
-   for the rest of the page. The next section (higher content, opaque
-   background) scrolls normally over it, creating the "lift" look.
-   Text + intro + "we bring that belief to life by" bullets on the left,
-   image on the right — same 43%/auto split as Care & Services' hero. ---- */
-.cs-hero-stage { position: relative; }
-.cs-hero { position: relative; top: 0; left: 0; width: 100%; z-index: auto; display: flex; align-items: flex-start; min-height: 785px; height: 785px; background: rgba(248,248,244,1); overflow: hidden; }
-.cs-hero.cs-hero-fixed { position: fixed; }
-#cs-hero-spacer { display: none; height: 785px; }
-#cs-hero-spacer.cs-hero-spacer-active { display: block; }
-.cs-hero-text { flex: 0 0 43%; padding: 140px 60px 0 70px; box-sizing: border-box; }
-.cs-hero-image { position: relative; flex: 1 1 auto; align-self: stretch; }
-.cs-hero-img-bg { position: absolute; top: 0; right: 0; width: 624px; height: 100%; object-fit: cover; }
-.cs-hero-img-fg { position: absolute; top: 67px; left: calc(100% - 624px - 95px); width: 216px; height: 257px; object-fit: cover; }
-.cs-h1 { font-family: 'KT Quantum Light'; font-weight: 400; font-size: 55px; text-transform: none; letter-spacing: 0.02em; color: rgba(0,0,0,1); margin: 0 0 24px; }
-.cs-intro-text { font-family: 'DM Sans'; font-weight: 300; font-size: 17px; line-height: 1.7; color: rgba(0,0,0,1); max-width: 420px; margin: 0 0 24px; }
-.cs-hero-list { list-style: disc; margin: 0; padding: 0 0 0 20px; font-family: 'DM Sans'; font-weight: 300; font-size: 17px; line-height: 1.6; color: rgba(0,0,0,1); max-width: 420px; }
-.cs-hero-list li { margin-bottom: 8px; }
-
-/* ---- The "lift" section: sits right after hero in normal flow, scrolls
-   over the pinned hero. Same mechanism as Care & Services. ---- */
-.cs-lift { position: relative; z-index: 10; background: rgba(248,248,244,1); }
-
-/* ---- Content sections: same 1200px standard container the rest of the
-   site uses (Showit's .sc, the Care & Services index list). Paragraph
-   text gets its own readable max-width inside that wider container. ---- */
-.cs-section { max-width: 1200px; margin: 0 auto; text-align: center; padding: 110px 60px; box-sizing: border-box; }
-.cs-section-tight { padding-top: 0; }
-.cs-section-inner { max-width: 760px; margin: 0 auto; }
-.cs-h2 { font-family: 'KT Quantum Light'; font-weight: 400; font-size: 31px; text-align: center; color: rgba(0,0,0,1); margin: 0 0 28px; }
-.cs-body { font-family: 'DM Sans'; font-weight: 300; font-size: 17px; line-height: 1.7; color: rgba(0,0,0,0.8); text-align: left; margin: 0 0 20px; }
-.cs-list { list-style: disc; margin: 0 0 20px; padding: 0 0 0 22px; font-family: 'DM Sans'; font-weight: 300; font-size: 17px; line-height: 1.7; color: rgba(0,0,0,0.8); text-align: left; }
-.cs-list li { margin-bottom: 10px; }
-
-/* ---- Our Values: same editorial index-list treatment used by Care &
-   Services / FAQ on the home page (hairline dividers, no cards). ---- */
-.cs-values-section { position: relative; background: rgba(248,248,244,1); padding: 0 60px 110px; }
-.cs-values-list { max-width: 1160px; margin: 0 auto; }
-.cs-value-row { display: flex; align-items: baseline; gap: 60px; padding: 32px 0; border-bottom: 1px solid rgba(0,0,0,0.12); text-align: left; }
-.cs-value-row:first-child { border-top: 1px solid rgba(0,0,0,0.12); }
-.cs-value-name { flex: 0 0 220px; font-family: 'KT Quantum Light'; font-weight: 400; font-size: 20px; color: rgba(0,0,0,1); margin: 0; }
-.cs-value-desc { flex: 1 1 auto; max-width: 760px; font-family: 'DM Sans'; font-weight: 300; font-size: 17px; line-height: 1.7; color: rgba(0,0,0,0.75); margin: 0; }
-
-/* ---- Team: placeholder band until photos/bios are ready ---- */
-.cs-team-section { position: relative; z-index: 10; background: rgb(233,239,243); padding: 110px 40px; text-align: center; }
-.cs-team-note { max-width: 560px; margin: 0 auto; font-family: 'DM Sans'; font-weight: 300; font-style: italic; font-size: 15px; line-height: 1.6; color: rgba(0,0,0,0.55); }
-
-.cs-cta { position: relative; z-index: 20; text-align: center; background: rgba(208,201,189,1); padding: 130px 40px; }
-.cs-cta-eyebrow { font-family: 'DM Sans'; font-weight: 300; font-size: 13px; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(248,248,244,0.8); margin: 0 0 20px; }
-.cs-cta-text { font-family: 'KT Quantum Light'; font-weight: 400; font-size: 31px; text-transform: none; line-height: 1.35; color: rgba(248,248,244,1); margin: 0 auto 40px; max-width: 680px; }
-.cs-btn-row { display: flex; gap: 18px; flex-wrap: wrap; justify-content: center; }
-.cs-btn { display: inline-block; padding: 15px 32px; border: 1px solid rgba(248,248,244,1); border-radius: 2px; font-family: 'DM Sans'; font-weight: 300; font-size: 14px; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(248,248,244,1); text-decoration: none; transition: letter-spacing 0.5s ease; }
-.cs-btn:hover { letter-spacing: 0.2em; }
-
-@media (max-width: 900px) {
-  .cs-hero-stage { height: auto; }
-  .cs-hero, .cs-hero.cs-hero-fixed { position: relative !important; flex-direction: column; min-height: auto; height: auto; padding-top: 70px; }
-  #cs-hero-spacer { display: none !important; }
-  .cs-hero-text { flex: 1 1 auto; padding: 40px 24px; }
-  .cs-hero-image { flex: 1 1 auto; height: 400px; width: 100%; }
-  .cs-hero-img-bg { top: 0; left: 0; right: 0; width: 100%; height: 100%; }
-  .cs-hero-img-fg { display: none; }
-  .cs-h1 { font-size: 36px; }
-  .cs-intro-text, .cs-hero-list { max-width: none; }
-  .cs-section { padding: 70px 24px; }
-  .cs-h2 { font-size: 26px; }
-  .cs-values-section { padding: 0 24px 70px; }
-  .cs-value-row { flex-direction: column; gap: 8px; }
-  .cs-value-name { flex: 0 0 auto; }
-  .cs-value-desc { max-width: none; }
-  .cs-team-section { padding: 70px 24px; }
-  .cs-cta { padding: 80px 24px; }
-  .cs-cta-text { font-size: 26px; }
-}
-
-/* ---- Footer positioning rules, copied from the original Showit page CSS
-   (care-services.html / index.html) since this hand-built page never had
-   the shared page-css block those pages inherited from the site capture. ---- */
-.sib-footer {z-index:301;}
-.m .sib-footer {height:608px;}
-.d .sib-footer {height:431px;}
-.m .sib-footer .ss-bg {background-color:rgba(248,248,244,1);}
-.d .sib-footer .ss-bg {background-color:rgba(248,248,244,1);}
-.d .sie-footer_0 {left:985px;top:396px;width:185px;height:18px;}
-.m .sie-footer_0 {left:200px;top:582px;width:105px;height:18px;}
-.d .sie-footer_0-text {color:rgba(0,0,0,1);line-height:1.8;font-size:9px;text-align:right;}
-.m .sie-footer_0-text {color:rgba(0,0,0,1);font-size:9px;text-align:right;}
-.d .sie-footer_1 {left:459px;top:396px;width:283px;height:19px;}
-.m .sie-footer_1 {left:0px;top:532px;width:325px;height:22px;}
-.d .sie-footer_1-text {color:rgba(0,0,0,1);font-size:10px;text-align:center;}
-.m .sie-footer_1-text {font-size:11px;}
-.d .sie-footer_2 {left:0px;top:377px;width:1200px;height:1px;display:none;}
-.m .sie-footer_2 {left:-3px;top:564px;width:330px;height:1px;}
-.sie-footer_2 svg {vertical-align:top;overflow:visible;pointer-events:none;box-sizing:content-box;}
-.m .sie-footer_2 svg {stroke:rgba(0,0,0,1);transform:scaleX(1);padding:0.5px;height:1px;width:330px;}
-.d .sie-footer_2 svg {stroke:rgba(0,0,0,1);transform:scaleX(1);padding:0.5px;height:1px;width:1200px;}
-.m .sie-footer_2 line {stroke-linecap:butt;stroke-width:1;stroke-dasharray:none;pointer-events:all;}
-.d .sie-footer_2 line {stroke-linecap:butt;stroke-width:1;stroke-dasharray:none;pointer-events:all;}
-.d .sie-footer_3:hover {opacity:0.5;transition-duration:1.25s;transition-property:opacity;}
-.m .sie-footer_3:hover {opacity:0.5;transition-duration:1.25s;transition-property:opacity;}
-.d .sie-footer_3 {left:872px;top:174px;width:167px;height:18px;transition-duration:1.25s;transition-property:opacity;}
-.m .sie-footer_3 {left:198px;top:342px;width:116px;height:18px;display:none;transition-duration:1.25s;transition-property:opacity;}
-.d .sie-footer_3-text:hover {color:rgba(0,0,0,1);letter-spacing:0.1em;}
-.m .sie-footer_3-text:hover {color:rgba(0,0,0,1);letter-spacing:0.1em;}
-.d .sie-footer_3-text {color:rgba(0,0,0,1);text-transform:none;line-height:2;letter-spacing:0em;font-size:11px;text-align:left;transition-duration:0.5s;transition-property:color,letter-spacing;}
-.m .sie-footer_3-text {color:rgba(0,0,0,1);line-height:2;text-align:left;transition-duration:0.5s;transition-property:color,letter-spacing;}
-.d .sie-footer_4:hover {opacity:0.5;transition-duration:1.25s;transition-property:opacity;}
-.m .sie-footer_4:hover {opacity:0.5;transition-duration:1.25s;transition-property:opacity;}
-.d .sie-footer_4 {left:872px;top:138px;width:167px;height:18px;transition-duration:1.25s;transition-property:opacity;}
-.m .sie-footer_4 {left:195px;top:368px;width:116px;height:18px;transition-duration:1.25s;transition-property:opacity;}
-.d .sie-footer_4-text:hover {color:rgba(0,0,0,1);letter-spacing:0.1em;}
-.m .sie-footer_4-text:hover {color:rgba(0,0,0,1);letter-spacing:0.1em;}
-.d .sie-footer_4-text {color:rgba(0,0,0,1);text-transform:none;line-height:2.2;letter-spacing:0em;font-size:11px;text-align:left;transition-duration:0.5s;transition-property:color,letter-spacing;}
-.m .sie-footer_4-text {color:rgba(0,0,0,1);line-height:2.2;text-align:left;transition-duration:0.5s;transition-property:color,letter-spacing;}
-.d .sie-footer_5:hover {opacity:0.5;transition-duration:1.25s;transition-property:opacity;}
-.m .sie-footer_5:hover {opacity:0.5;transition-duration:1.25s;transition-property:opacity;}
-.d .sie-footer_5 {left:872px;top:102px;width:167px;height:18px;transition-duration:1.25s;transition-property:opacity;}
-.m .sie-footer_5 {left:195px;top:338px;width:116px;height:18px;transition-duration:1.25s;transition-property:opacity;}
-.d .sie-footer_5-text:hover {color:rgba(0,0,0,1);letter-spacing:0.1em;}
-.m .sie-footer_5-text:hover {color:rgba(0,0,0,1);letter-spacing:0.1em;}
-.d .sie-footer_5-text {color:rgba(0,0,0,1);text-transform:none;line-height:2;letter-spacing:0em;font-size:11px;text-align:left;transition-duration:0.5s;transition-property:color,letter-spacing;}
-.m .sie-footer_5-text {color:rgba(0,0,0,1);line-height:2;text-align:left;transition-duration:0.5s;transition-property:color,letter-spacing;}
-.d .sie-footer_7 {left:719px;top:189px;width:220px;height:1px;}
-.m .sie-footer_7 {left:-1px;top:310px;width:327px;height:1px;}
-.sie-footer_7 svg {vertical-align:top;overflow:visible;pointer-events:none;box-sizing:content-box;}
-.m .sie-footer_7 svg {stroke:rgba(0,0,0,0.75);transform:scaleX(1);padding:0.5px;height:1px;width:327px;}
-.d .sie-footer_7 svg {stroke:rgba(0,0,0,0.75);transform:scaleX(1);padding:0.5px;height:220px;width:0px;}
-.m .sie-footer_7 line {stroke-linecap:butt;stroke-width:1;stroke-dasharray:none;pointer-events:all;}
-.d .sie-footer_7 line {stroke-linecap:butt;stroke-width:1;stroke-dasharray:none;pointer-events:all;}
-.d .sie-footer_8 {left:617px;top:258px;width:16px;height:17px;}
-.m .sie-footer_8 {left:172px;top:274px;width:12px;height:12px;}
-.d .sie-footer_8 svg {fill:rgba(0,0,0,1);}
-.m .sie-footer_8 svg {fill:rgba(0,0,0,1);}
-.d .sie-footer_9 {left:591px;top:258px;width:16px;height:17px;}
-.m .sie-footer_9 {left:157px;top:274px;width:12px;height:12px;}
-.d .sie-footer_9 svg {fill:rgba(0,0,0,1);}
-.m .sie-footer_9 svg {fill:rgba(0,0,0,1);}
-.d .sie-footer_10 {left:567px;top:258px;width:16px;height:17px;}
-.m .sie-footer_10 {left:140px;top:274px;width:12px;height:12px;}
-.d .sie-footer_10 svg {fill:rgba(0,0,0,1);}
-.m .sie-footer_10 svg {fill:rgba(0,0,0,1);}
-.d .sie-footer_11 {left:466px;top:173px;width:269px;height:74px;}
-.m .sie-footer_11 {left:27px;top:100px;width:273px;height:65px;}
-.d .sie-footer_11-text {font-size:12px;}
-.m .sie-footer_11-text {font-size:12px;}
-.d .sie-footer_12 {left:261px;top:189px;width:220px;height:1px;}
-.m .sie-footer_12 {left:59px;top:414px;width:208px;height:1px;}
-.sie-footer_12 svg {vertical-align:top;overflow:visible;pointer-events:none;box-sizing:content-box;}
-.m .sie-footer_12 svg {stroke:rgba(0,0,0,0.75);transform:scaleX(1);padding:0.5px;height:208px;width:0px;}
-.d .sie-footer_12 svg {stroke:rgba(0,0,0,0.75);transform:scaleX(1);padding:0.5px;height:220px;width:0px;}
-.m .sie-footer_12 line {stroke-linecap:butt;stroke-width:1;stroke-dasharray:none;pointer-events:all;}
-.d .sie-footer_12 line {stroke-linecap:butt;stroke-width:1;stroke-dasharray:none;pointer-events:all;}
-.d .sie-footer_13:hover {opacity:0.5;transition-duration:1.25s;transition-property:opacity;}
-.m .sie-footer_13:hover {opacity:0.5;transition-duration:1.25s;transition-property:opacity;}
-.d .sie-footer_13 {left:872px;top:245px;width:145px;height:18px;transition-duration:1.25s;transition-property:opacity;}
-.m .sie-footer_13 {left:195px;top:428px;width:104px;height:18px;transition-duration:1.25s;transition-property:opacity;}
-.d .sie-footer_13-text:hover {color:rgba(0,0,0,1);letter-spacing:0.1em;}
-.m .sie-footer_13-text:hover {color:rgba(0,0,0,1);letter-spacing:0.1em;}
-.d .sie-footer_13-text {color:rgba(0,0,0,1);text-transform:none;line-height:2;letter-spacing:0em;font-size:11px;text-align:left;transition-duration:0.5s;transition-property:color,letter-spacing;}
-.m .sie-footer_13-text {color:rgba(0,0,0,1);text-transform:none;line-height:2;text-align:left;transition-duration:0.5s;transition-property:color,letter-spacing;}
-.d .sie-footer_14:hover {opacity:0.5;transition-duration:1.25s;transition-property:opacity;}
-.m .sie-footer_14:hover {opacity:0.5;transition-duration:1.25s;transition-property:opacity;}
-.d .sie-footer_14 {left:177px;top:236px;width:145px;height:18px;transition-duration:1.25s;transition-property:opacity;}
-.m .sie-footer_14 {left:12px;top:446px;width:104px;height:18px;transition-duration:1.25s;transition-property:opacity;}
-.d .sie-footer_14-text:hover {color:rgba(0,0,0,1);letter-spacing:0.1em;}
-.m .sie-footer_14-text:hover {color:rgba(0,0,0,1);letter-spacing:0.1em;}
-.d .sie-footer_14-text {color:rgba(0,0,0,1);text-transform:none;line-height:2;letter-spacing:0em;font-size:11px;text-align:right;transition-duration:0.5s;transition-property:color,letter-spacing;}
-.m .sie-footer_14-text {color:rgba(0,0,0,1);line-height:2;text-align:right;transition-duration:0.5s;transition-property:color,letter-spacing;}
-.d .sie-footer_15:hover {opacity:0.5;transition-duration:1.25s;transition-property:opacity;}
-.m .sie-footer_15:hover {opacity:0.5;transition-duration:1.25s;transition-property:opacity;}
-.d .sie-footer_15 {left:177px;top:203px;width:145px;height:18px;transition-duration:1.25s;transition-property:opacity;}
-.m .sie-footer_15 {left:12px;top:419px;width:104px;height:18px;transition-duration:1.25s;transition-property:opacity;}
-.d .sie-footer_15-text:hover {color:rgba(0,0,0,1);letter-spacing:0.1em;}
-.m .sie-footer_15-text:hover {color:rgba(0,0,0,1);letter-spacing:0.1em;}
-.d .sie-footer_15-text {color:rgba(0,0,0,1);text-transform:none;line-height:2;letter-spacing:0em;font-size:11px;text-align:right;transition-duration:0.5s;transition-property:color,letter-spacing;}
-.m .sie-footer_15-text {color:rgba(0,0,0,1);line-height:2;text-align:right;transition-duration:0.5s;transition-property:color,letter-spacing;}
-.d .sie-footer_16:hover {opacity:0.5;transition-duration:1.25s;transition-property:opacity;}
-.m .sie-footer_16:hover {opacity:0.5;transition-duration:1.25s;transition-property:opacity;}
-.d .sie-footer_16 {left:177px;top:170px;width:145px;height:18px;transition-duration:1.25s;transition-property:opacity;}
-.m .sie-footer_16 {left:12px;top:392px;width:104px;height:18px;transition-duration:1.25s;transition-property:opacity;}
-.d .sie-footer_16-text:hover {color:rgba(0,0,0,1);letter-spacing:0.1em;}
-.m .sie-footer_16-text:hover {color:rgba(0,0,0,1);letter-spacing:0.1em;}
-.d .sie-footer_16-text {color:rgba(0,0,0,1);text-transform:none;line-height:2;letter-spacing:0em;font-size:11px;text-align:right;transition-duration:0.5s;transition-property:color,letter-spacing;}
-.m .sie-footer_16-text {color:rgba(0,0,0,1);line-height:2;text-align:right;transition-duration:0.5s;transition-property:color,letter-spacing;}
-.d .sie-footer_17:hover {opacity:0.5;transition-duration:1.25s;transition-property:opacity;}
-.m .sie-footer_17:hover {opacity:0.5;transition-duration:1.25s;transition-property:opacity;}
-.d .sie-footer_17 {left:177px;top:137px;width:145px;height:18px;transition-duration:1.25s;transition-property:opacity;}
-.m .sie-footer_17 {left:12px;top:365px;width:104px;height:18px;transition-duration:1.25s;transition-property:opacity;}
-.d .sie-footer_17-text:hover {color:rgba(0,0,0,1);letter-spacing:0.1em;}
-.m .sie-footer_17-text:hover {color:rgba(0,0,0,1);letter-spacing:0.1em;}
-.d .sie-footer_17-text {color:rgba(0,0,0,1);text-transform:none;line-height:2;letter-spacing:0em;font-size:11px;text-align:right;transition-duration:0.5s;transition-property:color,letter-spacing;}
-.m .sie-footer_17-text {color:rgba(0,0,0,1);line-height:2;text-align:right;transition-duration:0.5s;transition-property:color,letter-spacing;}
-.d .sie-footer_18:hover {opacity:0.5;transition-duration:1.25s;transition-property:opacity;}
-.m .sie-footer_18:hover {opacity:0.5;transition-duration:1.25s;transition-property:opacity;}
-.d .sie-footer_18 {left:177px;top:104px;width:145px;height:18px;transition-duration:1.25s;transition-property:opacity;}
-.m .sie-footer_18 {left:12px;top:338px;width:104px;height:18px;transition-duration:1.25s;transition-property:opacity;}
-.d .sie-footer_18-text:hover {color:rgba(0,0,0,1);letter-spacing:0.1em;}
-.m .sie-footer_18-text:hover {color:rgba(0,0,0,1);letter-spacing:0.1em;}
-.d .sie-footer_18-text {color:rgba(0,0,0,1);text-transform:none;line-height:2;letter-spacing:0em;font-size:11px;text-align:right;transition-duration:0.5s;transition-property:color,letter-spacing;}
-.m .sie-footer_18-text {color:rgba(0,0,0,1);line-height:2;letter-spacing:0.2em;text-align:right;transition-duration:0.5s;transition-property:color,letter-spacing;}
-.d .sie-footer_19:hover {opacity:0.5;transition-duration:1.25s;transition-property:opacity;}
-.m .sie-footer_19:hover {opacity:0.5;transition-duration:1.25s;transition-property:opacity;}
-.d .sie-footer_19 {left:872px;top:209px;width:167px;height:18px;transition-duration:1.25s;transition-property:opacity;}
-.m .sie-footer_19 {left:195px;top:398px;width:116px;height:18px;transition-duration:1.25s;transition-property:opacity;}
-.d .sie-footer_19-text:hover {color:rgba(0,0,0,1);letter-spacing:0.1em;}
-.m .sie-footer_19-text:hover {color:rgba(0,0,0,1);letter-spacing:0.1em;}
-.d .sie-footer_19-text {color:rgba(0,0,0,1);text-transform:none;line-height:2;letter-spacing:0em;font-size:11px;text-align:left;font-family:'DM Sans';font-weight:300;font-style:normal;transition-duration:0.5s;transition-property:color,letter-spacing;}
-.m .sie-footer_19-text {color:rgba(0,0,0,1);line-height:2;letter-spacing:0.1em;text-align:left;transition-duration:0.5s;transition-property:color,letter-spacing;}
-.d .sie-footer_20 {left:473px;top:299px;width:251px;height:43px;}
-.m .sie-footer_20 {left:51px;top:182px;width:224px;height:56px;}
-.d .sie-footer_20 .se-simple:hover {}
-.m .sie-footer_20 .se-simple:hover {}
-.d .sie-footer_20 .se-simple {background-color:rgba(56,49,25,1);}
-.m .sie-footer_20 .se-simple {background-color:rgba(56,49,25,1);}
-.d .sie-footer_21:hover {opacity:0.5;transition-duration:1.5s;transition-property:opacity;}
-.m .sie-footer_21:hover {opacity:0.5;transition-duration:1.5s;transition-property:opacity;}
-.d .sie-footer_21 {left:507px;top:311px;width:183px;height:18px;transition-duration:1.5s;transition-property:opacity;}
-.m .sie-footer_21 {left:68px;top:197px;width:192px;height:41px;transition-duration:1.5s;transition-property:opacity;}
-.d .sie-footer_21-text:hover {color:rgba(0,0,0,1);letter-spacing:0.2em;}
-.m .sie-footer_21-text:hover {color:rgba(0,0,0,1);letter-spacing:0.2em;}
-.d .sie-footer_21-text {color:rgba(255,255,255,1);text-transform:uppercase;line-height:2;letter-spacing:0.1em;font-size:11px;text-align:center;transition-duration:0.5s;transition-property:color,letter-spacing;}
-.m .sie-footer_21-text {color:rgba(255,255,255,1);text-transform:uppercase;line-height:2;letter-spacing:0.1em;font-size:11px;text-align:center;transition-duration:0.5s;transition-property:color,letter-spacing;}
-.d .sie-footer_22 {left:438px;top:84px;width:320px;height:76px;}
-.m .sie-footer_22 {left:12px;top:14px;width:293px;height:76px;}
-.d .sie-footer_22 .se-img {background-repeat:no-repeat;background-size:contain;background-position:50%;border-radius:inherit;}
-.m .sie-footer_22 .se-img {background-repeat:no-repeat;background-size:contain;background-position:50%;border-radius:inherit;}
-/* ---- Mobile footer override: the footer still uses Showit's legacy
-   .d/.m absolute-position system, which relied on Showit's own runtime JS
-   to swap <html class="d"> to <html class="m"> at the mobile breakpoint.
-   That JS was stripped when this site was captured as a static mirror, so
-   .m rules are dead code — mobile always rendered the 1200px-wide .d
-   layout, pushing most of the footer off-screen. Rather than resurrect
-   the fragile per-element .m positioning (tuned for different content
-   than what's here now), override the whole footer to a real flex stack
-   under a real media query. ---- */
-@media (max-width: 900px) {
-  #si-sp.sp { overflow-x: hidden; }
-  #footer.sib-footer { height: auto !important; }
-  #footer .ss-s.ss-bg { position: static !important; height: auto !important; }
-  #footer .sc { width: 100% !important; height: auto !important; padding: 60px 24px 40px; box-sizing: border-box; display: flex; flex-direction: column; align-items: center; }
-  #footer .se { position: static !important; transform: none !important; width: auto !important; height: auto !important; }
-  #footer .se-t { position: static !important; width: auto !important; height: auto !important; }
-  #footer .sie-footer_2, #footer .sie-footer_7, #footer .sie-footer_12 { display: none !important; }
-
-  #footer .sie-footer_22 { order: 1; display: flex !important; justify-content: center; margin: 0 0 24px; }
-  #footer .sie-footer_11 { order: 2; text-align: center; max-width: 320px; margin: 0 0 32px; }
-
-  #footer .sie-footer_20 { order: 3; position: static !important; display: block; width: 240px !important; margin: 0; }
-  #footer .sie-footer_20 .se-simple { position: static !important; width: 100% !important; height: 56px !important; }
-  #footer .sie-footer_21 { order: 4; position: static !important; width: 240px !important; height: 56px !important; display: flex; align-items: center; justify-content: center; text-align: center; pointer-events: none; margin: -56px 0 40px; }
-  #footer .sie-footer_21 .se-t { color: rgba(248,248,244,1); }
-
-  #footer .sie-footer_16 { order: 5; text-align: center; padding: 8px 0; }
-  #footer .sie-footer_17 { order: 6; text-align: center; padding: 8px 0; }
-  #footer .sie-footer_18 { order: 7; text-align: center; padding: 8px 0; }
-
-  #footer .sie-footer_5 { order: 8; text-align: center; padding: 6px 0; margin-top: 24px; }
-  #footer .sie-footer_4 { order: 9; text-align: center; padding: 6px 0; }
-  #footer .sie-footer_3 { order: 10; text-align: center; padding: 6px 0; }
-
-  #footer .sie-footer_1 { order: 11; text-align: center; margin-top: 24px; padding-top: 24px; border-top: 1px solid rgba(0,0,0,0.12); width: 100%; }
-}
-</style>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>About | Solivita Assisted Living</title>
+  <link rel="icon" type="image/svg+xml" href="images/brand/solivita-submark-black.svg">
+  <meta name="description" content="Meet the founder and mission behind Solivita Assisted Living in Otay Lakes, San Diego.">
+  <link rel="stylesheet" href="css/styles.css">
 </head>
-  <body>
-
-    <div id="si-sp" class="sp" style=""><nav class="site-nav" id="site-nav">
-  <a href="/" class="site-nav-logo"><img src="images/logo/solivita-submark-black.svg" alt="Solivita"></a>
-  <div class="site-nav-links">
-    <a href="/about">About</a>
-    <a href="care-services.html">Services &amp; Amenities</a>
-    <a href="/contact">Book a Tour</a>
-  </div>
-</nav><div class="cs-hero-stage">
-  <div class="cs-hero" id="cs-hero" data-bid="cs-hero">
-    <div class="cs-hero-text">
-      <h1 class="cs-h1">Our Mission</h1>
-      <p class="cs-intro-text">At Solivita, we believe that every stage of life deserves to be lived fully, with peace, purpose, and connection. Our mission is to bring that belief to life by:</p>
-      <ul class="cs-hero-list">
-        <li>Providing personalized care in a home designed to feel like a breath of fresh air for up to six Southern California residents.</li>
-        <li>Dedicating ourselves to the standard of care our founder spent her career enforcing, where every detail is intentional and nothing is bare-minimum.</li>
-        <li>Creating a community where residents are valued, supported, and never alone.</li>
-      </ul>
+<body>
+  <nav class="site-nav" id="site-nav">
+    <a href="/" class="site-nav-logo"><img src="images/brand/solivita-submark-black.svg" alt="Solivita"></a>
+    <div class="site-nav-links">
+      <a href="about.html">About</a>
+      <a href="care-services.html">Services &amp; Amenities</a>
+      <a href="/contact">Book a Tour</a>
     </div>
-    <div class="cs-hero-image">
-      <img class="cs-hero-img-bg" src="images/solivita-hero-sign.png" alt="" />
-      <!-- PLACEHOLDER: swap for a real Solivita portrait/lifestyle photo -->
-      <img class="cs-hero-img-fg" src="images/solivita-gift-backdrop-8.png" alt="" />
-    </div>
-  </div>
-  <div id="cs-hero-spacer"></div>
-</div>
+  </nav>
 
-<section class="cs-lift" data-bid="cs-lift">
-
-  <div class="cs-section">
-    <div class="cs-section-inner">
-      <h2 class="cs-h2">Our Story</h2>
-      <p class="cs-body">Angelica Medina is the founder of Solivita. She spent her career as an Investigator at the Community Care Licensing Investigations Bureau, a law enforcement role where she responded to priority 1 and 2 elder abuse cases across Southern California. She saw what happens when care falls short and knew she could provide the level of care she spent her career enforcing.</p>
-      <p class="cs-body" style="margin-bottom:0;">Using her eye for detail and her expertise in what it means to provide exceptional care at this stage of life, Angelica created Solivita to be the gold standard of what residential care can look like. A home designed to prove that senior living can be beautiful, dignified, and full of life, where residents feel at home and families feel at ease. Built to the standard she would want for her own loved ones.</p>
-    </div>
-  </div>
-
-</section>
-
-<section class="cs-values-section">
-  <div class="cs-section cs-section-tight" style="padding-bottom:60px;">
-    <h2 class="cs-h2">Our Values</h2>
-  </div>
-  <div class="cs-values-list">
-    <div class="cs-value-row">
-      <h3 class="cs-value-name">Community</h3>
-      <p class="cs-value-desc">Aging often means isolation. Through shared meals, daily activities, and genuine connection, we make sure no one here is alone. Because where there is community, every day is full of life.</p>
-    </div>
-    <div class="cs-value-row">
-      <h3 class="cs-value-name">Peace</h3>
-      <p class="cs-value-desc">A calm, restful environment where the pace of life is unhurried and designed to bring comfort. Our home and our team are built to support the daily needs of our residents so they can move through each day with ease. And for families, that same peace extends to knowing that their loved one is cared for, supported, and in good hands every hour of the day.</p>
-    </div>
-    <div class="cs-value-row">
-      <h3 class="cs-value-name">Intention</h3>
-      <p class="cs-value-desc">Built from a deep understanding of what residential care requires and a vision to reimagine what it could be, Solivita is curated down to the smallest detail. Our six coastal-inspired rooms each have their own character, and every element of the home, from the dedicated care team to the enrichment programming designed around the seasons, the community, and the residents themselves, is selected with the same level of thought and intention. Because when you know what this industry looks like at its worst, you pour everything into making it look like its best.</p>
-    </div>
-    <div class="cs-value-row">
-      <h3 class="cs-value-name">Purpose</h3>
-      <p class="cs-value-desc">Life at Solivita is designed around more than care. It's designed around living. Through enrichment programming, daily routines, and community activities, residents are given the space and support to stay engaged, connected, and living with purpose.</p>
-    </div>
-    <div class="cs-value-row">
-      <h3 class="cs-value-name">Belonging</h3>
-      <p class="cs-value-desc">Leaving a home of 50+ years is one of the hardest transitions a person can make. Solivita is designed to make that transition easier by providing a space where residents can thrive in this next chapter of their lives and truly feel at home.</p>
-    </div>
-  </div>
-</section>
-
-<section class="cs-team-section">
-  <h2 class="cs-h2">Team</h2>
-  <p class="cs-team-note">Placeholder for founder photo, caregiver photos, names, and roles after staging and photo shoot.</p>
-</section>
-
-<section class="cs-cta">
-  <p class="cs-cta-eyebrow">Visit Us</p>
-  <p class="cs-cta-text">We'd love to show you what life is like at Solivita.</p>
-  <div class="cs-btn-row">
-    <a href="/contact" class="cs-btn">Book a Tour</a>
-    <a href="/contact" class="cs-btn">Get in Touch</a>
-  </div>
-</section>
-
-<div id="footer" data-bid="footer" class="sb sib-footer" style="height: 431px;"><div class="ss-s ss-bg"><div class="sc" style="width:1200px"><div data-sid="footer_1" class="sie-footer_1 se" style="transform: scale(1, 1) translate(0px, 0px);"><p class="se-t sie-footer_1-text st-m-paragraph st-d-paragraph">&copy; Solivita Assisted Living<br></p></div><div data-sid="footer_2" class="sie-footer_2 se" style="display: none;"><svg class="se-line"><line data-d-strokelinecap="butt" data-d-linestyle="solid" data-d-thickness="1" data-d-rotatedwidth="1200" data-d-rotatedheight="0" data-d-widthoffset="0" data-d-heightoffset="0" data-d-isround="false" data-d-rotation="0" data-d-roundedsolid="false" data-d-dotted="false" data-d-length="1200" data-d-mirrorline="false" data-d-dashwidth="21" data-d-spacing="15" data-d-dasharrayvalue="none" data-m-strokelinecap="butt" data-m-linestyle="solid" data-m-thickness="1" data-m-rotatedwidth="330" data-m-rotatedheight="0" data-m-widthoffset="0" data-m-heightoffset="0" data-m-isround="false" data-m-rotation="0" data-m-roundedsolid="false" data-m-dotted="false" data-m-length="330" data-m-mirrorline="false" data-m-dashwidth="21" data-m-spacing="15" data-m-dasharrayvalue="none" x1="0" y1="0" x2="100%" y2="100%"></line></svg></div><div class="sie-footer_3 se" data-sid="footer_3" style="transform: scale(1, 1) translate(0px, 0px);"><h3 class="se-t sie-footer_3-text st-m-subheading st-d-subheading">1655 View Park Way, Chula Vista, CA 91913</h3></div><a href="mailto:Solivitaassistedliving@gmail.com" target="_self" class="sie-footer_4 se" data-sid="footer_4" style="transform: scale(1, 1) translate(0px, 0px);"><h3 class="se-t sie-footer_4-text st-m-subheading st-d-subheading">Solivitaassistedliving@gmail.com</h3></a><div class="sie-footer_5 se" data-sid="footer_5" style="transform: scale(1, 1) translate(0px, 0px);"><h3 class="se-t sie-footer_5-text st-m-subheading st-d-subheading">License #374605053</h3></div><div data-sid="footer_7" class="sie-footer_7 se" style="width: 1px; transform: scale(1, 1) translate(0px, 0px); top: 79px; left: 828px; height: 1px;"><svg class="se-line" style="width: 1px; height: 220px;"><line data-d-strokelinecap="butt" data-d-linestyle="solid" data-d-thickness="1" data-d-rotatedwidth="0" data-d-rotatedheight="220" data-d-widthoffset="110" data-d-heightoffset="110" data-d-isround="false" data-d-rotation="90" data-d-roundedsolid="false" data-d-dotted="false" data-d-length="220" data-d-mirrorline="false" data-d-dashwidth="21" data-d-spacing="15" data-d-dasharrayvalue="none" data-m-strokelinecap="butt" data-m-linestyle="solid" data-m-thickness="1" data-m-rotatedwidth="327" data-m-rotatedheight="0" data-m-widthoffset="0" data-m-heightoffset="0" data-m-isround="false" data-m-rotation="0" data-m-roundedsolid="false" data-m-dotted="false" data-m-length="327" data-m-mirrorline="false" data-m-dashwidth="21" data-m-spacing="15" data-m-dasharrayvalue="none" x1="0" y1="0" x2="0" y2="100%" style="stroke-width: 1px; stroke-dasharray: 0px;"></line></svg></div><div data-sid="footer_11" class="sie-footer_11 se" style="transform: scale(1, 1) translate(0px, 0px);"><p class="se-t sie-footer_11-text st-m-paragraph st-d-paragraph se-rc">Solivita is a licensed Residential Care Facility for the Elderly in Chula Vista, California.</p></div><div data-sid="footer_12" class="sie-footer_12 se" style="width: 1px; transform: scale(1, 1) translate(0px, 0px); top: 79px; left: 370px; height: 1px;"><svg class="se-line" style="width: 1px; height: 220px;"><line data-d-strokelinecap="butt" data-d-linestyle="solid" data-d-thickness="1" data-d-rotatedwidth="0" data-d-rotatedheight="220" data-d-widthoffset="110" data-d-heightoffset="110" data-d-isround="false" data-d-rotation="90" data-d-roundedsolid="false" data-d-dotted="false" data-d-length="220" data-d-mirrorline="false" data-d-dashwidth="21" data-d-spacing="15" data-d-dasharrayvalue="none" data-m-strokelinecap="butt" data-m-linestyle="solid" data-m-thickness="1" data-m-rotatedwidth="0" data-m-rotatedheight="208" data-m-widthoffset="104" data-m-heightoffset="104" data-m-isround="false" data-m-rotation="90" data-m-roundedsolid="false" data-m-dotted="false" data-m-length="208" data-m-mirrorline="false" data-m-dashwidth="21" data-m-spacing="15" data-m-dasharrayvalue="none" x1="0" y1="0" x2="0" y2="100%" style="stroke-width: 1px; stroke-dasharray: 0px;"></line></svg></div><a href="care-services.html" target="_self" class="sie-footer_16 se" data-sid="footer_16" style="transform: scale(1, 1) translate(0px, 0px);"><h3 class="se-t sie-footer_16-text st-m-subheading st-d-subheading">Services &amp; Amenities</h3></a><a href="about.html" target="_self" class="sie-footer_17 se" data-sid="footer_17" style="transform: scale(1, 1) translate(0px, 0px);"><h3 class="se-t sie-footer_17-text st-m-subheading st-d-subheading">About</h3></a><a href="/" target="_self" class="sie-footer_18 se" data-sid="footer_18" style="transform: scale(1, 1) translate(0px, 0px);"><h3 class="se-t sie-footer_18-text st-m-subheading st-d-subheading">Home</h3></a><div data-sid="footer_20" class="sie-footer_20 se" style="transform: scale(1, 1) translate(0px, 0px);"><div class="se-simple"></div></div><a href="care-services.html" target="_self" class="sie-footer_21 se" data-sid="footer_21" style="transform: scale(1, 1) translate(0px, 0px);"><h3 class="se-t sie-footer_21-text st-m-subheading st-d-subheading">view services &amp; amenities</h3></a><div data-sid="footer_22" class="sie-footer_22 se" style="transform: scale(1, 1) translate(0px, 0px); display:flex; align-items:center; justify-content:center;"><img src="images/logo/solivita-submark-black.svg" alt="Solivita" style="height:70px; width:auto;"></div></div></div></div>
-
+  <main>
+    <!-- Hero: sticky-pinned, same mechanism as Care & Services — see
+         .cs-hero-stage / #cs-hero-spacer in css/styles.css and
+         initHeroPin() in js/main.js. -->
+    <div class="cs-hero-stage">
+      <div class="cs-hero" id="cs-hero">
+        <div class="cs-hero-text">
+          <h1 class="cs-h1">Our Mission</h1>
+          <p class="cs-intro-text">At Solivita, we believe that every stage of life deserves to be lived fully, with peace, purpose, and connection. Our mission is to bring that belief to life by:</p>
+          <ul class="cs-hero-list">
+            <li>Providing personalized care in a home designed to feel like a breath of fresh air for up to six Southern California residents.</li>
+            <li>Dedicating ourselves to the standard of care our founder spent her career enforcing, where every detail is intentional and nothing is bare-minimum.</li>
+            <li>Creating a community where residents are valued, supported, and never alone.</li>
+          </ul>
+        </div>
+        <div class="cs-hero-image cs-hero-image-staggered">
+          <img class="cs-hero-img-stagger cs-hero-img-stagger-1" src="images/about/half-bath-art-shorebirds.png" alt="Framed shorebirds watercolor art">
+          <img class="cs-hero-img-stagger cs-hero-img-stagger-2" src="images/about/half-bath-art-boat.png" alt="Framed beach cottage and boat watercolor art">
+        </div>
+      </div>
+      <div class="cs-hero-spacer" id="cs-hero-spacer"></div>
     </div>
 
-<script src="/mirror.js"></script>
-<script>
-// Pins the hero to the viewport once you scroll past it, matching
-// Care & Services (verified live against pressandpalm.com/contact):
-// writes `position: fixed` on scroll and never releases it — the hero
-// stays fixed behind everything while the next section scrolls over it.
-(function () {
-  var hero = document.getElementById('cs-hero');
-  var spacer = document.getElementById('cs-hero-spacer');
-  if (!hero || !spacer) return;
+    <section class="cs-lift">
+      <div class="cs-story-section">
+        <div class="cs-story-photo-wrap">
+          <div class="cs-story-photo-blob">
+            <img src="images/about/our-story-family.jpg" alt="Solivita's founder with her family">
+          </div>
+        </div>
+        <div class="cs-story-text">
+          <h2 class="cs-h2">Our Story</h2>
+          <p class="cs-body">Angelica Medina is the founder of Solivita. She spent her career as an Investigator at the Community Care Licensing Investigations Bureau, a law enforcement role where she responded to priority 1 and 2 elder abuse cases across Southern California. She saw what happens when care falls short and knew she could provide the level of care she spent her career enforcing.</p>
+          <p class="cs-body" style="margin-bottom:0;">Using her eye for detail and her expertise in what it means to provide exceptional care at this stage of life, Angelica created Solivita to be the gold standard of what residential care can look like. A home designed to prove that senior living can be beautiful, dignified, and full of life, where residents feel at home and families feel at ease. Built to the standard she would want for her own loved ones.</p>
+        </div>
+      </div>
 
-  function onScroll() {
-    if (window.matchMedia('(max-width: 900px)').matches) return;
-    var pinned = window.scrollY > 0;
-    hero.classList.toggle('cs-hero-fixed', pinned);
-    spacer.classList.toggle('cs-hero-spacer-active', pinned);
-  }
+      <section class="cs-values-section">
+        <div class="cs-section cs-section-tight" style="padding-bottom:60px;">
+          <h2 class="cs-h2">Our Values</h2>
+        </div>
+        <div class="cs-values-list">
+          <div class="cs-value-row">
+            <h3 class="cs-value-name">Community</h3>
+            <p class="cs-value-desc">Aging often means isolation. Through shared meals, daily activities, and genuine connection, we make sure no one here is alone. Because where there is community, every day is full of life.</p>
+          </div>
+          <div class="cs-value-row">
+            <h3 class="cs-value-name">Peace</h3>
+            <p class="cs-value-desc">A calm, restful environment where the pace of life is unhurried and designed to bring comfort. Our home and our team are built to support the daily needs of our residents so they can move through each day with ease. And for families, that same peace extends to knowing that their loved one is cared for, supported, and in good hands every hour of the day.</p>
+          </div>
+          <div class="cs-value-row">
+            <h3 class="cs-value-name">Intention</h3>
+            <p class="cs-value-desc">Built from a deep understanding of what residential care requires and a vision to reimagine what it could be, Solivita is curated down to the smallest detail. Our six coastal-inspired rooms each have their own character, and every element of the home, from the dedicated care team to the enrichment programming designed around the seasons, the community, and the residents themselves, is selected with the same level of thought and intention. Because when you know what this industry looks like at its worst, you pour everything into making it look like its best.</p>
+          </div>
+          <div class="cs-value-row">
+            <h3 class="cs-value-name">Purpose</h3>
+            <p class="cs-value-desc">Life at Solivita is designed around more than care. It's designed around living. Through enrichment programming, daily routines, and community activities, residents are given the space and support to stay engaged, connected, and living with purpose.</p>
+          </div>
+          <div class="cs-value-row">
+            <h3 class="cs-value-name">Belonging</h3>
+            <p class="cs-value-desc">Leaving a home of 50+ years is one of the hardest transitions a person can make. Solivita is designed to make that transition easier by providing a space where residents can thrive in this next chapter of their lives and truly feel at home.</p>
+          </div>
+        </div>
+      </section>
 
-  window.addEventListener('scroll', onScroll, { passive: true });
-  onScroll();
-})();
+      <section class="cs-cta">
+        <p class="cs-cta-text">We'd love to show you what life is like at Solivita.</p>
+        <div class="cs-btn-row">
+          <a href="/contact" class="cs-btn">Book a Tour</a>
+          <a href="/contact" class="cs-btn">Get in Touch</a>
+        </div>
+      </section>
+    </section>
+  </main>
 
-// Nav goes glass (blurred translucent card) once scrolled past the hero;
-// transparent while it's still over the hero. Same script on every page.
-(function () {
-  var nav = document.getElementById('site-nav');
-  var hero = document.querySelector('.cs-hero-stage, #hero');
-  if (!nav) return;
-  var threshold = hero ? hero.offsetHeight : 400;
+  <footer class="site-footer">
+    <div class="site-footer-inner">
+      <nav class="site-footer-nav" aria-label="Footer">
+        <a href="/">Home</a>
+        <a href="about.html">About</a>
+        <a href="care-services.html">Services &amp; Amenities</a>
+      </nav>
+      <div class="site-footer-brand">
+        <img src="images/brand/solivita-submark-black.svg" alt="Solivita">
+        <p class="site-footer-license">Solivita is a licensed Residential Care Facility for the Elderly in Chula Vista, California.</p>
+      </div>
+      <div class="site-footer-contact">
+        <p>License #374605053</p>
+        <p><a href="mailto:Solivitaassistedliving@gmail.com">Solivitaassistedliving@gmail.com</a></p>
+        <p>1655 View Park Way, Chula Vista, CA 91913</p>
+      </div>
+    </div>
+    <p class="site-footer-bottom">&copy; Solivita Assisted Living</p>
+  </footer>
 
-  function onScroll() {
-    nav.classList.toggle('site-nav-glass', window.scrollY > threshold - 80);
-  }
-
-  window.addEventListener('scroll', onScroll, { passive: true });
-  onScroll();
-})();
-</script>
-</body></html>
+  <script src="js/main.js"></script>
+</body>
+</html>

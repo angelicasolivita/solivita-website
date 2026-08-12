@@ -1,1305 +1,223 @@
 <!DOCTYPE html>
-<html class="d desktop landscape" lang=""><head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Solivita | Assisted Living in Otay Lakes, San Diego</title>
-      <link rel="icon" type="image/svg+xml" href="images/logo/solivita-submark-black.svg">
-      <meta name="description" content="Solivita is a residential assisted living home in the Otay Lakes community of Southern San Diego, built on peace, purpose, and connection.">
-          
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-<link href="css/css-L2Nzcz" rel="stylesheet" type="text/css">
-<style>
-@font-face{font-family:KT Quantum Light;src:url('images/ktquantum-light-webfont-Ly9zdGF0.woff');}
-@font-face{font-family:Mattone;src:url('images/mattone-150-Ly9zdGF0.woff');}
- </style>
-    
-    <link rel="stylesheet" type="text/css" href="css/animate.min-L2FqYX.css">
-    
-    <style type="text/css">.stg-grid {
-    box-sizing:border-box;
-}
-.stg-grid-sizer {
-    box-sizing: border-box;
-}
-.stg-grid-item {
-    box-sizing: border-box;
-    transition: opacity .4s linear;
-    cursor:pointer;
-}
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Solivita Assisted Living | Otay Lakes, San Diego</title>
+  <link rel="icon" type="image/svg+xml" href="images/brand/solivita-submark-black.svg">
+  <meta name="description" content="Assisted Living in the Otay Lakes community of Southern San Diego. A home for up to six residents, built on the standard of care our founder spent her career enforcing.">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <nav class="site-nav" id="site-nav">
+    <a href="/" class="site-nav-logo"><img src="images/brand/solivita-submark-black.svg" alt="Solivita"></a>
+    <div class="site-nav-links">
+      <a href="about.html">About</a>
+      <a href="care-services.html">Services &amp; Amenities</a>
+      <a href="/contact">Book a Tour</a>
+    </div>
+  </nav>
 
-.stg-grid-img {
-    user-select: none;
-    user-drag: none;
-    display:block;
-    width:100%;
-    box-sizing: border-box;
-}
-
-.stg-slider {
-    width:100%;
-    height:100%;
-    position:fixed;
-    top:0px;
-    left:0px;
-    opacity:0;
-    z-index:80000;
-    background-color:#000000;
-    background-color:rgba(0,0,0,1);
-    overflow:hidden;
-    display:none;
-
-    -moz-transition:opacity .5s ease;
-    -webkit-transition:opacity .5s ease;
-    transition:opacity .5s ease;
-}
-
-.stg-slider-close-btn {
-    position	: absolute;
-    right		: 0px;
-    top	        : 0px;
-    font-family	: "sans-serif";
-    font-weight	: 400;
-    font-size	: 40px;
-    height	    : 40px;
-    width		: 40px;
-    text-align	: center;
-    line-height	: 40px;
-    cursor		: pointer;
-}
-
-.stg-slider-tray {
-    left:0px;
-    top: 0px;
-    bottom: 0px;
-    white-space: nowrap;
-    position:absolute;
-    width:100%;
-}
-
-.stg-slider-tray .stg-slider-ph {
-    position:absolute;
-    /** background: url("dark-preloader.gif") no-repeat center center; **/
-    height:100%;
-    width:100%;
-    top:0px;
-    left:0px;
-    text-align: center;
-}
-
-.stg-slider-tray .stg-slider-ph-animate {
-    -moz-transition:left 0.4s ease;
-    -webkit-transition:left 0.4s ease;
-    transition:left 0.4s ease;
-}
-
-.stg-slider-tray .stg-slider-ph img {
-    display:inline-block;
-    max-height: 100%;
-    max-width: 100%;
-    vertical-align: middle;
-    text-align:center;
-}
-
-.stg-slider-tray .stg-slider-image-box {
-    vertical-align:middle;
-    text-align:center;
-    display: inline-block;
-    padding:10px;
-    width:100%;
-    height:100%;
-    box-sizing:border-box;
-    -webkit-box-sizing:border-box;
-    -moz-box-sizing: border-box;
-}
-
-.stg-slider.visible {
-    opacity:1;
-}
-
-.stg-slider.invisible {
-    opacity:0;
-}
-
-.stg-slider-tray .stg-slider-image-box:before {
-    content: '';
-    display: inline-block;
-    height: 100%;
-    vertical-align: middle;
-}
-
-.stg-slider-tray.stg-slider-right-spring {
-    -moz-animation: right_spring 0.3s;
-    -webkit-animation: right_spring 0.3s;
-}
-
-.stg-slider-tray.stg-slider-left-spring {
-    -moz-animation: left_spring 0.3s;
-    -webkit-animation: left_spring 0.3s;
-}
-
-.stg-slider-arrow:hover {
-    opacity:1;
-}
-
-.stg-slider-arrow.active {
-    opacity:1;
-}
-
-.stg-slider-prev-arrow {
-    left:40px;
-}
-
-.stg-slider-next-arrow {
-    right:40px;
-}
-
-.stg-slider-loader {
-    border-radius: 50%;
-    position:absolute;
-    width: 36px;
-    height: 36px;
-    left:50%;
-    top:50%;
-    margin-left:-18px;
-    margin-top:-18px;
-    border: 0.25rem solid rgba(0, 0, 0, 0.2);
-    border-top-color: white;
-    -webkit-animation: spin 1s infinite linear;
-    animation: spin 1s infinite linear;
-    display:none;
-}
-
-@-webkit-keyframes right_spring {
-    0%{		margin-left:0px;}
-    50%{	margin-left:-30px;}
-    100%{	margin-left:0px;}
-}
-
-@-webkit-keyframes left_spring {
-    0%{		margin-left:0px;}
-    50%{	margin-left:30px;}
-    100%{	margin-left:0px;}
-}
-
-@keyframes right_spring {
-    0%{		margin-left:0px;}
-    50%{	margin-left:-30px;}
-    100%{	margin-left:0px;}
-}
-
-@keyframes left_spring {
-    0%{		margin-left:0px;}
-    50%{	margin-left:30px;}
-    100%{	margin-left:0px;}
-}
-/**
-@-webkit-keyframes spin {
-    0% {
-        -webkit-transform: rotate(0deg);
-        transform: rotate(0deg);
-    }
-    100% {
-        -webkit-transform: rotate(360deg);
-        transform: rotate(360deg);
-    }
-}
-
-@keyframes spin {
-    0% {
-        -webkit-transform: rotate(0deg);
-        transform: rotate(0deg);
-    }
-    100% {
-        -webkit-transform: rotate(360deg);
-        transform: rotate(360deg);
-    }
-}
-**/
-
-.stg-slider-arrow {
-    border:none;
-    text-decoration:none;
-    opacity:.2;
-    cursor:pointer;
-    position:absolute;
-    width:50px;
-    height:60px;
-    font-size:48px;
-    font-family:Arial;
-    line-height:60px;
-    text-align:center;
-
-    top:50%;
-    margin-top:-29px;
-
-    -moz-transition:opacity 0.2s ease;
-    -webkit-transition:opacity 0.2s ease;
-    transition:opacity 0.2s ease;
-}</style>		
-		
-		
-
-    
-    <link rel="stylesheet" type="text/css" href="css/showit-engine.css">
-    <style id="si-page-css">
-      html.m {background-color:rgba(248,248,244,1);}
-html.d {background-color:rgba(248,248,244,1);}
-.d .se:has(.st-primary) {border-radius:10px;box-shadow:none;opacity:1;overflow:hidden;transition-duration:0.5s;}
-.d .st-primary {border-style:solid;padding:10px 14px 10px 14px;border-width:0px;border-color:rgba(0,0,0,1);background-color:rgba(0,0,0,1);background-image:none;border-radius:inherit;transition-duration:0.5s;}
-.d .st-primary span {color:rgba(255,255,255,1);font-family:'DM Mono';font-weight:300;font-style:normal;font-size:13px;text-align:center;text-transform:uppercase;letter-spacing:0.05em;line-height:1.7;transition-duration:0.5s;}
-.d .se:has(.st-primary:hover), .d .se:has(.trigger-child-hovers:hover .st-primary) {}
-.d .st-primary.se-button:hover, .d .trigger-child-hovers:hover .st-primary.se-button {background-color:rgba(0,0,0,1);background-image:none;transition-property:background-color,background-image;}
-.d .st-primary.se-button:hover span, .d .trigger-child-hovers:hover .st-primary.se-button span {}
-.m .se:has(.st-primary) {border-radius:10px;box-shadow:none;opacity:1;overflow:hidden;}
-.m .st-primary {border-style:solid;padding:10px 14px 10px 14px;border-width:0px;border-color:rgba(0,0,0,1);background-color:rgba(0,0,0,1);background-image:none;border-radius:inherit;}
-.m .st-primary span {color:rgba(255,255,255,1);font-family:'DM Mono';font-weight:300;font-style:normal;font-size:11px;text-align:center;text-transform:uppercase;letter-spacing:0.05em;line-height:1.7;}
-.d .se:has(.st-secondary) {border-radius:10px;box-shadow:none;opacity:1;overflow:hidden;transition-duration:0.5s;}
-.d .st-secondary {border-style:solid;padding:10px 14px 10px 14px;border-width:2px;border-color:rgba(0,0,0,1);background-color:rgba(0,0,0,0);background-image:none;border-radius:inherit;transition-duration:0.5s;}
-.d .st-secondary span {color:rgba(0,0,0,1);font-family:'DM Mono';font-weight:300;font-style:normal;font-size:13px;text-align:center;text-transform:uppercase;letter-spacing:0.05em;line-height:1.7;transition-duration:0.5s;}
-.d .se:has(.st-secondary:hover), .d .se:has(.trigger-child-hovers:hover .st-secondary) {}
-.d .st-secondary.se-button:hover, .d .trigger-child-hovers:hover .st-secondary.se-button {border-color:rgba(0,0,0,0.7);background-color:rgba(0,0,0,0);background-image:none;transition-property:border-color,background-color,background-image;}
-.d .st-secondary.se-button:hover span, .d .trigger-child-hovers:hover .st-secondary.se-button span {color:rgba(0,0,0,0.7);transition-property:color;}
-.m .se:has(.st-secondary) {border-radius:10px;box-shadow:none;opacity:1;overflow:hidden;}
-.m .st-secondary {border-style:solid;padding:10px 14px 10px 14px;border-width:2px;border-color:rgba(0,0,0,1);background-color:rgba(0,0,0,0);background-image:none;border-radius:inherit;}
-.m .st-secondary span {color:rgba(0,0,0,1);font-family:'DM Mono';font-weight:300;font-style:normal;font-size:11px;text-align:center;text-transform:uppercase;letter-spacing:0.05em;line-height:1.7;}
-.d .st-d-title {color:rgba(0,0,0,1);text-transform:uppercase;line-height:1.2;letter-spacing:0em;font-size:46px;text-align:center;font-family:'KT Quantum Light';font-weight:400;font-style:normal;}
-.d .st-d-title.se-rc a {color:rgba(0,0,0,1);}
-.d .st-d-title.se-rc a:hover {text-decoration:underline;color:rgba(56,49,25,1);opacity:0.8;}
-.m .st-m-title {color:rgba(0,0,0,1);text-transform:uppercase;line-height:1.2;letter-spacing:0em;font-size:28px;text-align:center;font-family:'KT Quantum Light';font-weight:400;font-style:normal;}
-.m .st-m-title.se-rc a {color:rgba(0,0,0,1);}
-.m .st-m-title.se-rc a:hover {text-decoration:underline;color:rgba(56,49,25,1);opacity:0.8;}
-.d .st-d-heading {color:rgba(0,0,0,1);line-height:1.2;letter-spacing:0em;font-size:31px;text-align:center;font-family:'KT Quantum Light';font-weight:400;font-style:normal;}
-.d .st-d-heading.se-rc a {color:rgba(0,0,0,1);}
-.d .st-d-heading.se-rc a:hover {text-decoration:underline;color:rgba(56,49,25,1);opacity:0.8;}
-.m .st-m-heading {color:rgba(0,0,0,1);text-transform:uppercase;line-height:1.2;letter-spacing:0em;font-size:20px;text-align:center;font-family:'KT Quantum Light';font-weight:400;font-style:normal;}
-.m .st-m-heading.se-rc a {color:rgba(0,0,0,1);}
-.m .st-m-heading.se-rc a:hover {text-decoration:underline;color:rgba(56,49,25,1);opacity:0.8;}
-.d .st-d-subheading {color:rgba(0,0,0,1);text-transform:uppercase;line-height:1.7;letter-spacing:0.1em;font-size:16px;text-align:center;font-family:'DM Sans';font-weight:300;font-style:normal;}
-.d .st-d-subheading.se-rc a {color:rgba(0,0,0,1);}
-.d .st-d-subheading.se-rc a:hover {text-decoration:underline;color:rgba(248,248,244,1);opacity:0.8;}
-.m .st-m-subheading {color:rgba(0,0,0,1);text-transform:uppercase;line-height:1.7;letter-spacing:0.1em;font-size:11px;text-align:center;font-family:'DM Sans';font-weight:300;font-style:normal;}
-.m .st-m-subheading.se-rc a {color:rgba(0,0,0,1);}
-.m .st-m-subheading.se-rc a:hover {text-decoration:underline;color:rgba(248,248,244,1);opacity:0.8;}
-.d .st-d-paragraph {color:rgba(0,0,0,1);line-height:1.7;letter-spacing:0em;font-size:17px;text-align:center;font-family:'DM Sans';font-weight:300;font-style:normal;}
-.d .st-d-paragraph.se-rc a {color:rgba(0,0,0,1);}
-.d .st-d-paragraph.se-rc a:hover {text-decoration:underline;color:rgba(0,0,0,1);opacity:0.8;}
-.m .st-m-paragraph {color:rgba(0,0,0,1);line-height:1.7;letter-spacing:0em;font-size:12px;text-align:center;font-family:'DM Sans';font-weight:300;font-style:normal;}
-.m .st-m-paragraph.se-rc a {color:rgba(0,0,0,1);}
-.m .st-m-paragraph.se-rc a:hover {text-decoration:underline;color:rgba(0,0,0,1);opacity:0.8;}
-.sib-black-menu-logo {z-index:200;}
-.m .sib-black-menu-logo {height:5px;}
-.d .sib-black-menu-logo {height:1px;}
-.m .sib-black-menu-logo .ss-bg {background-color:rgba(0,0,0,0);}
-.d .sib-black-menu-logo .ss-bg {background-color:rgba(0,0,0,0);}
-.d .sie-black-menu-logo_0:hover {opacity:1;transition-duration:1.5s;transition-property:opacity;}
-.m .sie-black-menu-logo_0:hover {opacity:1;transition-duration:1.5s;transition-property:opacity;}
-.d .sie-black-menu-logo_0 {left:1050px;top:53px;width:90px;height:22px;transition-duration:1.5s;transition-property:opacity;}
-.m .sie-black-menu-logo_0 {left:228px;top:29px;width:64px;height:15px;display:none;transition-duration:1.5s;transition-property:opacity;}
-.d .sie-black-menu-logo_0-text:hover {color:rgba(0,0,0,1);letter-spacing:0.2em;}
-.m .sie-black-menu-logo_0-text:hover {color:rgba(0,0,0,1);letter-spacing:0.2em;}
-.d .sie-black-menu-logo_0-text {color:rgba(0,0,0,1);font-size:16px;text-align:right;transition-duration:0.5s;transition-property:color,letter-spacing;}
-.m .sie-black-menu-logo_0-text {color:rgba(0,0,0,1);font-size:13px;text-align:right;transition-duration:0.5s;transition-property:color,letter-spacing;}
-.d .sie-black-menu-logo_1 {left:1132px;top:28px;width:26px;height:52px;display:none;}
-.m .sie-black-menu-logo_1 {left:267px;top:22px;width:24px;height:30px;}
-.d .sie-black-menu-logo_1 svg {fill:rgba(0,0,0,1);}
-.m .sie-black-menu-logo_1 svg {fill:rgba(0,0,0,1);}
-.d .sie-black-menu-logo_2 {left:741px;top:64px;width:345px;height:1px;}
-.m .sie-black-menu-logo_2 {left:226px;top:36px;width:66px;height:1px;display:none;}
-.se-line {width:auto;height:auto;}
-.sie-black-menu-logo_2 svg {vertical-align:top;overflow:visible;pointer-events:none;box-sizing:content-box;}
-.m .sie-black-menu-logo_2 svg {stroke:rgba(0,0,0,1);transform:scaleX(1);padding:0.5px;height:1px;width:66px;}
-.d .sie-black-menu-logo_2 svg {stroke:rgba(0,0,0,1);transform:scaleX(1);padding:0.5px;height:1px;width:345px;}
-.m .sie-black-menu-logo_2 line {stroke-linecap:butt;stroke-width:1;stroke-dasharray:none;pointer-events:all;}
-.d .sie-black-menu-logo_2 line {stroke-linecap:butt;stroke-width:1;stroke-dasharray:none;pointer-events:all;}
-.d .sie-black-menu-logo_3 {left:546px;top:85px;width:108px;height:18px;}
-.m .sie-black-menu-logo_3 {left:13px;top:52px;width:90px;height:15px;display:none;}
-.d .sie-black-menu-logo_3-text {color:rgba(0,0,0,1);font-size:11px;text-align:center;}
-.m .sie-black-menu-logo_3-text {color:rgba(0,0,0,1);font-size:9px;text-align:left;}
-.d .sie-black-menu-logo_4 {left:466px;top:47px;width:268px;height:35px;}
-.m .sie-black-menu-logo_4 {left:30px;top:25px;width:208px;height:25px;}
-.d .sie-black-menu-logo_4-text {color:rgba(0,0,0,1);letter-spacing:0.1em;font-size:30px;text-align:center;font-family:'KT Quantum Light';font-weight:400;font-style:normal;}
-.m .sie-black-menu-logo_4-text {color:rgba(0,0,0,1);letter-spacing:0.1em;font-size:20px;text-align:left;font-family:'KT Quantum Light';font-weight:400;font-style:normal;}
-.d .sie-black-menu-logo_5 {left:187px;top:64px;width:273px;height:1px;}
-.m .sie-black-menu-logo_5 {left:30px;top:58px;width:260px;height:1px;}
-.sie-black-menu-logo_5 svg {vertical-align:top;overflow:visible;pointer-events:none;box-sizing:content-box;}
-.m .sie-black-menu-logo_5 svg {stroke:rgba(0,0,0,1);transform:scaleX(1);padding:0.5px;height:1px;width:260px;}
-.d .sie-black-menu-logo_5 svg {stroke:rgba(0,0,0,1);transform:scaleX(1);padding:0.5px;height:1px;width:273px;}
-.m .sie-black-menu-logo_5 line {stroke-linecap:butt;stroke-width:1;stroke-dasharray:none;pointer-events:all;}
-.d .sie-black-menu-logo_5 line {stroke-linecap:butt;stroke-width:1;stroke-dasharray:none;pointer-events:all;}
-.d .sie-black-menu-logo_8:hover {opacity:1;transition-duration:1s;transition-property:opacity;}
-.m .sie-black-menu-logo_8:hover {opacity:1;transition-duration:1s;transition-property:opacity;}
-.d .sie-black-menu-logo_8 {left:105px;top:53px;width:150px;height:22px;transition-duration:1s;transition-property:opacity;}
-.m .sie-black-menu-logo_8 {left:46px;top:52px;width:100px;height:15px;transition-duration:1s;transition-property:opacity;}
-.d .sie-black-menu-logo_8-text:hover {color:rgba(0,0,0,1);letter-spacing:0.2em;}
-.m .sie-black-menu-logo_8-text:hover {color:rgba(0,0,0,1);letter-spacing:0.2em;}
-.d .sie-black-menu-logo_8-text {color:rgba(0,0,0,1);font-size:16px;text-align:left;transition-duration:0.5s;transition-property:color,letter-spacing;}
-.m .sie-black-menu-logo_8-text {color:rgba(0,0,0,1);font-size:13px;text-align:left;transition-duration:0.5s;transition-property:color;}
-.d .sie-black-menu-logo_9 {left:86px;top:55px;width:13px;height:18px;}
-.m .sie-black-menu-logo_9 {left:30px;top:52px;width:12px;height:15px;display:none;}
-.d .sie-black-menu-logo_9-text {color:rgba(0,0,0,1);text-align:center;}
-.m .sie-black-menu-logo_9-text {color:rgba(0,0,0,1);text-align:center;}
-.d .sie-black-menu-logo_10:hover {opacity:1;transition-duration:1s;transition-property:opacity;}
-.m .sie-black-menu-logo_10:hover {opacity:1;transition-duration:1s;transition-property:opacity;}
-.d .sie-black-menu-logo_10 {left:63px;top:55px;width:23px;height:18px;transition-duration:1s;transition-property:opacity;}
-.m .sie-black-menu-logo_10 {left:13px;top:52px;width:17px;height:15px;display:none;transition-duration:1s;transition-property:opacity;}
-.d .sie-black-menu-logo_10-text:hover {color:rgba(56,49,25,1);}
-.m .sie-black-menu-logo_10-text:hover {color:rgba(56,49,25,1);}
-.d .sie-black-menu-logo_10-text {color:rgba(0,0,0,1);text-align:left;transition-duration:0.5s;transition-property:color;}
-.m .sie-black-menu-logo_10-text {color:rgba(0,0,0,1);text-align:left;transition-duration:0.5s;transition-property:color;}
-.m .sib-client-spotlight {height:1035px;}
-.d .sib-client-spotlight {height:844px;}
-.m .sib-client-spotlight .ss-bg {background-color:rgba(248,248,244,1);}
-.d .sib-client-spotlight .ss-bg {background-color:rgba(248,248,244,1);}
-.d .sie-client-spotlight_0 {left:634px;top:0px;width:567px;height:844px;}
-.m .sie-client-spotlight_0 {left:20px;top:80px;width:281px;height:346px;}
-.sie-client-spotlight_0 img {border:none;}
-.d .sie-client-spotlight_0 .se-img {background-repeat:no-repeat;background-size:cover;background-position:50% 50%;}
-.m .sie-client-spotlight_0 .se-img {background-repeat:no-repeat;background-size:cover;background-position:50% 50%;}
-.d .sie-client-spotlight_1 {left:35px;top:169px;width:471px;height:45px;}
-.m .sie-client-spotlight_1 {left:21px;top:452px;width:280px;height:39px;}
-.d .sie-client-spotlight_1-text {text-transform:uppercase;font-size:55px;font-family:'KT Quantum Light';font-weight:400;font-style:normal;}
-.m .sie-client-spotlight_1-text {text-transform:uppercase;font-size:34px;font-family:'KT Quantum Light';font-weight:400;font-style:normal;}
-.d .sie-client-spotlight_2 {left:-35px;top:336px;width:640px;height:195px;}
-.m .sie-client-spotlight_2 {left:21px;top:542px;width:279px;height:420px;}
-.d .sie-client-spotlight_2-text {overflow:visible;}
-
-.m .sie-client-spotlight_2-text {overflow:visible;}
-.d .sie-client-spotlight_3 {left:122px;top:496px;width:326px;height:45px;}
-.m .sie-client-spotlight_3 {left:14px;top:743px;width:281px;height:32px;}
-.d .sie-client-spotlight_3-text {font-family:'KT Quantum Light';font-weight:400;font-style:normal;}
-.m .sie-client-spotlight_3-text {font-family:'KT Quantum Light';font-weight:400;font-style:normal;}
-.d .sie-client-spotlight_4 {left:74px;top:563px;width:421px;height:79px;}
-.m .sie-client-spotlight_4 {left:14px;top:786px;width:277px;height:60px;}
-.d .sie-client-spotlight_4-text {line-height:2.7;}
-.m .sie-client-spotlight_4-text {line-height:2.7;}
-.d .sie-client-spotlight_5 {left:74px;top:541px;width:421px;height:1px;}
-.m .sie-client-spotlight_5 {left:14px;top:775px;width:354px;height:1px;}
-.d .sie-client-spotlight_5 .se-simple:hover {}
-.m .sie-client-spotlight_5 .se-simple:hover {}
-.d .sie-client-spotlight_5 .se-simple {background-color:rgba(0,0,0,1);}
-.m .sie-client-spotlight_5 .se-simple {background-color:rgba(0,0,0,1);}
-.d .sie-client-spotlight_6 {left:67px;top:280px;width:421px;height:14px;}
-.m .sie-client-spotlight_6 {left:21px;top:502px;width:277px;height:13px;}
-.d .sie-client-spotlight_7 {left:220px;top:595px;width:auto;height:auto;}
-.m .sie-client-spotlight_7 {left:21px;top:982px;width:auto;height:auto;}
-.m .sie-client-spotlight_7-text {line-height:1.4;font-size:8px;text-align:left;}
-.d .sie-client-spotlight_8 {left:14px;top:800px;width:27px;height:37px;}
-.m .sie-client-spotlight_8 {left:14px;top:990px;width:27px;height:26px;}
-.d .sie-client-spotlight_8 svg {fill:rgba(45,47,35,1);}
-.m .sie-client-spotlight_8 svg {fill:rgba(45,47,35,1);}
-.m .sib-parallax-with-logo {height:294px;}
-.d .sib-parallax-with-logo {height:694px;}
-.m .sib-parallax-with-logo .ss-bg {background-color:rgba(0,0,0,1);}
-.d .sib-parallax-with-logo .ss-bg {background-color:rgba(0,0,0,1);}
-.m .sib-parallax-with-logo.sb-nm-dH .sc {height:294px;}
-.d .sib-parallax-with-logo.sb-nd-dH .sc {height:694px;}
-.m .sib-two-features {height:800px;}
-.d .sib-our-approach {height:390px;}
-.d .sie-our-approach_title {left:0px;top:0px;width:1200px;height:100px;}
-.d .sie-our-approach_title-text {text-align:center;font-size:110px;color:rgba(0,0,0,0.06);letter-spacing:0em;line-height:1;font-family:'KT Quantum Light';font-weight:400;}
-.d .sie-our-approach_0 {left:100px;top:180px;width:1000px;height:100px;}
-.d .sie-our-approach_0-text {text-align:center;}
-.d .sie-our-approach_1 {left:100px;top:300px;width:1000px;height:70px;}
-.d .sie-our-approach_1-text {text-align:center;}
-.m .sib-our-approach {height:640px;}
-.m .sie-our-approach_title {left:10px;top:20px;width:301px;height:60px;}
-.m .sie-our-approach_title-text {text-align:center;font-size:56px;color:rgba(0,0,0,0.06);letter-spacing:0em;line-height:1;font-family:'KT Quantum Light';font-weight:400;}
-.m .sie-our-approach_0 {left:20px;top:170px;width:281px;height:260px;}
-.m .sie-our-approach_0-text {text-align:center;}
-.m .sie-our-approach_1 {left:20px;top:440px;width:281px;height:180px;}
-.m .sie-our-approach_1-text {text-align:center;}
-.d .sib-two-features {height:610px;}
-.m .sib-two-features .ss-bg {background-color:rgba(248,248,244,1);}
-.d .sib-two-features .ss-bg {background-color:rgba(248,248,244,1);}
-.d .sib-two-features.sb-nd-dH .sc {height:1002px;}
-.d .sie-two-features_title {left:0px;top:0px;width:1200px;height:100px;}
-.d .sie-two-features_title-text {text-align:center;font-size:110px;color:rgba(0,0,0,0.06);letter-spacing:0em;line-height:1;font-family:'KT Quantum Light';font-weight:400;}
-.d .sie-two-features_0 {left:20px;top:160px;width:324px;height:30px;}
-
-.d .sie-two-features_0p {left:20px;top:205px;width:324px;height:115px;}
-.d .sie-two-features_0p-text {text-align:center;font-size:16px;}
-.d .sie-two-features_0l {left:60px;top:340px;width:244px;height:180px;}
-.d .sie-two-features_0l-text {text-align:left;list-style:disc;padding-left:18px;font-size:16px;}
-.d .sie-two-features_0l-text li {margin-bottom:8px;}
-.m .sie-two-features_title {left:10px;top:20px;width:301px;height:33px;}
-.m .sie-two-features_title-text {text-align:center;}
-.m .sie-two-features_0 {left:10px;top:70px;width:301px;height:35px;}
-
-.m .sie-two-features_0p {left:10px;top:110px;width:301px;height:180px;}
-.m .sie-two-features_0p-text {text-align:center;}
-.d .sie-two-features_0 .se-img {background-repeat:no-repeat;background-size:cover;background-position:50% 50%;border-radius:inherit;}
-.m .sie-two-features_0 .se-img {background-repeat:no-repeat;background-size:cover;background-position:50% 50%;border-radius:inherit;}
-.d .sie-two-features_1 {left:438px;top:160px;width:324px;height:30px;}
-
-.d .sie-two-features_1p {left:438px;top:205px;width:324px;height:115px;}
-.d .sie-two-features_1p-text {text-align:center;font-size:16px;}
-.d .sie-two-features_1l {left:478px;top:340px;width:244px;height:180px;}
-.d .sie-two-features_1l-text {text-align:left;list-style:disc;padding-left:18px;font-size:16px;}
-.d .sie-two-features_1l-text li {margin-bottom:8px;}
-.m .sie-two-features_1 {left:10px;top:310px;width:301px;height:35px;}
-
-.m .sie-two-features_1p {left:10px;top:350px;width:301px;height:180px;}
-.m .sie-two-features_1p-text {text-align:center;}
-.d .sie-two-features_1 .se-img {background-repeat:no-repeat;background-size:cover;background-position:100% 100%;border-radius:inherit;}
-.m .sie-two-features_1 .se-img {background-repeat:no-repeat;background-size:cover;background-position:100% 100%;border-radius:inherit;}
-.d .sie-two-features_2 {left:856px;top:160px;width:324px;height:30px;}
-
-.d .sie-two-features_2p {left:856px;top:205px;width:324px;height:115px;}
-.d .sie-two-features_2p-text {text-align:center;font-size:16px;}
-.d .sie-two-features_2l {left:896px;top:340px;width:244px;height:180px;}
-.d .sie-two-features_2l-text {text-align:left;list-style:disc;padding-left:18px;font-size:16px;}
-.d .sie-two-features_2l-text li {margin-bottom:8px;}
-.m .sie-two-features_2 {left:10px;top:550px;width:301px;height:35px;}
-
-.m .sie-two-features_2p {left:10px;top:590px;width:301px;height:180px;}
-.m .sie-two-features_2p-text {text-align:center;}
-.d .sie-two-features_2 .se-img {background-repeat:no-repeat;background-size:cover;background-position:50% 50%;border-radius:inherit;}
-.m .sie-two-features_2 .se-img {background-repeat:no-repeat;background-size:cover;background-position:50% 50%;border-radius:inherit;}
-.m .sib-color-palette {height:348px;}
-.d .sib-color-palette {height:429px;}
-.m .sib-color-palette .ss-bg {background-color:rgba(248,248,244,1);}
-.d .sib-color-palette .ss-bg {background-color:rgba(248,248,244,1);}
-.d .sie-color-palette_0 {left:87px;top:97px;width:187px;height:24px;}
-.m .sie-color-palette_0 {left:12px;top:38px;width:156px;height:20px;}
-.d .sie-color-palette_0-text {color:rgba(17,17,17,1);letter-spacing:0.3em;font-size:9px;text-align:left;font-family:'Mattone';font-weight:400;font-style:normal;}
-.m .sie-color-palette_0-text {color:rgba(0,0,0,1);letter-spacing:0.2em;text-align:left;font-family:'Mattone';font-weight:400;font-style:normal;}
-.d .sie-color-palette_1 {left:239px;top:105px;width:1106px;height:1px;}
-.m .sie-color-palette_1 {left:139px;top:46px;width:300px;height:1px;}
-.d .sie-color-palette_1 .se-simple:hover {}
-.m .sie-color-palette_1 .se-simple:hover {}
-.d .sie-color-palette_1 .se-simple {background-color:rgba(0,0,0,1);}
-.m .sie-color-palette_1 .se-simple {background-color:rgba(0,0,0,1);}
-.d .sie-color-palette_2 {left:180px;top:178px;width:140px;height:162px;}
-.m .sie-color-palette_2 {left:12px;top:82px;width:79px;height:92px;}
-.d .sie-color-palette_2 .se-simple:hover {}
-.m .sie-color-palette_2 .se-simple:hover {}
-.d .sie-color-palette_2 .se-simple {background-color:rgba(31,42,57,1);}
-.m .sie-color-palette_2 .se-simple {background-color:rgba(31,42,57,1);}
-.d .sie-color-palette_3 {left:355px;top:178px;width:140px;height:162px;}
-.m .sie-color-palette_3 {left:117px;top:82px;width:79px;height:92px;}
-.d .sie-color-palette_3 .se-simple:hover {}
-.m .sie-color-palette_3 .se-simple:hover {}
-.d .sie-color-palette_3 .se-simple {background-color:rgba(108,125,142,1);}
-.m .sie-color-palette_3 .se-simple {background-color:rgba(108,125,142,1);}
-.d .sie-color-palette_4 {left:530px;top:178px;width:140px;height:162px;}
-.m .sie-color-palette_4 {left:223px;top:82px;width:79px;height:92px;}
-.d .sie-color-palette_4 .se-simple:hover {}
-.m .sie-color-palette_4 .se-simple:hover {}
-.d .sie-color-palette_4 .se-simple {background-color:rgba(173,193,210,1);}
-.m .sie-color-palette_4 .se-simple {background-color:rgba(173,193,210,1);}
-.d .sie-color-palette_5 {left:705px;top:178px;width:140px;height:162px;}
-.m .sie-color-palette_5 {left:12px;top:203px;width:79px;height:92px;}
-.d .sie-color-palette_5 .se-simple:hover {}
-.m .sie-color-palette_5 .se-simple:hover {}
-.d .sie-color-palette_5 .se-simple {background-color:rgba(227,223,216,1);}
-.m .sie-color-palette_5 .se-simple {background-color:rgba(227,223,216,1);}
-.d .sie-color-palette_6 {left:880px;top:178px;width:140px;height:162px;}
-.m .sie-color-palette_6 {left:117px;top:203px;width:79px;height:92px;}
-.d .sie-color-palette_6 .se-simple:hover {}
-.m .sie-color-palette_6 .se-simple:hover {}
-.d .sie-color-palette_6 .se-simple {border-color:rgba(208,201,189,1);border-style:solid;background-color:rgba(237,234,230,1);}
-.m .sie-color-palette_6 .se-simple {border-color:rgba(208,201,189,1);border-style:solid;background-color:rgba(237,234,230,1);}
-.m .sib-two-photos {height:879px;}
-.d .sib-two-photos {height:818px;}
-.m .sib-two-photos .ss-bg {background-color:rgba(248,248,244,1);}
-.d .sib-two-photos .ss-bg {background-color:rgba(248,248,244,1);}
-.d .sie-two-photos_0:hover {opacity:0.8;transition-duration:0.5s;transition-property:opacity;}
-.m .sie-two-photos_0:hover {opacity:0.8;transition-duration:0.5s;transition-property:opacity;}
-.d .sie-two-photos_0 {left:718px;top:55px;width:434px;height:581px;opacity:1;transition-duration:0.5s;transition-property:opacity;}
-.m .sie-two-photos_0 {left:29px;top:530px;width:262px;height:325px;transition-duration:0.5s;transition-property:opacity;}
-.d .sie-two-photos_0 .se-img {background-repeat:no-repeat;background-size:cover;background-position:50% 50%;border-radius:inherit;}
-.m .sie-two-photos_0 .se-img {background-repeat:no-repeat;background-size:cover;background-position:50% 50%;border-radius:inherit;}
-.d .sie-two-photos_1:hover {opacity:0.8;transition-duration:0.5s;transition-property:opacity;}
-.m .sie-two-photos_1:hover {opacity:0.8;transition-duration:0.5s;transition-property:opacity;}
-.d .sie-two-photos_1 {left:171px;top:38px;width:472px;height:724px;opacity:1;transition-duration:0.5s;transition-property:opacity;}
-.m .sie-two-photos_1 {left:17px;top:83px;width:287px;height:420px;transition-duration:0.5s;transition-property:opacity;}
-.d .sie-two-photos_1 .se-img {background-repeat:no-repeat;background-size:cover;background-position:50% 50%;border-radius:inherit;}
-.m .sie-two-photos_1 .se-img {background-repeat:no-repeat;background-size:cover;background-position:50% 50%;border-radius:inherit;}
-.d .sie-two-photos_2 {left:974px;top:587px;width:142px;height:83px;}
-.m .sie-two-photos_2 {left:45px;top:725px;width:87px;height:120px;}
-.d .sie-two-photos_2 .se-img {background-repeat:no-repeat;background-size:cover;background-position:50% 50%;border-radius:inherit;}
-.m .sie-two-photos_2 .se-img {background-repeat:no-repeat;background-size:cover;background-position:50% 50%;border-radius:inherit;}
-.d .sie-two-photos_3 {left:218px;top:253px;width:379px;height:230px;}
-.m .sie-two-photos_3 {left:48px;top:379px;width:224px;height:122px;}
-.d .sie-two-photos_3 .se-img {background-repeat:no-repeat;background-size:cover;background-position:50% 50%;border-radius:inherit;}
-.m .sie-two-photos_3 .se-img {background-repeat:no-repeat;background-size:cover;background-position:50% 50%;border-radius:inherit;}
-.m .sib-parallax-with-design {height:294px;}
-.d .sib-parallax-with-design {height:694px;}
-.m .sib-parallax-with-design .ss-bg {background-color:rgba(0,0,0,1);}
-.d .sib-parallax-with-design .ss-bg {background-color:rgba(0,0,0,1);}
-.m .sib-parallax-with-design.sb-nm-dH .sc {height:294px;}
-.d .sib-parallax-with-design.sb-nd-dH .sc {height:694px;}
-.m .sib-gallery-grid {height:1938px;}
-.d .sib-gallery-grid {height:1449px;}
-.m .sib-gallery-grid .ss-bg {background-color:rgba(248,248,244,1);}
-.d .sib-gallery-grid .ss-bg {background-color:rgba(248,248,244,1);}
-.m .sib-gallery-grid.sb-nm-dH .sc {height:1938px;}
-.d .sib-gallery-grid.sb-nd-dH .sc {height:1449px;}
-.d .sie-gallery-grid_0 {left:30px;top:101px;width:1140px;height:83px;}
-.m .sie-gallery-grid_0 {left:19px;top:45px;width:282px;height:45px;}
-.d .sie-gallery-grid_0-text {text-align:center;}
-.m .sie-gallery-grid_0-text {text-align:center;}
-.d .sie-gallery-grid_1 {left:0px;top:178px;width:1200px;height:1259px;}
-.m .sie-gallery-grid_1 {left:14px;top:103px;width:292px;height:1812px;}
-.d .sig-gallery-grid_1 {width:100%;padding:20px;position:relative;box-sizing:border-box;}
-.d .sig-gallery-grid_1 .stg-grid-sizer {width:33.333%;}
-.d .sig-gallery-grid_1 .stg-grid-item {width:33.333%;padding:20px;}
-.d .sig-gallery-grid_1 .stg-grid-img {}
-.d .sig-gallery-grid_1-stg-slider.stg-slider {background-color:rgba(248,248,244,1);}
-.d .sig-gallery-grid_1-stg-slider .stg-slider-controls {color:#383119;}
-.d .sig-gallery-grid_1-stg-slider .stg-slider-controls svg path {fill:#383119;}
-.m .sig-gallery-grid_1 {width:100%;padding:5px;position:relative;box-sizing:border-box;}
-.m .sig-gallery-grid_1 .stg-grid-sizer {width:100.000%;}
-.m .sig-gallery-grid_1 .stg-grid-item {width:100.000%;padding:5px;}
-.m .sig-gallery-grid_1 .stg-grid-img {}
-.m .sig-gallery-grid_1-stg-slider.stg-slider {background-color:rgba(0,0,0,1);}
-.m .sig-gallery-grid_1-stg-slider .stg-slider-controls {color:#FFFFFF;}
-.m .sig-gallery-grid_1-stg-slider .stg-slider-controls svg path {fill:#FFFFFF;}
-.m .sib-you-might-also-like {height:1433px;}
-.d .sib-you-might-also-like {height:785px;}
-.m .sib-you-might-also-like .ss-bg {background-color:rgba(255,255,255,1);}
-.d .sib-you-might-also-like .ss-bg {background-color:rgba(255,255,255,1);}
-.d .sie-you-might-also-like_0:hover {opacity:0.8;transition-duration:0.5s;transition-property:opacity;}
-.m .sie-you-might-also-like_0:hover {opacity:0.8;transition-duration:0.5s;transition-property:opacity;}
-.d .sie-you-might-also-like_0 {left:20px;top:173px;width:324px;height:403px;opacity:1;transition-duration:0.5s;transition-property:opacity;}
-.m .sie-you-might-also-like_0 {left:67px;top:126px;width:187px;height:257px;transition-duration:0.5s;transition-property:opacity;}
-.d .sie-you-might-also-like_0 .se-img {background-repeat:no-repeat;background-size:cover;background-position:0% 0%;border-radius:inherit;}
-.m .sie-you-might-also-like_0 .se-img {background-repeat:no-repeat;background-size:cover;background-position:0% 0%;border-radius:inherit;}
-.d .sie-you-might-also-like_1 {left:20px;top:614px;width:324px;height:45px;}
-.m .sie-you-might-also-like_1 {left:26px;top:401px;width:269px;height:35px;}
-.d .sie-you-might-also-like_1-text {font-size:34px;font-family:'KT Quantum Light';font-weight:400;font-style:normal;}
-.d .sie-you-might-also-like_2:hover {opacity:0.8;transition-duration:0.5s;transition-property:opacity;}
-.m .sie-you-might-also-like_2:hover {opacity:0.8;transition-duration:0.5s;transition-property:opacity;}
-.d .sie-you-might-also-like_2 {left:438px;top:173px;width:324px;height:403px;opacity:1;transition-duration:0.5s;transition-property:opacity;}
-.m .sie-you-might-also-like_2 {left:67px;top:559px;width:187px;height:257px;transition-duration:0.5s;transition-property:opacity;}
-.d .sie-you-might-also-like_2 .se-img {background-repeat:no-repeat;background-size:cover;background-position:50% 50%;border-radius:inherit;}
-.m .sie-you-might-also-like_2 .se-img {background-repeat:no-repeat;background-size:cover;background-position:50% 50%;border-radius:inherit;}
-.d .sie-you-might-also-like_3 {left:438px;top:614px;width:324px;height:45px;}
-.m .sie-you-might-also-like_3 {left:26px;top:834px;width:269px;height:35px;}
-.d .sie-you-might-also-like_3-text {font-size:34px;text-align:center;font-family:'KT Quantum Light';font-weight:400;font-style:normal;}
-.m .sie-you-might-also-like_3-text {font-size:30px;text-align:center;font-family:'KT Quantum Light';font-weight:400;font-style:normal;}
-.d .sie-you-might-also-like_4:hover {opacity:0.8;transition-duration:0.5s;transition-property:opacity;}
-.m .sie-you-might-also-like_4:hover {opacity:0.8;transition-duration:0.5s;transition-property:opacity;}
-.d .sie-you-might-also-like_4 {left:856px;top:173px;width:324px;height:403px;opacity:1;transition-duration:0.5s;transition-property:opacity;}
-.m .sie-you-might-also-like_4 {left:67px;top:968px;width:187px;height:257px;transition-duration:0.5s;transition-property:opacity;}
-.d .sie-you-might-also-like_4 .se-img {background-repeat:no-repeat;background-size:cover;background-position:50% 50%;border-radius:inherit;}
-.m .sie-you-might-also-like_4 .se-img {background-repeat:no-repeat;background-size:cover;background-position:50% 50%;border-radius:inherit;}
-.d .sie-you-might-also-like_5 {left:856px;top:614px;width:324px;height:45px;}
-.m .sie-you-might-also-like_5 {left:26px;top:1243px;width:269px;height:35px;}
-.d .sie-you-might-also-like_5-text {font-size:34px;font-family:'KT Quantum Light';font-weight:400;font-style:normal;}
-.d .sie-you-might-also-like_6 {left:-58px;top:0px;width:1344px;height:1px;}
-.m .sie-you-might-also-like_6 {left:-12px;top:0px;width:354px;height:1px;}
-.sie-you-might-also-like_6 svg {vertical-align:top;overflow:visible;pointer-events:none;box-sizing:content-box;}
-.m .sie-you-might-also-like_6 svg {stroke:rgba(0,0,0,1);transform:scaleX(1);padding:0.5px;height:1px;width:354px;}
-.d .sie-you-might-also-like_6 svg {stroke:rgba(0,0,0,1);transform:scaleX(1);padding:0.5px;height:1px;width:1344px;}
-.m .sie-you-might-also-like_6 line {stroke-linecap:butt;stroke-width:1;stroke-dasharray:none;pointer-events:all;}
-.d .sie-you-might-also-like_6 line {stroke-linecap:butt;stroke-width:1;stroke-dasharray:none;pointer-events:all;}
-.d .sie-you-might-also-like_7 {left:-58px;top:783px;width:1344px;height:1px;}
-.m .sie-you-might-also-like_7 {left:-12px;top:0px;width:354px;height:1px;}
-.sie-you-might-also-like_7 svg {vertical-align:top;overflow:visible;pointer-events:none;box-sizing:content-box;}
-.m .sie-you-might-also-like_7 svg {stroke:rgba(0,0,0,1);transform:scaleX(1);padding:0.5px;height:1px;width:354px;}
-.d .sie-you-might-also-like_7 svg {stroke:rgba(0,0,0,1);transform:scaleX(1);padding:0.5px;height:1px;width:1344px;}
-.m .sie-you-might-also-like_7 line {stroke-linecap:butt;stroke-width:1;stroke-dasharray:none;pointer-events:all;}
-.d .sie-you-might-also-like_7 line {stroke-linecap:butt;stroke-width:1;stroke-dasharray:none;pointer-events:all;}
-.d .sie-you-might-also-like_8 {left:322px;top:64px;width:556px;height:33px;}
-.m .sie-you-might-also-like_8 {left:34px;top:63px;width:252px;height:29px;}
-.d .sie-you-might-also-like_8-text {text-align:center;}
-.m .sie-you-might-also-like_8-text {text-align:center;}
-.m .sib-call-to-action-1 {height:505px;}
-.d .sib-call-to-action-1 {height:607px;}
-.m .sib-call-to-action-1 .ss-bg {background-color:rgba(208,201,189,1);}
-.d .sib-call-to-action-1 .ss-bg {background-color:rgba(208,201,189,1);}
-.d .sie-call-to-action-1_0:hover {opacity:1;transition-duration:0.5s;transition-property:opacity;}
-.m .sie-call-to-action-1_0:hover {opacity:1;transition-duration:0.5s;transition-property:opacity;}
-.d .sie-call-to-action-1_0 {left:162px;top:195px;width:876px;height:152px;transition-duration:0.5s;transition-property:opacity;}
-.m .sie-call-to-action-1_0 {left:27px;top:152px;width:267px;height:130px;transition-duration:0.5s;transition-property:opacity;}
-.d .sie-call-to-action-1_0-text:hover {}
-.m .sie-call-to-action-1_0-text:hover {}
-.d .sie-call-to-action-1_0-text {color:rgba(248,248,244,1);text-transform:uppercase;font-size:47px;text-align:center;}
-.m .sie-call-to-action-1_0-text {color:rgba(248,248,244,1);text-transform:uppercase;text-align:center;}
-.d .sie-call-to-action-1_1 {left:424px;top:131px;width:352px;height:20px;}
-.m .sie-call-to-action-1_1 {left:23px;top:117px;width:274px;height:35px;}
-.d .sie-call-to-action-1_1-text {color:rgba(248,248,244,1);text-align:center;}
-.m .sie-call-to-action-1_1-text {color:rgba(248,248,244,1);text-align:center;}
-.d .sie-call-to-action-1_2 {left:573px;top:276px;width:54px;height:250px;border-radius:0px;}
-.m .sie-call-to-action-1_2 {left:37px;top:340px;width:246px;height:49px;border-radius:0px;}
-.d .sie-call-to-action-1_2 .se-simple:hover {}
-.m .sie-call-to-action-1_2 .se-simple:hover {}
-.d .sie-call-to-action-1_2 .se-simple {border-color:rgba(255,255,255,1);border-width:2px;border-style:solid;background-color:rgba(0,0,0,0);opacity:1;border-radius:inherit;}
-.m .sie-call-to-action-1_2 .se-simple {border-color:rgba(255,255,255,1);border-width:2px;border-style:solid;background-color:rgba(208,201,189,0);opacity:1;border-radius:inherit;}
-.d .sie-call-to-action-1_3 {left:475px;top:374px;width:250px;height:54px;}
-.m .sie-call-to-action-1_3 {left:53px;top:357px;width:214px;height:30px;}
-.d .sie-call-to-action-1_3-text {color:rgba(255,255,255,1);line-height:3.9;text-align:center;overflow:hidden;}
-.m .sie-call-to-action-1_3-text {color:rgba(255,255,255,1);text-align:center;overflow:hidden;}
-.sib-pop-up-menu {z-index:302;}
-.m .sib-pop-up-menu {height:693px;display:none;}
-.d .sib-pop-up-menu {height:701px;display:none;}
-.m .sib-pop-up-menu .ss-bg {background-color:rgba(0,0,0,0);}
-.d .sib-pop-up-menu .ss-bg {background-color:rgba(0,0,0,0);}
-.m .sib-pop-up-menu.sb-nm-wH .sc {height:693px;}
-.d .sib-pop-up-menu.sb-nd-wH .sc {height:701px;}
-.d .sie-pop-up-menu_0 {left:600px;top:0px;width:600px;height:701px;}
-.m .sie-pop-up-menu_0 {left:-3px;top:-2px;width:329px;height:695px;}
-.d .sie-pop-up-menu_0 .se-simple:hover {}
-.m .sie-pop-up-menu_0 .se-simple:hover {}
-.d .sie-pop-up-menu_0 .se-simple {background-color:rgba(56,49,25,1);}
-.m .sie-pop-up-menu_0 .se-simple {background-color:rgba(56,49,25,1);}
-.d .sie-pop-up-menu_1 {left:0px;top:-3px;width:600px;height:707px;opacity:1;}
-.m .sie-pop-up-menu_1 {left:48px;top:78px;width:224px;height:336px;opacity:1;display:none;}
-.d .sie-pop-up-menu_1 .se-img {background-repeat:no-repeat;background-size:cover;background-position:50% 50%;border-radius:inherit;}
-.m .sie-pop-up-menu_1 .se-img {background-repeat:no-repeat;background-size:cover;background-position:50% 50%;border-radius:inherit;}
-.d .sie-pop-up-menu_2 {left:772px;top:615px;width:260px;height:50px;}
-.m .sie-pop-up-menu_2 {left:58px;top:583px;width:205px;height:34px;}
-.d .sie-pop-up-menu_2-text {color:rgba(255,255,255,1);font-size:12px;text-align:center;}
-.m .sie-pop-up-menu_2-text {color:rgba(255,255,255,1);font-size:12px;text-align:center;}
-.d .sie-pop-up-menu_3 {left:0px;top:-3px;width:600px;height:707px;opacity:1;}
-.m .sie-pop-up-menu_3 {left:48px;top:78px;width:224px;height:336px;opacity:1;display:none;}
-.d .sie-pop-up-menu_3 .se-img {background-repeat:no-repeat;background-size:cover;background-position:50% 50%;border-radius:inherit;}
-.m .sie-pop-up-menu_3 .se-img {background-repeat:no-repeat;background-size:cover;background-position:50% 50%;border-radius:inherit;}
-.d .sie-pop-up-menu_4 {left:0px;top:488px;width:601px;height:63px;}
-.m .sie-pop-up-menu_4 {left:112px;top:303px;width:96px;height:16px;display:none;}
-.d .sie-pop-up-menu_4-text {color:rgba(255,255,255,1);}
-.m .sie-pop-up-menu_4-text {color:rgba(255,255,255,1);}
-.d .sie-pop-up-menu_5:hover {opacity:1;transition-duration:1s;transition-property:opacity;}
-.m .sie-pop-up-menu_5:hover {opacity:1;transition-duration:1s;transition-property:opacity;}
-.d .sie-pop-up-menu_5 {left:600px;top:528px;width:602px;height:32px;transition-duration:1s;transition-property:opacity;}
-.m .sie-pop-up-menu_5 {left:60px;top:501px;width:200px;height:46px;transition-duration:1s;transition-property:opacity;}
-.d .sie-pop-up-menu_5-text:hover {color:rgba(255,255,255,1);letter-spacing:0.1em;}
-.m .sie-pop-up-menu_5-text:hover {color:rgba(255,255,255,1);letter-spacing:0.1em;}
-.d .sie-pop-up-menu_5-text {color:rgba(255,255,255,1);font-size:25px;font-family:'KT Quantum Light';font-weight:400;font-style:normal;transition-duration:0.5s;transition-property:color,letter-spacing;}
-.m .sie-pop-up-menu_5-text {color:rgba(255,255,255,1);font-size:24px;font-family:'KT Quantum Light';font-weight:400;font-style:normal;transition-duration:0.5s;transition-property:color,letter-spacing;}
-.d .sie-pop-up-menu_6 {left:600px;top:502px;width:601px;height:18px;}
-.m .sie-pop-up-menu_6 {left:115px;top:483px;width:90px;height:15px;}
-.d .sie-pop-up-menu_6-text {color:rgba(255,255,255,1);font-size:10px;}
-.m .sie-pop-up-menu_6-text {color:rgba(255,255,255,1);font-size:11px;}
-.d .sie-pop-up-menu_7:hover {opacity:1;transition-duration:1s;transition-property:opacity;}
-.m .sie-pop-up-menu_7:hover {opacity:1;transition-duration:1s;transition-property:opacity;}
-.d .sie-pop-up-menu_7 {left:600px;top:440px;width:602px;height:31px;transition-duration:1s;transition-property:opacity;}
-.m .sie-pop-up-menu_7 {left:42px;top:423px;width:235px;height:46px;transition-duration:1s;transition-property:opacity;}
-.d .sie-pop-up-menu_7-text:hover {color:rgba(255,255,255,1);letter-spacing:0.1em;}
-.m .sie-pop-up-menu_7-text:hover {color:rgba(255,255,255,1);letter-spacing:0.1em;}
-.d .sie-pop-up-menu_7-text {color:rgba(255,255,255,1);font-size:25px;transition-duration:0.5s;transition-property:color,letter-spacing;}
-.m .sie-pop-up-menu_7-text {color:rgba(255,255,255,1);font-family:'KT Quantum Light';font-weight:400;font-style:normal;transition-duration:0.5s;transition-property:color,letter-spacing;}
-.d .sie-pop-up-menu_8 {left:601px;top:415px;width:601px;height:18px;}
-.m .sie-pop-up-menu_8 {left:115px;top:399px;width:90px;height:15px;}
-.d .sie-pop-up-menu_8-text {color:rgba(255,255,255,1);font-size:10px;}
-.m .sie-pop-up-menu_8-text {color:rgba(255,255,255,1);font-size:11px;}
-.d .sie-pop-up-menu_9:hover {opacity:1;transition-duration:1s;transition-property:opacity;}
-.m .sie-pop-up-menu_9:hover {opacity:1;transition-duration:1s;transition-property:opacity;}
-.d .sie-pop-up-menu_9 {left:600px;top:277px;width:602px;height:31px;opacity:1;transition-duration:1s;transition-property:opacity;}
-.m .sie-pop-up-menu_9 {left:38px;top:275px;width:243px;height:46px;transition-duration:1s;transition-property:opacity;}
-.d .sie-pop-up-menu_9-text:hover {color:rgba(255,255,255,1);letter-spacing:0.1em;}
-.m .sie-pop-up-menu_9-text:hover {color:rgba(255,255,255,1);letter-spacing:0.1em;}
-.d .sie-pop-up-menu_9-text {color:rgba(255,255,255,1);font-size:25px;transition-duration:0.5s;transition-property:color,letter-spacing;}
-.m .sie-pop-up-menu_9-text {color:rgba(255,255,255,1);font-family:'KT Quantum Light';font-weight:400;font-style:normal;transition-duration:0.5s;transition-property:color,letter-spacing;}
-.d .sie-pop-up-menu_10 {left:601px;top:259px;width:601px;height:18px;}
-.m .sie-pop-up-menu_10 {left:115px;top:257px;width:90px;height:15px;}
-.d .sie-pop-up-menu_10-text {color:rgba(255,255,255,1);font-size:10px;}
-.m .sie-pop-up-menu_10-text {color:rgba(255,255,255,1);font-size:11px;}
-.d .sie-pop-up-menu_11:hover {opacity:1;transition-duration:1s;transition-property:opacity;}
-.m .sie-pop-up-menu_11:hover {opacity:1;transition-duration:1s;transition-property:opacity;}
-.d .sie-pop-up-menu_11 {left:598px;top:200px;width:602px;height:30px;transition-duration:1s;transition-property:opacity;}
-.m .sie-pop-up-menu_11 {left:72px;top:205px;width:175px;height:46px;transition-duration:1s;transition-property:opacity;}
-.d .sie-pop-up-menu_11-text:hover {color:rgba(255,255,255,1);letter-spacing:0.1em;}
-.m .sie-pop-up-menu_11-text:hover {color:rgba(255,255,255,1);letter-spacing:0.1em;}
-.d .sie-pop-up-menu_11-text {color:rgba(255,255,255,1);font-size:25px;transition-duration:0.5s;transition-property:color,letter-spacing;}
-.m .sie-pop-up-menu_11-text {color:rgba(255,255,255,1);font-family:'KT Quantum Light';font-weight:400;font-style:normal;transition-duration:0.5s;transition-property:color,letter-spacing;}
-.d .sie-pop-up-menu_12 {left:600px;top:182px;width:601px;height:18px;}
-.m .sie-pop-up-menu_12 {left:115px;top:187px;width:90px;height:15px;}
-.d .sie-pop-up-menu_12-text {color:rgba(255,255,255,1);font-size:11px;}
-.m .sie-pop-up-menu_12-text {color:rgba(255,255,255,1);font-size:11px;}
-.d .sie-pop-up-menu_13:hover {opacity:1;transition-duration:1s;transition-property:opacity;}
-.m .sie-pop-up-menu_13:hover {opacity:1;transition-duration:1s;transition-property:opacity;}
-.d .sie-pop-up-menu_13 {left:600px;top:122px;width:602px;height:30px;transition-duration:1s;transition-property:opacity;}
-.m .sie-pop-up-menu_13 {left:82px;top:141px;width:155px;height:46px;transition-duration:1s;transition-property:opacity;}
-.d .sie-pop-up-menu_13-text:hover {color:rgba(255,255,255,1);letter-spacing:0.1em;}
-.m .sie-pop-up-menu_13-text:hover {color:rgba(255,255,255,1);letter-spacing:0.1em;}
-.d .sie-pop-up-menu_13-text {color:rgba(255,255,255,1);font-size:25px;transition-duration:0.5s;transition-property:color,letter-spacing;}
-.m .sie-pop-up-menu_13-text {color:rgba(255,255,255,1);font-family:'KT Quantum Light';font-weight:400;font-style:normal;transition-duration:0.5s;transition-property:color,letter-spacing;}
-.d .sie-pop-up-menu_14 {left:602px;top:103px;width:601px;height:18px;}
-.m .sie-pop-up-menu_14 {left:115px;top:123px;width:90px;height:15px;}
-.d .sie-pop-up-menu_14-text {color:rgba(255,255,255,1);font-size:11px;}
-.m .sie-pop-up-menu_14-text {color:rgba(255,255,255,1);font-size:11px;}
-.d .sie-pop-up-menu_15 {left:1125px;top:57px;width:16px;height:16px;}
-.m .sie-pop-up-menu_15 {left:274px;top:31px;width:14px;height:14px;}
-.d .sie-pop-up-menu_15 svg {fill:rgba(255,255,255,1);}
-.m .sie-pop-up-menu_15 svg {fill:rgba(255,255,255,1);}
-.d .sie-pop-up-menu_16 {left:736px;top:64px;width:372px;height:1px;}
-.m .sie-pop-up-menu_16 {left:226px;top:36px;width:66px;height:1px;display:none;}
-.sie-pop-up-menu_16 svg {vertical-align:top;overflow:visible;pointer-events:none;box-sizing:content-box;}
-.m .sie-pop-up-menu_16 svg {stroke:rgba(255,255,255,1);transform:scaleX(1);padding:0.5px;height:1px;width:66px;}
-.d .sie-pop-up-menu_16 svg {stroke:rgba(255,255,255,1);transform:scaleX(1);padding:0.5px;height:1px;width:372px;}
-.m .sie-pop-up-menu_16 line {stroke-linecap:butt;stroke-width:1;stroke-dasharray:none;pointer-events:all;}
-.d .sie-pop-up-menu_16 line {stroke-linecap:butt;stroke-width:1;stroke-dasharray:none;pointer-events:all;}
-.d .sie-pop-up-menu_17 {left:546px;top:85px;width:108px;height:18px;}
-.m .sie-pop-up-menu_17 {left:13px;top:52px;width:90px;height:15px;display:none;}
-.d .sie-pop-up-menu_17-text {color:rgba(255,255,255,1);font-size:11px;text-align:center;}
-.m .sie-pop-up-menu_17-text {color:rgba(255,255,255,1);font-size:9px;text-align:left;}
-.d .sie-pop-up-menu_18:hover {opacity:1;transition-duration:1s;transition-property:opacity;}
-.m .sie-pop-up-menu_18:hover {opacity:1;transition-duration:1s;transition-property:opacity;}
-.d .sie-pop-up-menu_18 {left:465px;top:47px;width:271px;height:35px;transition-duration:1s;transition-property:opacity;}
-.m .sie-pop-up-menu_18 {left:30px;top:25px;width:175px;height:25px;transition-duration:1s;transition-property:opacity;}
-.d .sie-pop-up-menu_18-text:hover {color:rgba(255,255,255,1);letter-spacing:0.1em;}
-.m .sie-pop-up-menu_18-text:hover {color:rgba(255,255,255,1);letter-spacing:0.1em;}
-.d .sie-pop-up-menu_18-text {color:rgba(255,255,255,1);letter-spacing:0.1em;font-size:30px;font-family:'KT Quantum Light';font-weight:400;font-style:normal;transition-duration:0.5s;transition-property:color,letter-spacing;}
-.m .sie-pop-up-menu_18-text {color:rgba(255,255,255,1);letter-spacing:0.1em;font-size:20px;font-family:'KT Quantum Light';font-weight:400;font-style:normal;transition-duration:0.5s;transition-property:color,letter-spacing;}
-.d .sie-pop-up-menu_19 {left:187px;top:64px;width:278px;height:1px;}
-.m .sie-pop-up-menu_19 {left:30px;top:58px;width:260px;height:1px;}
-.sie-pop-up-menu_19 svg {vertical-align:top;overflow:visible;pointer-events:none;box-sizing:content-box;}
-.m .sie-pop-up-menu_19 svg {stroke:rgba(255,255,255,1);transform:scaleX(1);padding:0.5px;height:1px;width:260px;}
-.d .sie-pop-up-menu_19 svg {stroke:rgba(255,255,255,1);transform:scaleX(1);padding:0.5px;height:1px;width:278px;}
-.m .sie-pop-up-menu_19 line {stroke-linecap:butt;stroke-width:1;stroke-dasharray:none;pointer-events:all;}
-.d .sie-pop-up-menu_19 line {stroke-linecap:butt;stroke-width:1;stroke-dasharray:none;pointer-events:all;}
-.d .sie-pop-up-menu_20:hover {opacity:1;transition-duration:1s;transition-property:opacity;}
-.m .sie-pop-up-menu_20:hover {opacity:1;transition-duration:1s;transition-property:opacity;}
-.d .sie-pop-up-menu_20 {left:105px;top:55px;width:24px;height:18px;transition-duration:1s;transition-property:opacity;}
-.m .sie-pop-up-menu_20 {left:46px;top:52px;width:17px;height:15px;display:none;transition-duration:1s;transition-property:opacity;}
-.d .sie-pop-up-menu_20-text:hover {color:rgba(56,49,25,1);}
-.m .sie-pop-up-menu_20-text:hover {color:rgba(56,49,25,1);}
-.d .sie-pop-up-menu_20-text {color:rgba(255,255,255,1);text-align:left;transition-duration:0.5s;transition-property:color;}
-.m .sie-pop-up-menu_20-text {color:rgba(255,255,255,1);text-align:left;transition-duration:0.5s;transition-property:color;}
-.d .sie-pop-up-menu_21 {left:86px;top:55px;width:13px;height:18px;}
-.m .sie-pop-up-menu_21 {left:30px;top:52px;width:12px;height:15px;display:none;}
-.d .sie-pop-up-menu_21-text {color:rgba(255,255,255,1);text-align:center;}
-.m .sie-pop-up-menu_21-text {color:rgba(255,255,255,1);text-align:center;}
-.d .sie-pop-up-menu_22:hover {opacity:1;transition-duration:1s;transition-property:opacity;}
-.m .sie-pop-up-menu_22:hover {opacity:1;transition-duration:1s;transition-property:opacity;}
-.d .sie-pop-up-menu_22 {left:63px;top:55px;width:23px;height:18px;transition-duration:1s;transition-property:opacity;}
-.m .sie-pop-up-menu_22 {left:13px;top:52px;width:17px;height:15px;display:none;transition-duration:1s;transition-property:opacity;}
-.d .sie-pop-up-menu_22-text:hover {color:rgba(56,49,25,1);}
-.m .sie-pop-up-menu_22-text:hover {color:rgba(56,49,25,1);}
-.d .sie-pop-up-menu_22-text {color:rgba(255,255,255,1);text-align:left;transition-duration:0.5s;transition-property:color;}
-.m .sie-pop-up-menu_22-text {color:rgba(255,255,255,1);text-align:left;transition-duration:0.5s;transition-property:color;}
-.d .sie-pop-up-menu_23:hover {opacity:1;transition-duration:1s;transition-property:opacity;}
-.m .sie-pop-up-menu_23:hover {opacity:1;transition-duration:1s;transition-property:opacity;}
-.d .sie-pop-up-menu_23 {left:599px;top:358px;width:602px;height:31px;transition-duration:1s;transition-property:opacity;}
-.m .sie-pop-up-menu_23 {left:42px;top:346px;width:235px;height:40px;transition-duration:1s;transition-property:opacity;}
-.d .sie-pop-up-menu_23-text:hover {color:rgba(255,255,255,1);letter-spacing:0.1em;}
-.m .sie-pop-up-menu_23-text:hover {color:rgba(255,255,255,1);letter-spacing:0.1em;}
-.d .sie-pop-up-menu_23-text {color:rgba(255,255,255,1);text-transform:uppercase;font-size:25px;transition-duration:0.5s;transition-property:color,letter-spacing;}
-.m .sie-pop-up-menu_23-text {color:rgba(255,255,255,1);text-transform:uppercase;font-family:'KT Quantum Light';font-weight:400;font-style:normal;transition-duration:0.5s;transition-property:color,letter-spacing;}
-.d .sie-pop-up-menu_24 {left:601px;top:333px;width:601px;height:18px;}
-.m .sie-pop-up-menu_24 {left:115px;top:331px;width:90px;height:15px;}
-.d .sie-pop-up-menu_24-text {color:rgba(255,255,255,1);font-size:10px;}
-.m .sie-pop-up-menu_24-text {color:rgba(255,255,255,1);font-size:11px;}
-.sib-footer {z-index:301;}
-.m .sib-footer {height:608px;}
-.d .sib-footer {height:431px;}
-.m .sib-footer .ss-bg {background-color:rgba(248,248,244,1);}
-.d .sib-footer .ss-bg {background-color:rgba(248,248,244,1);}
-.d .sie-footer_0 {left:985px;top:396px;width:185px;height:18px;}
-.m .sie-footer_0 {left:200px;top:582px;width:105px;height:18px;}
-.d .sie-footer_0-text {color:rgba(0,0,0,1);line-height:1.8;font-size:9px;text-align:right;}
-.m .sie-footer_0-text {color:rgba(0,0,0,1);font-size:9px;text-align:right;}
-.d .sie-footer_1 {left:459px;top:396px;width:283px;height:19px;}
-.m .sie-footer_1 {left:0px;top:532px;width:325px;height:22px;}
-.d .sie-footer_1-text {color:rgba(0,0,0,1);font-size:10px;text-align:center;}
-.m .sie-footer_1-text {font-size:11px;}
-.d .sie-footer_2 {left:0px;top:377px;width:1200px;height:1px;display:none;}
-.m .sie-footer_2 {left:-3px;top:564px;width:330px;height:1px;}
-.sie-footer_2 svg {vertical-align:top;overflow:visible;pointer-events:none;box-sizing:content-box;}
-.m .sie-footer_2 svg {stroke:rgba(0,0,0,1);transform:scaleX(1);padding:0.5px;height:1px;width:330px;}
-.d .sie-footer_2 svg {stroke:rgba(0,0,0,1);transform:scaleX(1);padding:0.5px;height:1px;width:1200px;}
-.m .sie-footer_2 line {stroke-linecap:butt;stroke-width:1;stroke-dasharray:none;pointer-events:all;}
-.d .sie-footer_2 line {stroke-linecap:butt;stroke-width:1;stroke-dasharray:none;pointer-events:all;}
-.d .sie-footer_3:hover {opacity:0.5;transition-duration:1.25s;transition-property:opacity;}
-.m .sie-footer_3:hover {opacity:0.5;transition-duration:1.25s;transition-property:opacity;}
-.d .sie-footer_3 {left:872px;top:174px;width:167px;height:18px;transition-duration:1.25s;transition-property:opacity;}
-.m .sie-footer_3 {left:198px;top:342px;width:116px;height:18px;display:none;transition-duration:1.25s;transition-property:opacity;}
-.d .sie-footer_3-text:hover {color:rgba(0,0,0,1);letter-spacing:0.1em;}
-.m .sie-footer_3-text:hover {color:rgba(0,0,0,1);letter-spacing:0.1em;}
-.d .sie-footer_3-text {color:rgba(0,0,0,1);text-transform:none;line-height:2;letter-spacing:0em;font-size:11px;text-align:left;transition-duration:0.5s;transition-property:color,letter-spacing;}
-.m .sie-footer_3-text {color:rgba(0,0,0,1);line-height:2;text-align:left;transition-duration:0.5s;transition-property:color,letter-spacing;}
-.d .sie-footer_4:hover {opacity:0.5;transition-duration:1.25s;transition-property:opacity;}
-.m .sie-footer_4:hover {opacity:0.5;transition-duration:1.25s;transition-property:opacity;}
-.d .sie-footer_4 {left:872px;top:138px;width:167px;height:18px;transition-duration:1.25s;transition-property:opacity;}
-.m .sie-footer_4 {left:195px;top:368px;width:116px;height:18px;transition-duration:1.25s;transition-property:opacity;}
-.d .sie-footer_4-text:hover {color:rgba(0,0,0,1);letter-spacing:0.1em;}
-.m .sie-footer_4-text:hover {color:rgba(0,0,0,1);letter-spacing:0.1em;}
-.d .sie-footer_4-text {color:rgba(0,0,0,1);text-transform:none;line-height:2.2;letter-spacing:0em;font-size:11px;text-align:left;transition-duration:0.5s;transition-property:color,letter-spacing;}
-.m .sie-footer_4-text {color:rgba(0,0,0,1);line-height:2.2;text-align:left;transition-duration:0.5s;transition-property:color,letter-spacing;}
-.d .sie-footer_5:hover {opacity:0.5;transition-duration:1.25s;transition-property:opacity;}
-.m .sie-footer_5:hover {opacity:0.5;transition-duration:1.25s;transition-property:opacity;}
-.d .sie-footer_5 {left:872px;top:102px;width:167px;height:18px;transition-duration:1.25s;transition-property:opacity;}
-.m .sie-footer_5 {left:195px;top:338px;width:116px;height:18px;transition-duration:1.25s;transition-property:opacity;}
-.d .sie-footer_5-text:hover {color:rgba(0,0,0,1);letter-spacing:0.1em;}
-.m .sie-footer_5-text:hover {color:rgba(0,0,0,1);letter-spacing:0.1em;}
-.d .sie-footer_5-text {color:rgba(0,0,0,1);text-transform:none;line-height:2;letter-spacing:0em;font-size:11px;text-align:left;transition-duration:0.5s;transition-property:color,letter-spacing;}
-.m .sie-footer_5-text {color:rgba(0,0,0,1);line-height:2;text-align:left;transition-duration:0.5s;transition-property:color,letter-spacing;}
-.d .sie-footer_7 {left:719px;top:189px;width:220px;height:1px;}
-.m .sie-footer_7 {left:-1px;top:310px;width:327px;height:1px;}
-.sie-footer_7 svg {vertical-align:top;overflow:visible;pointer-events:none;box-sizing:content-box;}
-.m .sie-footer_7 svg {stroke:rgba(0,0,0,0.75);transform:scaleX(1);padding:0.5px;height:1px;width:327px;}
-.d .sie-footer_7 svg {stroke:rgba(0,0,0,0.75);transform:scaleX(1);padding:0.5px;height:220px;width:0px;}
-.m .sie-footer_7 line {stroke-linecap:butt;stroke-width:1;stroke-dasharray:none;pointer-events:all;}
-.d .sie-footer_7 line {stroke-linecap:butt;stroke-width:1;stroke-dasharray:none;pointer-events:all;}
-.d .sie-footer_8 {left:617px;top:258px;width:16px;height:17px;}
-.m .sie-footer_8 {left:172px;top:274px;width:12px;height:12px;}
-.d .sie-footer_8 svg {fill:rgba(0,0,0,1);}
-.m .sie-footer_8 svg {fill:rgba(0,0,0,1);}
-.d .sie-footer_9 {left:591px;top:258px;width:16px;height:17px;}
-.m .sie-footer_9 {left:157px;top:274px;width:12px;height:12px;}
-.d .sie-footer_9 svg {fill:rgba(0,0,0,1);}
-.m .sie-footer_9 svg {fill:rgba(0,0,0,1);}
-.d .sie-footer_10 {left:567px;top:258px;width:16px;height:17px;}
-.m .sie-footer_10 {left:140px;top:274px;width:12px;height:12px;}
-.d .sie-footer_10 svg {fill:rgba(0,0,0,1);}
-.m .sie-footer_10 svg {fill:rgba(0,0,0,1);}
-.d .sie-footer_11 {left:466px;top:173px;width:269px;height:74px;}
-.m .sie-footer_11 {left:27px;top:100px;width:273px;height:65px;}
-.d .sie-footer_11-text {font-size:12px;}
-.m .sie-footer_11-text {font-size:12px;}
-.d .sie-footer_12 {left:261px;top:189px;width:220px;height:1px;}
-.m .sie-footer_12 {left:59px;top:414px;width:208px;height:1px;}
-.sie-footer_12 svg {vertical-align:top;overflow:visible;pointer-events:none;box-sizing:content-box;}
-.m .sie-footer_12 svg {stroke:rgba(0,0,0,0.75);transform:scaleX(1);padding:0.5px;height:208px;width:0px;}
-.d .sie-footer_12 svg {stroke:rgba(0,0,0,0.75);transform:scaleX(1);padding:0.5px;height:220px;width:0px;}
-.m .sie-footer_12 line {stroke-linecap:butt;stroke-width:1;stroke-dasharray:none;pointer-events:all;}
-.d .sie-footer_12 line {stroke-linecap:butt;stroke-width:1;stroke-dasharray:none;pointer-events:all;}
-.d .sie-footer_13:hover {opacity:0.5;transition-duration:1.25s;transition-property:opacity;}
-.m .sie-footer_13:hover {opacity:0.5;transition-duration:1.25s;transition-property:opacity;}
-.d .sie-footer_13 {left:872px;top:245px;width:145px;height:18px;transition-duration:1.25s;transition-property:opacity;}
-.m .sie-footer_13 {left:195px;top:428px;width:104px;height:18px;transition-duration:1.25s;transition-property:opacity;}
-.d .sie-footer_13-text:hover {color:rgba(0,0,0,1);letter-spacing:0.1em;}
-.m .sie-footer_13-text:hover {color:rgba(0,0,0,1);letter-spacing:0.1em;}
-.d .sie-footer_13-text {color:rgba(0,0,0,1);text-transform:none;line-height:2;letter-spacing:0em;font-size:11px;text-align:left;transition-duration:0.5s;transition-property:color,letter-spacing;}
-.m .sie-footer_13-text {color:rgba(0,0,0,1);text-transform:none;line-height:2;text-align:left;transition-duration:0.5s;transition-property:color,letter-spacing;}
-.d .sie-footer_14:hover {opacity:0.5;transition-duration:1.25s;transition-property:opacity;}
-.m .sie-footer_14:hover {opacity:0.5;transition-duration:1.25s;transition-property:opacity;}
-.d .sie-footer_14 {left:177px;top:236px;width:145px;height:18px;transition-duration:1.25s;transition-property:opacity;}
-.m .sie-footer_14 {left:12px;top:446px;width:104px;height:18px;transition-duration:1.25s;transition-property:opacity;}
-.d .sie-footer_14-text:hover {color:rgba(0,0,0,1);letter-spacing:0.1em;}
-.m .sie-footer_14-text:hover {color:rgba(0,0,0,1);letter-spacing:0.1em;}
-.d .sie-footer_14-text {color:rgba(0,0,0,1);text-transform:none;line-height:2;letter-spacing:0em;font-size:11px;text-align:right;transition-duration:0.5s;transition-property:color,letter-spacing;}
-.m .sie-footer_14-text {color:rgba(0,0,0,1);line-height:2;text-align:right;transition-duration:0.5s;transition-property:color,letter-spacing;}
-.d .sie-footer_15:hover {opacity:0.5;transition-duration:1.25s;transition-property:opacity;}
-.m .sie-footer_15:hover {opacity:0.5;transition-duration:1.25s;transition-property:opacity;}
-.d .sie-footer_15 {left:177px;top:203px;width:145px;height:18px;transition-duration:1.25s;transition-property:opacity;}
-.m .sie-footer_15 {left:12px;top:419px;width:104px;height:18px;transition-duration:1.25s;transition-property:opacity;}
-.d .sie-footer_15-text:hover {color:rgba(0,0,0,1);letter-spacing:0.1em;}
-.m .sie-footer_15-text:hover {color:rgba(0,0,0,1);letter-spacing:0.1em;}
-.d .sie-footer_15-text {color:rgba(0,0,0,1);text-transform:none;line-height:2;letter-spacing:0em;font-size:11px;text-align:right;transition-duration:0.5s;transition-property:color,letter-spacing;}
-.m .sie-footer_15-text {color:rgba(0,0,0,1);line-height:2;text-align:right;transition-duration:0.5s;transition-property:color,letter-spacing;}
-.d .sie-footer_16:hover {opacity:0.5;transition-duration:1.25s;transition-property:opacity;}
-.m .sie-footer_16:hover {opacity:0.5;transition-duration:1.25s;transition-property:opacity;}
-.d .sie-footer_16 {left:177px;top:170px;width:145px;height:18px;transition-duration:1.25s;transition-property:opacity;}
-.m .sie-footer_16 {left:12px;top:392px;width:104px;height:18px;transition-duration:1.25s;transition-property:opacity;}
-.d .sie-footer_16-text:hover {color:rgba(0,0,0,1);letter-spacing:0.1em;}
-.m .sie-footer_16-text:hover {color:rgba(0,0,0,1);letter-spacing:0.1em;}
-.d .sie-footer_16-text {color:rgba(0,0,0,1);text-transform:none;line-height:2;letter-spacing:0em;font-size:11px;text-align:right;transition-duration:0.5s;transition-property:color,letter-spacing;}
-.m .sie-footer_16-text {color:rgba(0,0,0,1);line-height:2;text-align:right;transition-duration:0.5s;transition-property:color,letter-spacing;}
-.d .sie-footer_17:hover {opacity:0.5;transition-duration:1.25s;transition-property:opacity;}
-.m .sie-footer_17:hover {opacity:0.5;transition-duration:1.25s;transition-property:opacity;}
-.d .sie-footer_17 {left:177px;top:137px;width:145px;height:18px;transition-duration:1.25s;transition-property:opacity;}
-.m .sie-footer_17 {left:12px;top:365px;width:104px;height:18px;transition-duration:1.25s;transition-property:opacity;}
-.d .sie-footer_17-text:hover {color:rgba(0,0,0,1);letter-spacing:0.1em;}
-.m .sie-footer_17-text:hover {color:rgba(0,0,0,1);letter-spacing:0.1em;}
-.d .sie-footer_17-text {color:rgba(0,0,0,1);text-transform:none;line-height:2;letter-spacing:0em;font-size:11px;text-align:right;transition-duration:0.5s;transition-property:color,letter-spacing;}
-.m .sie-footer_17-text {color:rgba(0,0,0,1);line-height:2;text-align:right;transition-duration:0.5s;transition-property:color,letter-spacing;}
-.d .sie-footer_18:hover {opacity:0.5;transition-duration:1.25s;transition-property:opacity;}
-.m .sie-footer_18:hover {opacity:0.5;transition-duration:1.25s;transition-property:opacity;}
-.d .sie-footer_18 {left:177px;top:104px;width:145px;height:18px;transition-duration:1.25s;transition-property:opacity;}
-.m .sie-footer_18 {left:12px;top:338px;width:104px;height:18px;transition-duration:1.25s;transition-property:opacity;}
-.d .sie-footer_18-text:hover {color:rgba(0,0,0,1);letter-spacing:0.1em;}
-.m .sie-footer_18-text:hover {color:rgba(0,0,0,1);letter-spacing:0.1em;}
-.d .sie-footer_18-text {color:rgba(0,0,0,1);text-transform:none;line-height:2;letter-spacing:0em;font-size:11px;text-align:right;transition-duration:0.5s;transition-property:color,letter-spacing;}
-.m .sie-footer_18-text {color:rgba(0,0,0,1);line-height:2;letter-spacing:0.2em;text-align:right;transition-duration:0.5s;transition-property:color,letter-spacing;}
-.d .sie-footer_19:hover {opacity:0.5;transition-duration:1.25s;transition-property:opacity;}
-.m .sie-footer_19:hover {opacity:0.5;transition-duration:1.25s;transition-property:opacity;}
-.d .sie-footer_19 {left:872px;top:209px;width:167px;height:18px;transition-duration:1.25s;transition-property:opacity;}
-.m .sie-footer_19 {left:195px;top:398px;width:116px;height:18px;transition-duration:1.25s;transition-property:opacity;}
-.d .sie-footer_19-text:hover {color:rgba(0,0,0,1);letter-spacing:0.1em;}
-.m .sie-footer_19-text:hover {color:rgba(0,0,0,1);letter-spacing:0.1em;}
-.d .sie-footer_19-text {color:rgba(0,0,0,1);text-transform:none;line-height:2;letter-spacing:0em;font-size:11px;text-align:left;font-family:'DM Sans';font-weight:300;font-style:normal;transition-duration:0.5s;transition-property:color,letter-spacing;}
-.m .sie-footer_19-text {color:rgba(0,0,0,1);line-height:2;letter-spacing:0.1em;text-align:left;transition-duration:0.5s;transition-property:color,letter-spacing;}
-.d .sie-footer_20 {left:473px;top:299px;width:251px;height:43px;}
-.m .sie-footer_20 {left:51px;top:182px;width:224px;height:56px;}
-.d .sie-footer_20 .se-simple:hover {}
-.m .sie-footer_20 .se-simple:hover {}
-.d .sie-footer_20 .se-simple {background-color:rgba(56,49,25,1);}
-.m .sie-footer_20 .se-simple {background-color:rgba(56,49,25,1);}
-.d .sie-footer_21:hover {opacity:0.5;transition-duration:1.5s;transition-property:opacity;}
-.m .sie-footer_21:hover {opacity:0.5;transition-duration:1.5s;transition-property:opacity;}
-.d .sie-footer_21 {left:507px;top:311px;width:183px;height:18px;transition-duration:1.5s;transition-property:opacity;}
-.m .sie-footer_21 {left:68px;top:197px;width:192px;height:41px;transition-duration:1.5s;transition-property:opacity;}
-.d .sie-footer_21-text:hover {color:rgba(0,0,0,1);letter-spacing:0.2em;}
-.m .sie-footer_21-text:hover {color:rgba(0,0,0,1);letter-spacing:0.2em;}
-.d .sie-footer_21-text {color:rgba(255,255,255,1);text-transform:uppercase;line-height:2;letter-spacing:0.1em;font-size:11px;text-align:center;transition-duration:0.5s;transition-property:color,letter-spacing;}
-.m .sie-footer_21-text {color:rgba(255,255,255,1);text-transform:uppercase;line-height:2;letter-spacing:0.1em;font-size:11px;text-align:center;transition-duration:0.5s;transition-property:color,letter-spacing;}
-.d .sie-footer_22 {left:438px;top:84px;width:320px;height:76px;}
-.m .sie-footer_22 {left:12px;top:14px;width:293px;height:76px;}
-.d .sie-footer_22 .se-img {background-repeat:no-repeat;background-size:contain;background-position:50%;border-radius:inherit;}
-.m .sie-footer_22 .se-img {background-repeat:no-repeat;background-size:contain;background-position:50%;border-radius:inherit;}
-
-      body {
--webkit-font-smoothing:antialiased;
--moz-osx-font-smoothing:grayscale;
-}
-    </style>
-
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-
-  <style>
-/* ---- Site nav: fixed, transparent over the hero, glass (blurred
-   translucent card) once scrolled past it. Submark logo left, About /
-   Services & Amenities / Book a Tour right. Same markup on every page. ---- */
-.site-nav { position: fixed; top: 0; left: 0; right: 0; z-index: 500; display: flex; align-items: center; justify-content: space-between; padding: 28px 60px; box-sizing: border-box; background: transparent; transition: background-color 0.4s ease, backdrop-filter 0.4s ease, box-shadow 0.4s ease; }
-.site-nav.site-nav-glass { background: rgba(248,248,244,0.6); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); box-shadow: 0 1px 0 rgba(0,0,0,0.06); }
-.site-nav-logo { display: flex; align-items: center; }
-.site-nav-logo img { height: 46px; width: auto; display: block; }
-.site-nav-links { display: flex; align-items: center; gap: 40px; }
-.site-nav-links a { font-family: 'DM Sans'; font-weight: 300; font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(0,0,0,1); text-decoration: none; transition: opacity 0.3s ease; }
-.site-nav-links a:hover { opacity: 0.6; }
-@media (max-width: 900px) {
-  .site-nav { padding: 20px 24px; }
-  .site-nav-logo img { height: 36px; }
-  .site-nav-links { gap: 20px; }
-  .site-nav-links a { font-size: 11px; }
-}
-
-/* ---- Care & Services: editorial numbered index, matching the site's
-   understated coastal-editorial voice (no cards, no photo backdrop).
-   Merged with the category list: "Our Approach" copy on the left, a
-   compact quick-glance list of the six Care & Services categories on the
-   right against a blue backdrop. Single section, no repeated giant
-   heading — links through to care-services.html for full detail. ---- */
-.cs-h2 { font-family: 'KT Quantum Light'; font-weight: 400; font-size: 31px; color: rgba(0,0,0,1); margin: 0; }
-.cs-body { font-family: 'DM Sans'; font-weight: 300; font-size: 17px; line-height: 1.7; color: rgba(0,0,0,0.8); margin: 0; }
-/* ---- Our Approach: full-viewport-height section so it reads as its own
-   distinct "screen" while scrolling — the photo runs the full height and
-   width of the right half (no padding/rounded corners on that side), so
-   the section boundary feels crisp when Care & Services begins next. ---- */
-.cs-approach-section { position: relative; background: rgba(248,248,244,1); padding: 110px 60px; box-sizing: border-box; }
-.cs-approach-inner { max-width: 820px; margin: 0 auto; text-align: center; }
-.cs-approach-inner .cs-h2 { text-align: center; margin: 0 0 20px; }
-.cs-approach-inner .cs-body { text-align: center; margin: 0 0 16px; }
-
-/* ---- Shape divider: Elementor "Triangle" shape, ported from
-   westmontliving.com (real markup/CSS, not approximated). Sits at the
-   bottom edge of Our Approach, filled with Care & Services' background
-   color, so it reads as that section's notch cutting up into this one. ---- */
-.cs-shape-divider { position: absolute; bottom: -1px; left: 0; width: 100%; height: 60px; line-height: 0; overflow: hidden; direction: ltr; }
-.cs-shape-divider svg { display: block; position: relative; left: 50%; width: calc(100% + 1.3px); height: 60px; transform: translateX(-50%); }
-.cs-shape-divider svg path { fill: rgba(237,231,220,1); }
-
-@media (max-width: 900px) {
-  .cs-approach-section { padding: 70px 24px 90px; }
-}
-
-/* ---- Care & Services: 3-up category cards (photo + number badge, title,
-   description), matching the reference design's home-page preview of
-   the Care & Services page. Sits directly below Our Approach's trust
-   strip, before the room carousel. ---- */
-.cs-services-section { position: relative; background: rgba(237,231,220,1); padding: 60px 60px 70px; }
-.cs-services-inner { max-width: 1200px; margin: 0 auto; }
-.cs-services-title { text-align: center; font-family: 'KT Quantum Light'; font-weight: 400; font-size: 31px; color: rgba(0,0,0,1); margin: 0 0 32px; }
-.cs-services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; margin: 0 0 32px; }
-.cs-service-card-photo { position: relative; width: 100%; height: 200px; margin: 0 0 18px; border-radius: 2px; overflow: hidden; }
-.cs-service-card-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
-.cs-service-card h3 { font-family: 'KT Quantum Light'; font-weight: 400; font-size: 20px; color: rgba(0,0,0,1); margin: 0 0 10px; }
-.cs-service-card p { font-family: 'DM Sans'; font-weight: 300; font-size: 17px; line-height: 1.55; color: rgba(0,0,0,0.75); margin: 0; }
-.cs-services-cta { text-align: center; }
-.cs-services-cta .cs-btn { border-color: rgba(0,0,0,1); color: rgba(0,0,0,1); }
-@media (max-width: 900px) {
-  .cs-services-section { padding: 70px 24px; }
-  .cs-services-title { font-size: 26px; margin-bottom: 40px; }
-  .cs-services-grid { grid-template-columns: 1fr; gap: 40px; }
-  .cs-service-card-photo { height: 220px; }
-}
-
-/* ---- Rooms carousel: horizontal-scroll glass cards, following standard
-   senior-living / assisted-living room-listing conventions — photo,
-   room name, occupancy + bathroom badges, short description. Glass
-   (frosted, translucent) card treatment matches the nav. Background photo
-   sits behind the whole strip so the blur has something to read against. ---- */
-.cs-rooms-section { position: relative; padding: 100px 0 120px; box-sizing: border-box; background-size: cover; background-position: center; }
-.cs-rooms-section::before { content: ''; position: absolute; inset: 0; background: rgba(20,24,28,0.35); }
-.cs-rooms-title { position: relative; z-index: 1; text-align: center; font-family: 'KT Quantum Light'; font-weight: 400; font-size: 31px; color: rgba(255,255,255,1); margin: 0 0 12px; }
-.cs-rooms-sub { position: relative; z-index: 1; text-align: center; font-family: 'DM Sans'; font-weight: 300; font-size: 17px; color: rgba(255,255,255,0.85); margin: 0 0 50px; }
-.cs-rooms-track { position: relative; z-index: 1; display: flex; gap: 24px; overflow-x: auto; padding: 4px 60px 20px; scroll-snap-type: x proximity; scrollbar-width: thin; }
-.cs-room-card { scroll-snap-align: start; flex: 0 0 320px; background: rgba(248,248,244,0.22); backdrop-filter: blur(18px); -webkit-backdrop-filter: blur(18px); border: 1px solid rgba(255,255,255,0.35); border-radius: 4px; overflow: hidden; }
-.cs-room-photo { height: 190px; display: flex; align-items: center; justify-content: center; font-family: 'KT Quantum Light'; font-weight: 400; font-size: 15px; letter-spacing: 0.05em; text-transform: uppercase; color: rgba(255,255,255,0.5); }
-.cs-room-body { padding: 24px 24px 28px; }
-.cs-room-name { font-family: 'KT Quantum Light'; font-weight: 400; font-size: 20px; color: rgba(255,255,255,1); margin: 0 0 10px; }
-.cs-room-tags { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 14px; }
-.cs-room-tag { font-family: 'DM Sans'; font-weight: 300; font-size: 11px; letter-spacing: 0.06em; text-transform: uppercase; color: rgba(255,255,255,0.9); border: 1px solid rgba(255,255,255,0.4); border-radius: 2px; padding: 5px 10px; }
-.cs-room-desc { font-family: 'DM Sans'; font-weight: 300; font-size: 17px; line-height: 1.6; color: rgba(255,255,255,0.85); margin: 0; }
-@media (max-width: 900px) {
-  .cs-rooms-section { padding: 60px 0 80px; }
-  .cs-rooms-title { font-size: 24px; }
-  .cs-rooms-track { padding: 4px 24px 16px; gap: 16px; }
-  .cs-room-card { flex: 0 0 260px; }
-}
-
-/* ---- FAQ: accordion, matching the editorial index-list treatment used
-   by Care & Services (hairline dividers, watermark heading, cream bg).
-   Native <details>/<summary> — accessible, no JS required. ---- */
-.cs-faq-section { position: relative; padding: 120px 60px 140px; box-sizing: border-box; background: rgba(248,248,244,1); }
-.cs-faq-title { text-align: center; font-family: 'KT Quantum Light'; font-weight: 400; font-size: 110px; color: rgba(0,0,0,0.06); letter-spacing: 0em; line-height: 1; margin: 0 0 60px; }
-.cs-faq-list { max-width: 800px; margin: 0 auto; }
-.cs-faq-item { border-bottom: 1px solid rgba(0,0,0,0.12); }
-.cs-faq-item:first-child { border-top: 1px solid rgba(0,0,0,0.12); }
-.cs-faq-item summary { list-style: none; cursor: pointer; display: flex; align-items: center; justify-content: space-between; gap: 24px; padding: 26px 0; font-family: 'KT Quantum Light'; font-weight: 400; font-size: 20px; color: rgba(0,0,0,1); }
-.cs-faq-item summary::-webkit-details-marker { display: none; }
-.cs-faq-icon { flex: 0 0 auto; position: relative; width: 16px; height: 16px; }
-.cs-faq-icon::before, .cs-faq-icon::after { content: ''; position: absolute; background: rgba(0,0,0,0.6); transition: transform 0.25s ease; }
-.cs-faq-icon::before { top: 50%; left: 0; width: 16px; height: 1px; transform: translateY(-50%); }
-.cs-faq-icon::after { left: 50%; top: 0; width: 1px; height: 16px; transform: translateX(-50%); }
-.cs-faq-item[open] .cs-faq-icon::after { transform: translateX(-50%) rotate(90deg); opacity: 0; }
-.cs-faq-answer { padding: 0 0 26px; margin: 0; max-width: 680px; font-family: 'DM Sans'; font-weight: 300; font-size: 17px; line-height: 1.65; color: rgba(0,0,0,0.75); }
-@media (max-width: 900px) {
-  .cs-faq-section { padding: 70px 24px 90px; }
-  .cs-faq-title { font-size: 56px; margin-bottom: 40px; }
-  .cs-faq-item summary { font-size: 18px; padding: 20px 0; }
-  .cs-faq-answer { padding-bottom: 20px; }
-}
-
-/* ---- CTA band: matches pressandpalm.com/aurea's tan band exactly —
-   small uppercase eyebrow, large muted-cream headline (soft, low-contrast
-   on purpose against the tan), bordered button below. Restyled with
-   Solivita copy. ---- */
-.cs-cta { position: relative; z-index: 20; text-align: center; background: rgba(208,201,189,1); padding: 130px 40px; }
-.cs-cta-eyebrow { font-family: 'DM Sans'; font-weight: 300; font-size: 13px; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(248,248,244,0.8); margin: 0 0 20px; }
-.cs-cta-text { font-family: 'KT Quantum Light'; font-weight: 400; font-size: 31px; text-transform: none; line-height: 1.35; color: rgba(248,248,244,1); margin: 0 auto 40px; max-width: 680px; }
-.cs-btn-row { display: flex; gap: 18px; flex-wrap: wrap; justify-content: center; }
-.cs-btn { display: inline-block; padding: 15px 32px; border: 1px solid rgba(248,248,244,1); border-radius: 2px; font-family: 'DM Sans'; font-weight: 300; font-size: 14px; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(248,248,244,1); text-decoration: none; transition: letter-spacing 0.5s ease; }
-.cs-btn:hover { letter-spacing: 0.2em; }
-
-@media (max-width: 900px) {
-  .cs-cta { padding: 80px 24px; }
-  .cs-cta-text { font-size: 24px; }
-}
-
-/* ---- Mobile footer override: the footer still uses Showit's legacy
-   .d/.m absolute-position system, which relied on Showit's own runtime JS
-   to swap <html class="d"> to <html class="m"> at the mobile breakpoint.
-   That JS was stripped when this site was captured as a static mirror, so
-   .m rules are dead code — mobile always rendered the 1200px-wide .d
-   layout, pushing most of the footer off-screen. Rather than resurrect
-   the fragile per-element .m positioning (tuned for different content
-   than what's here now), override the whole footer to a real flex stack
-   under a real media query. ---- */
-@media (max-width: 900px) {
-  #si-sp.sp { overflow-x: hidden; }
-  #footer.sib-footer { height: auto !important; }
-  #footer .ss-s.ss-bg { position: static !important; height: auto !important; }
-  #footer .sc { width: 100% !important; height: auto !important; padding: 60px 24px 40px; box-sizing: border-box; display: flex; flex-direction: column; align-items: center; }
-  #footer .se { position: static !important; transform: none !important; width: auto !important; height: auto !important; }
-  #footer .se-t { position: static !important; width: auto !important; height: auto !important; }
-  #footer .sie-footer_2, #footer .sie-footer_7, #footer .sie-footer_12 { display: none !important; }
-
-  #footer .sie-footer_22 { order: 1; display: flex !important; justify-content: center; margin: 0 0 24px; }
-  #footer .sie-footer_11 { order: 2; text-align: center; max-width: 320px; margin: 0 0 32px; }
-
-  #footer .sie-footer_20 { order: 3; position: static !important; display: block; width: 240px !important; margin: 0; }
-  #footer .sie-footer_20 .se-simple { position: static !important; width: 100% !important; height: 56px !important; }
-  #footer .sie-footer_21 { order: 4; position: static !important; width: 240px !important; height: 56px !important; display: flex; align-items: center; justify-content: center; text-align: center; pointer-events: none; margin: -56px 0 40px; }
-  #footer .sie-footer_21 .se-t { color: rgba(248,248,244,1); }
-
-  #footer .sie-footer_16 { order: 5; text-align: center; padding: 8px 0; }
-  #footer .sie-footer_17 { order: 6; text-align: center; padding: 8px 0; }
-  #footer .sie-footer_18 { order: 7; text-align: center; padding: 8px 0; }
-
-  #footer .sie-footer_5 { order: 8; text-align: center; padding: 6px 0; margin-top: 24px; }
-  #footer .sie-footer_4 { order: 9; text-align: center; padding: 6px 0; }
-  #footer .sie-footer_3 { order: 10; text-align: center; padding: 6px 0; }
-
-  #footer .sie-footer_1 { order: 11; text-align: center; margin-top: 24px; padding-top: 24px; border-top: 1px solid rgba(0,0,0,0.12); width: 100%; }
-}
-
-/* ---- Mobile hero override: same Showit .d/.m dead-code problem as the
-   footer — #client-spotlight is the homepage's first-impression hero
-   (photo, wordmark, eyebrow, body copy, CTA) and was rendering the
-   1200px-canvas desktop layout on mobile, clipping the logo and running
-   text off-screen. Same fix: real flex stack under a real media query. ---- */
-@media (max-width: 900px) {
-  #client-spotlight.sib-client-spotlight { height: auto !important; }
-  #client-spotlight .ss-s.ss-bg { position: static !important; height: auto !important; }
-  #client-spotlight .sc { width: 100% !important; height: auto !important; padding: 100px 24px 60px; box-sizing: border-box; display: flex; flex-direction: column; align-items: center; }
-  #client-spotlight .se { position: static !important; transform: none !important; width: auto !important; height: auto !important; }
-  #client-spotlight .se-t { position: static !important; width: auto !important; height: auto !important; }
-
-  #client-spotlight .sie-client-spotlight_0 { order: 1; width: 100% !important; height: 320px !important; margin: 0 0 32px; }
-  #client-spotlight .sie-client-spotlight_1 { order: 2; width: 240px !important; margin: 0 0 20px; }
-  #client-spotlight .sie-client-spotlight_6 { order: 3; text-align: center; margin: 0 0 16px; }
-  #client-spotlight .sie-client-spotlight_2 { order: 4; text-align: center; max-width: 340px; margin: 0 0 28px; }
-  #client-spotlight .sie-client-spotlight_5 { order: 5; display: none !important; }
-  #client-spotlight .sie-client-spotlight_3, #client-spotlight .sie-client-spotlight_4, #client-spotlight .sie-client-spotlight_8 { display: none !important; }
-  #client-spotlight .sie-client-spotlight_7 { order: 6; position: static !important; }
-}
-  </style>
-
-  </head>
-  <body>
-    
-    <div id="si-sp" class="sp" style=""><nav class="site-nav" id="site-nav">
-  <a href="/" class="site-nav-logo"><img src="images/logo/solivita-submark-black.svg" alt="Solivita"></a>
-  <div class="site-nav-links">
-    <a href="about.html">About</a>
-    <a href="care-services.html">Services &amp; Amenities</a>
-    <a href="/contact">Book a Tour</a>
-  </div>
-</nav><div id="client-spotlight" data-bid="client-spotlight" class="sb sib-client-spotlight" style="height: 844px;"><div class="ss-s ss-bg"><div class="sc" style="width:1200px"><div data-sid="client-spotlight_0" class="sie-client-spotlight_0 se" style="width: 687px; transform: scale(1, 1) translate(0px, 0px);"><div data-sie="client-spotlight_0" class="sg-s sig-client-spotlight_0 sg-sc-1" style="width: 100%; height: 100%; position: relative;"><div style="width: 100%; height: 100%; background-image: url(&quot;images/emboss-Ly9zdGF0.png&quot;); position: static; top: 0px; left: 0px; z-index: 99; opacity: 1; display: block; visibility: hidden;" class="se-img cycle-slide cycle-sentinel" data-slide-index="0"></div><div style="width: 100%; height: 100%; background-image: url(&quot;images/emboss-Ly9zdGF0.png&quot;); position: absolute; top: 0px; left: 0px; z-index: 100; opacity: 0; display: block; visibility: hidden;" class="se-img cycle-slide" data-slide-index="0"></div><div style="width: 100%; height: 100%; background-image: url(&quot;images/solivita-livingroom.jpg&quot;); position: absolute; top: 0px; left: 0px; z-index: 99; visibility: visible; opacity: 0.86; display: block;" class="se-img cycle-slide cycle-slide-active" data-slide-index="1"></div></div><div></div></div><div data-sid="client-spotlight_1" class="sie-client-spotlight_1 se" style="transform: scale(1, 1) translate(0px, 0px);"><img src="images/logo/solivita-primary-black.svg" alt="Solivita" style="width:100%; height:auto; display:block;"></div><div data-sid="client-spotlight_2" class="sie-client-spotlight_2 se" style="transform: scale(1, 1) translate(0px, 0px);"><p class="se-t sie-client-spotlight_2-text st-m-paragraph st-d-paragraph se-rc">Assisted Living in the Otay Lakes community of Southern San Diego, built on the standard of care our founder spent her career enforcing.<br><br>Solivita is a senior living home where peace, purpose, and connection come together under one roof. Designed to feel like a breath of fresh air, every detail of our home is curated to support residents in living this next chapter fully. We believe that transitioning into this new stage of life is the start of something meaningful, because there's still so much life to live.<br></p></div><div data-sid="client-spotlight_6" class="sie-client-spotlight_6 se" style="transform: scale(1, 1) translate(0px, 0px);"><h3 class="se-t sie-client-spotlight_6-text st-m-subheading st-d-subheading se-rc">a bright new chapter of life</h3></div><a href="/contact" target="_self" class="sie-client-spotlight_7 se" data-sid="client-spotlight_7" style="display:inline-flex; align-items:center; justify-content:center; padding:16px; border:1px solid rgba(0,0,0,1); border-radius:2px;"><p class="se-t sie-client-spotlight_7-text st-m-subheading st-d-subheading" style="position:relative; width:auto; height:auto; margin:0; padding:0; line-height:1; text-align:center; white-space:nowrap;">LEARN MORE</p></a></div></div></div><div id="parallax-with-logo" data-bid="parallax-with-logo" class="sb sib-parallax-with-logo sb-nm-dH sb-nd-dH" style="height: 694px;"><div class="ss-s ss-bg"><div class="sb-m ssp-d" style="opacity: 1;"><img class="sb-mc sbg-i slzy" data-src="images/solivita-gift-backdrop-8.png" width="1200" height="1200" alt="" src="images/solivita-gift-backdrop-8.png" style="width: 100%; height: 1008px; inset: 0px auto auto; transform: translateY(-528.001px);"></div><div class="sc" style="width:1200px"></div></div></div><section class="cs-approach-section">
-  <div class="cs-approach-inner">
-    <h2 class="cs-h2">Our Approach</h2>
-    <p class="cs-body">The name Solivita means sun and life, chosen to reflect the belief that senior living can be a bright new chapter. Our founder created Solivita with a clear vision for what senior living should feel like. Intentionally small, with a maximum of six residents, so every person receives the kind of personalized care that larger facilities simply cannot provide.</p>
-    <p class="cs-body">From the coastal-inspired rooms to the enrichment programming designed around our residents, every part of Solivita is built with the same level of thought and intention as the care.</p>
-  </div>
-  <div class="cs-shape-divider">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 100" preserveAspectRatio="none">
-      <path d="M500.2,94.7L0,0v100h1000V0L500.2,94.7z"></path>
-    </svg>
-  </div>
-</section>
-<section class="cs-services-section">
-  <div class="cs-services-inner">
-    <h2 class="cs-services-title">Care &amp; Services</h2>
-    <div class="cs-services-grid">
-      <div class="cs-service-card">
-        <div class="cs-service-card-photo">
-          <img src="images/hands-caregiver.jpg" alt="Personalized Care Plans" />
+  <main>
+    <!-- Hero: scrolls away normally with the page (NOT sticky-pinned —
+         that mechanism only applies to the About / Care & Services
+         hero). Every element below is positioned to match the original
+         page's exact coordinates (extracted via getBoundingClientRect
+         against the pre-rebuild site, within its 1200px centered
+         container) rather than an approximated flex layout — see
+         .cs-hero-home in css/styles.css. -->
+    <div class="cs-hero-stage">
+      <div class="cs-hero cs-hero-home">
+        <div class="cs-hero-home-container">
+          <img class="cs-hero-home-wordmark" src="images/brand/solivita-primary-black.svg" alt="Solivita Assisted Living">
+          <p class="cs-hero-home-tagline">a bright new chapter of life</p>
+          <div class="cs-hero-home-body">
+            <p class="cs-intro-text">Assisted Living in the Otay Lakes community of Southern San Diego, built on the standard of care our founder spent her career enforcing.</p>
+            <p class="cs-intro-text">Solivita is a senior living home where peace, purpose, and connection come together under one roof. Designed to feel like a breath of fresh air, every detail of our home is curated to support residents in living this next chapter fully. We believe that transitioning into this new stage of life is the start of something meaningful, because there's still so much life to live.</p>
+          </div>
+          <a href="/contact" class="cs-btn cs-btn-dark cs-hero-home-btn">Learn More</a>
+          <div class="cs-hero-home-image">
+            <img src="images/hero/hero-livingroom.jpg" alt="Solivita living room, coastal-inspired interior">
+          </div>
         </div>
-        <h3>Personalized Care Plans</h3>
-        <p>Tailored to each resident's needs, preferences, and routines. Our dedicated caregivers provide consistent, one-on-one support with the same team every day, so residents are cared for by people who genuinely know them.</p>
-      </div>
-      <div class="cs-service-card">
-        <div class="cs-service-card-photo">
-          <img src="images/bedroom-suite.jpg" alt="Daily Living Assistance" />
-        </div>
-        <h3>Daily Living Assistance</h3>
-        <p>Support with medication management, grooming, dressing, and day-to-day needs, delivered with dignity, patience, and respect for independence. We follow the standard of care our founder spent her career enforcing.</p>
-      </div>
-      <div class="cs-service-card">
-        <div class="cs-service-card-photo">
-          <img src="images/conversation-companions.jpg" alt="Enrichment & Activities" />
-        </div>
-        <h3>Enrichment &amp; Activities</h3>
-        <p>Planned weekly programming with scheduled activities, group outings, and social events. Life at Solivita is active, social, and grounded in the belief that there's still so much life to live.</p>
+        <h1 class="visually-hidden">Solivita Assisted Living — A Bright New Chapter of Life</h1>
       </div>
     </div>
-    <div class="cs-services-cta">
-      <a href="care-services.html" class="cs-btn">View All Services &amp; Amenities</a>
-    </div>
-  </div>
-</section>
-<section class="cs-rooms-section" style="background-image: url('images/solivita-gift-backdrop-8.png');">
-  <h2 class="cs-rooms-title">Our Rooms</h2>
-  <p class="cs-rooms-sub">Five coastal-inspired rooms, each with their own character</p>
-  <div class="cs-rooms-track">
-    <div class="cs-room-card">
-      <div class="cs-room-photo">Photo Placeholder</div>
-      <div class="cs-room-body">
-        <h3 class="cs-room-name">La Jolla Room</h3>
-        <div class="cs-room-tags">
-          <span class="cs-room-tag">Shared Room</span>
-          <span class="cs-room-tag">Shared Bathroom</span>
-        </div>
-        <p class="cs-room-desc">A bright room for two, with an adjoining bathroom just steps away.</p>
-      </div>
-    </div>
-    <div class="cs-room-card">
-      <div class="cs-room-photo">Photo Placeholder</div>
-      <div class="cs-room-body">
-        <h3 class="cs-room-name">Mission Room A</h3>
-        <div class="cs-room-tags">
-          <span class="cs-room-tag">Jack &amp; Jill</span>
-          <span class="cs-room-tag">Shared Bathroom</span>
-        </div>
-        <p class="cs-room-desc">A private room connected to Mission Room B by a shared Jack-and-Jill bathroom.</p>
-      </div>
-    </div>
-    <div class="cs-room-card">
-      <div class="cs-room-photo">Photo Placeholder</div>
-      <div class="cs-room-body">
-        <h3 class="cs-room-name">Mission Room B</h3>
-        <div class="cs-room-tags">
-          <span class="cs-room-tag">Jack &amp; Jill</span>
-          <span class="cs-room-tag">Shared Bathroom</span>
-        </div>
-        <p class="cs-room-desc">A private room connected to Mission Room A by a shared Jack-and-Jill bathroom.</p>
-      </div>
-    </div>
-    <div class="cs-room-card">
-      <div class="cs-room-photo">Photo Placeholder</div>
-      <div class="cs-room-body">
-        <h3 class="cs-room-name">Pacific Room</h3>
-        <div class="cs-room-tags">
-          <span class="cs-room-tag">Solo Room</span>
-          <span class="cs-room-tag">No Bathroom</span>
-        </div>
-        <p class="cs-room-desc">A quiet private room with the nearest full bathroom just down the hall.</p>
-      </div>
-    </div>
-    <div class="cs-room-card">
-      <div class="cs-room-photo">Photo Placeholder</div>
-      <div class="cs-room-body">
-        <h3 class="cs-room-name">Sunset Cliffs Room</h3>
-        <div class="cs-room-tags">
-          <span class="cs-room-tag">Solo Room</span>
-          <span class="cs-room-tag">Private Bathroom</span>
-        </div>
-        <p class="cs-room-desc">A private room with its own en-suite bathroom for maximum comfort and independence.</p>
-      </div>
-    </div>
-  </div>
-</section>
-<section class="cs-faq-section">
-  <h2 class="cs-faq-title">FAQ</h2>
-  <div class="cs-faq-list">
-    <details class="cs-faq-item">
-      <summary>What type of care does Solivita provide?<span class="cs-faq-icon"></span></summary>
-      <p class="cs-faq-answer">Solivita is a licensed Residential Care Facility for the Elderly (RCFE) in California. We provide non-medical residential care including 24/7 supervision, medication management, daily living assistance, meals, housekeeping, and enrichment activities. We are not a medical facility and we do not provide nursing care.</p>
-    </details>
-    <details class="cs-faq-item">
-      <summary>Who is Solivita right for?<span class="cs-faq-icon"></span></summary>
-      <p class="cs-faq-answer">We serve ambulatory adults ages 59 and older who benefit from daily companionship, structured support, and personalized care plans in a safe home environment. Solivita is designed for aging in place, providing the support residents need while respecting their independence. We do not currently accept residents with advanced dementia or who are non-ambulatory.</p>
-    </details>
-    <details class="cs-faq-item">
-      <summary>How many residents live at Solivita?<span class="cs-faq-icon"></span></summary>
-      <p class="cs-faq-answer">A maximum of six. Our intentionally small community allows us to provide truly individualized care with a 1:3 caregiver-to-resident ratio that large facilities cannot match.</p>
-    </details>
-    <details class="cs-faq-item">
-      <summary>What does the monthly cost include?<span class="cs-faq-icon"></span></summary>
-      <p class="cs-faq-answer">Our all-inclusive monthly rate covers personalized care, 24/7 supervision, three chef-prepared meals daily, medication management, housekeeping, laundry, activities, and all comfort amenities. Pricing is based on an initial care needs assessment.</p>
-    </details>
-    <details class="cs-faq-item">
-      <summary>How do I schedule a tour?<span class="cs-faq-icon"></span></summary>
-      <p class="cs-faq-answer">Click &quot;Book a Tour&quot; anywhere on our site. We'll ask a few quick questions to make sure Solivita is the right fit, then schedule a time for you to visit in person.</p>
-    </details>
-  </div>
-</section>
-<!-- PLACEHOLDER: scroll-parallax image is a placeholder (from Press & Palm's
-     Aurea portfolio work) — swap for a real Solivita photo once available. -->
-<div id="parallax-with-design" data-bid="parallax-with-design" class="sb sib-parallax-with-design sb-nm-dH sb-nd-dH" style="height: 694px;"><div class="ss-s ss-bg"><div class="sb-m ssp-d" style="opacity: 0.34;"><img class="sb-mc sbg-i slzy" data-src="images/design-01js5rmag4-1745025688-2-Ly9zdGF0.jpg" width="1200" height="1200" alt="" src="images/design-01js5rmag4-1745025688-2-Ly9zdGF0.jpg" style="width: 100%; height: 960px; inset: 0px auto auto; transform: translateY(24.548px);"></div><div class="sc" style="width:1200px"></div></div></div>
-<section class="cs-cta">
-  <p class="cs-cta-eyebrow">Visit Us</p>
-  <p class="cs-cta-text">We'd love to show you what life is like at Solivita.</p>
-  <div class="cs-btn-row">
-    <a href="/contact" class="cs-btn">Book a Tour</a>
-    <a href="/contact" class="cs-btn">Get in Touch</a>
-  </div>
-</section>
 
-<div id="footer" data-bid="footer" class="sb sib-footer" style="height: 431px;"><div class="ss-s ss-bg"><div class="sc" style="width:1200px"><div data-sid="footer_1" class="sie-footer_1 se" style="transform: scale(1, 1) translate(0px, 0px);"><p class="se-t sie-footer_1-text st-m-paragraph st-d-paragraph">&copy; Solivita Assisted Living<br></p></div><div data-sid="footer_2" class="sie-footer_2 se" style="display: none;"><svg class="se-line"><line data-d-strokelinecap="butt" data-d-linestyle="solid" data-d-thickness="1" data-d-rotatedwidth="1200" data-d-rotatedheight="0" data-d-widthoffset="0" data-d-heightoffset="0" data-d-isround="false" data-d-rotation="0" data-d-roundedsolid="false" data-d-dotted="false" data-d-length="1200" data-d-mirrorline="false" data-d-dashwidth="21" data-d-spacing="15" data-d-dasharrayvalue="none" data-m-strokelinecap="butt" data-m-linestyle="solid" data-m-thickness="1" data-m-rotatedwidth="330" data-m-rotatedheight="0" data-m-widthoffset="0" data-m-heightoffset="0" data-m-isround="false" data-m-rotation="0" data-m-roundedsolid="false" data-m-dotted="false" data-m-length="330" data-m-mirrorline="false" data-m-dashwidth="21" data-m-spacing="15" data-m-dasharrayvalue="none" x1="0" y1="0" x2="100%" y2="100%"></line></svg></div><div class="sie-footer_3 se" data-sid="footer_3" style="transform: scale(1, 1) translate(0px, 0px);"><h3 class="se-t sie-footer_3-text st-m-subheading st-d-subheading">1655 View Park Way, Chula Vista, CA 91913</h3></div><a href="mailto:Solivitaassistedliving@gmail.com" target="_self" class="sie-footer_4 se" data-sid="footer_4" style="transform: scale(1, 1) translate(0px, 0px);"><h3 class="se-t sie-footer_4-text st-m-subheading st-d-subheading">Solivitaassistedliving@gmail.com</h3></a><div class="sie-footer_5 se" data-sid="footer_5" style="transform: scale(1, 1) translate(0px, 0px);"><h3 class="se-t sie-footer_5-text st-m-subheading st-d-subheading">License #374605053</h3></div><div data-sid="footer_7" class="sie-footer_7 se" style="width: 1px; transform: scale(1, 1) translate(0px, 0px); top: 79px; left: 828px; height: 1px;"><svg class="se-line" style="width: 1px; height: 220px;"><line data-d-strokelinecap="butt" data-d-linestyle="solid" data-d-thickness="1" data-d-rotatedwidth="0" data-d-rotatedheight="220" data-d-widthoffset="110" data-d-heightoffset="110" data-d-isround="false" data-d-rotation="90" data-d-roundedsolid="false" data-d-dotted="false" data-d-length="220" data-d-mirrorline="false" data-d-dashwidth="21" data-d-spacing="15" data-d-dasharrayvalue="none" data-m-strokelinecap="butt" data-m-linestyle="solid" data-m-thickness="1" data-m-rotatedwidth="327" data-m-rotatedheight="0" data-m-widthoffset="0" data-m-heightoffset="0" data-m-isround="false" data-m-rotation="0" data-m-roundedsolid="false" data-m-dotted="false" data-m-length="327" data-m-mirrorline="false" data-m-dashwidth="21" data-m-spacing="15" data-m-dasharrayvalue="none" x1="0" y1="0" x2="0" y2="100%" style="stroke-width: 1px; stroke-dasharray: 0px;"></line></svg></div><div data-sid="footer_11" class="sie-footer_11 se" style="transform: scale(1, 1) translate(0px, 0px);"><p class="se-t sie-footer_11-text st-m-paragraph st-d-paragraph se-rc">Solivita is a licensed Residential Care Facility for the Elderly in Chula Vista, California.</p></div><div data-sid="footer_12" class="sie-footer_12 se" style="width: 1px; transform: scale(1, 1) translate(0px, 0px); top: 79px; left: 370px; height: 1px;"><svg class="se-line" style="width: 1px; height: 220px;"><line data-d-strokelinecap="butt" data-d-linestyle="solid" data-d-thickness="1" data-d-rotatedwidth="0" data-d-rotatedheight="220" data-d-widthoffset="110" data-d-heightoffset="110" data-d-isround="false" data-d-rotation="90" data-d-roundedsolid="false" data-d-dotted="false" data-d-length="220" data-d-mirrorline="false" data-d-dashwidth="21" data-d-spacing="15" data-d-dasharrayvalue="none" data-m-strokelinecap="butt" data-m-linestyle="solid" data-m-thickness="1" data-m-rotatedwidth="0" data-m-rotatedheight="208" data-m-widthoffset="104" data-m-heightoffset="104" data-m-isround="false" data-m-rotation="90" data-m-roundedsolid="false" data-m-dotted="false" data-m-length="208" data-m-mirrorline="false" data-m-dashwidth="21" data-m-spacing="15" data-m-dasharrayvalue="none" x1="0" y1="0" x2="0" y2="100%" style="stroke-width: 1px; stroke-dasharray: 0px;"></line></svg></div><a href="care-services.html" target="_self" class="sie-footer_16 se" data-sid="footer_16" style="transform: scale(1, 1) translate(0px, 0px);"><h3 class="se-t sie-footer_16-text st-m-subheading st-d-subheading">Services &amp; Amenities</h3></a><a href="about.html" target="_self" class="sie-footer_17 se" data-sid="footer_17" style="transform: scale(1, 1) translate(0px, 0px);"><h3 class="se-t sie-footer_17-text st-m-subheading st-d-subheading">About</h3></a><a href="/" target="_self" class="sie-footer_18 se" data-sid="footer_18" style="transform: scale(1, 1) translate(0px, 0px);"><h3 class="se-t sie-footer_18-text st-m-subheading st-d-subheading">Home</h3></a><div data-sid="footer_20" class="sie-footer_20 se" style="transform: scale(1, 1) translate(0px, 0px);"><div class="se-simple"></div></div><a href="care-services.html" target="_self" class="sie-footer_21 se" data-sid="footer_21" style="transform: scale(1, 1) translate(0px, 0px);"><h3 class="se-t sie-footer_21-text st-m-subheading st-d-subheading">view services &amp; amenities</h3></a><div data-sid="footer_22" class="sie-footer_22 se" style="transform: scale(1, 1) translate(0px, 0px); display:flex; align-items:center; justify-content:center;"><img src="images/logo/solivita-submark-black.svg" alt="Solivita" style="height:70px; width:auto;"></div></div></div></div></div>
+    <div class="cs-parallax-band">
+      <img src="images/ui/bg-abstract-coastline.png" alt="Abstract coastline illustration">
+    </div>
 
-<script src="/mirror.js"></script>
-<script>
-// Nav goes glass (blurred translucent card) once scrolled past the hero;
-// transparent while it's still over the hero. Same script/threshold logic
-// on every page — reads whichever hero section exists on that page.
-(function () {
-  var nav = document.getElementById('site-nav');
-  var hero = document.querySelector('.cs-hero-stage, #hero, #client-spotlight');
-  if (!nav) return;
-  var threshold = hero ? hero.offsetHeight : 400;
+    <section class="cs-lift">
+      <section class="cs-approach-section">
+        <div class="cs-approach-inner">
+          <h2 class="cs-h2">Our Approach</h2>
+          <p class="cs-body">The name Solivita means sun and life, chosen to reflect the belief that senior living can be a bright new chapter. Our founder created Solivita with a clear vision for what senior living should feel like. Intentionally small, with a maximum of six residents, so every person receives the kind of personalized care that larger facilities simply cannot provide.</p>
+          <p class="cs-body">From the coastal-inspired rooms to the enrichment programming designed around our residents, every part of Solivita is built with the same level of thought and intention as the care.</p>
+        </div>
+        <div class="cs-shape-divider">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 100" preserveAspectRatio="none">
+            <path d="M500.2,94.7L0,0v100h1000V0L500.2,94.7z"></path>
+          </svg>
+        </div>
+      </section>
 
-  function onScroll() {
-    nav.classList.toggle('site-nav-glass', window.scrollY > threshold - 80);
-  }
+      <section class="cs-services-section">
+        <div class="cs-services-inner">
+          <h2 class="cs-services-title">Care &amp; Services</h2>
+          <div class="cs-services-grid">
+            <div class="cs-service-card">
+              <div class="cs-service-card-photo">
+                <img src="images/services/service-personalized-care.jpg" alt="Caregiver holding a resident's hands">
+              </div>
+              <h3>Personalized Care Plans</h3>
+              <p>Tailored to each resident's needs, preferences, and routines. Our dedicated caregivers provide consistent, one-on-one support with the same team every day, so residents are cared for by people who genuinely know them.</p>
+            </div>
+            <div class="cs-service-card">
+              <div class="cs-service-card-photo">
+                <img src="images/services/service-daily-living.jpg" alt="Bright, coastal-inspired bedroom suite">
+              </div>
+              <h3>Daily Living Assistance</h3>
+              <p>Support with medication management, grooming, dressing, and day-to-day needs, delivered with dignity, patience, and respect for independence. We follow the standard of care our founder spent her career enforcing.</p>
+            </div>
+            <div class="cs-service-card">
+              <div class="cs-service-card-photo">
+                <img src="images/services/service-enrichment.jpg" alt="Residents in conversation together">
+              </div>
+              <h3>Enrichment &amp; Activities</h3>
+              <p>Planned weekly programming with scheduled activities, group outings, and social events. Life at Solivita is active, social, and grounded in the belief that there's still so much life to live.</p>
+            </div>
+          </div>
+          <div class="cs-services-cta">
+            <a href="care-services.html" class="cs-btn">View All Services &amp; Amenities</a>
+          </div>
+        </div>
+      </section>
 
-  window.addEventListener('scroll', onScroll, { passive: true });
-  onScroll();
-})();
-</script>
-</body></html>
+      <section class="cs-rooms-section" style="background-image: url('images/ui/bg-abstract-coastline.png');">
+        <h2 class="cs-rooms-title">Our Rooms</h2>
+        <p class="cs-rooms-sub">Five coastal-inspired rooms, each with their own character</p>
+        <div class="cs-rooms-track">
+          <div class="cs-room-card">
+            <div class="cs-room-photo" style="background-image: url('images/rooms/room-coronado.jpg');"></div>
+            <div class="cs-room-body">
+              <h3 class="cs-room-name">Coronado</h3>
+              <div class="cs-room-tags">
+                <span class="cs-room-tag">15'5" x 11'</span>
+                <span class="cs-room-tag">Shared Bathroom</span>
+              </div>
+              <p class="cs-room-desc">A bright room near the front entry, sharing the Jack-and-Jill bathroom just down the hall.</p>
+            </div>
+          </div>
+          <div class="cs-room-card">
+            <div class="cs-room-photo" style="background-image: url('images/rooms/room-delmar.jpg');"></div>
+            <div class="cs-room-body">
+              <h3 class="cs-room-name">Del Mar</h3>
+              <div class="cs-room-tags">
+                <span class="cs-room-tag">12'5" x 13'</span>
+                <span class="cs-room-tag">Shared Bathroom</span>
+                <span class="cs-room-tag">Walk-In Closet</span>
+              </div>
+              <p class="cs-room-desc">A generous room with its own walk-in closet, sharing the Jack-and-Jill bathroom down the hall.</p>
+            </div>
+          </div>
+          <div class="cs-room-card">
+            <div class="cs-room-photo" style="background-image: url('images/rooms/room-thecove.jpg');"></div>
+            <div class="cs-room-body">
+              <h3 class="cs-room-name">The Cove</h3>
+              <div class="cs-room-tags">
+                <span class="cs-room-tag">11' x 15'5"</span>
+                <span class="cs-room-tag">Shared Bathroom</span>
+              </div>
+              <p class="cs-room-desc">Tucked beside the shared bathroom with direct room access, no hallway crossing needed.</p>
+            </div>
+          </div>
+          <div class="cs-room-card">
+            <div class="cs-room-photo" style="background-image: url('images/rooms/room-lajolla.jpg');"></div>
+            <div class="cs-room-body">
+              <h3 class="cs-room-name">La Jolla</h3>
+              <div class="cs-room-tags">
+                <span class="cs-room-tag">11' x 13'</span>
+                <span class="cs-room-tag">Shared Bathroom</span>
+              </div>
+              <p class="cs-room-desc">A calm corner room near the garage entry, sharing the Jack-and-Jill bathroom down the hall.</p>
+            </div>
+          </div>
+          <div class="cs-room-card">
+            <div class="cs-room-photo" style="background-image: url('images/rooms/room-torreypines.jpg');"></div>
+            <div class="cs-room-body">
+              <h3 class="cs-room-name">Torrey Pines</h3>
+              <div class="cs-room-tags">
+                <span class="cs-room-tag">15'5" x 21'</span>
+                <span class="cs-room-tag">Shared Room</span>
+                <span class="cs-room-tag">Private Bathroom</span>
+              </div>
+              <p class="cs-room-desc">Our largest room, shared by two residents, with a private bathroom, walk-in closet, double vanity, shower and tub, electric fireplace, and a sliding door out to the backyard.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="cs-faq-section">
+        <h2 class="cs-faq-title">FAQ</h2>
+        <div class="cs-faq-list">
+          <details class="cs-faq-item">
+            <summary>What type of care does Solivita provide?<span class="cs-faq-icon"></span></summary>
+            <p class="cs-faq-answer">Solivita is a licensed Residential Care Facility for the Elderly (RCFE) in California. We provide non-medical residential care including 24/7 supervision, medication management, daily living assistance, meals, housekeeping, and enrichment activities. We are not a medical facility and we do not provide nursing care.</p>
+          </details>
+          <details class="cs-faq-item">
+            <summary>Who is Solivita right for?<span class="cs-faq-icon"></span></summary>
+            <p class="cs-faq-answer">We serve ambulatory adults ages 59 and older who benefit from daily companionship, structured support, and personalized care plans in a safe home environment. Solivita is designed for aging in place, providing the support residents need while respecting their independence. We do not currently accept residents with advanced dementia or who are non-ambulatory.</p>
+          </details>
+          <details class="cs-faq-item">
+            <summary>How many residents live at Solivita?<span class="cs-faq-icon"></span></summary>
+            <p class="cs-faq-answer">A maximum of six. Our intentionally small community allows us to provide truly individualized care with a 1:3 caregiver-to-resident ratio that large facilities cannot match.</p>
+          </details>
+          <details class="cs-faq-item">
+            <summary>What does the monthly cost include?<span class="cs-faq-icon"></span></summary>
+            <p class="cs-faq-answer">Our all-inclusive monthly rate covers personalized care, 24/7 supervision, three chef-prepared meals daily, medication management, housekeeping, laundry, activities, and all comfort amenities. Pricing is based on an initial care needs assessment.</p>
+          </details>
+          <details class="cs-faq-item">
+            <summary>How do I schedule a tour?<span class="cs-faq-icon"></span></summary>
+            <p class="cs-faq-answer">Click "Book a Tour" anywhere on our site. We'll ask a few quick questions to make sure Solivita is the right fit, then schedule a time for you to visit in person.</p>
+          </details>
+        </div>
+      </section>
+
+      <div class="cs-parallax-band">
+        <img src="images/hero/hero-greenroom.jpg" alt="Solivita common room">
+      </div>
+
+      <section class="cs-cta">
+        <p class="cs-cta-text">We'd love to show you what life is like at Solivita.</p>
+        <div class="cs-btn-row">
+          <a href="/contact" class="cs-btn">Book a Tour</a>
+          <a href="/contact" class="cs-btn">Get in Touch</a>
+        </div>
+      </section>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="site-footer-inner">
+      <nav class="site-footer-nav" aria-label="Footer">
+        <a href="/">Home</a>
+        <a href="about.html">About</a>
+        <a href="care-services.html">Services &amp; Amenities</a>
+      </nav>
+      <div class="site-footer-brand">
+        <img src="images/brand/solivita-submark-black.svg" alt="Solivita">
+        <p class="site-footer-license">Solivita is a licensed Residential Care Facility for the Elderly in Chula Vista, California.</p>
+      </div>
+      <div class="site-footer-contact">
+        <p>License #374605053</p>
+        <p><a href="mailto:Solivitaassistedliving@gmail.com">Solivitaassistedliving@gmail.com</a></p>
+        <p>1655 View Park Way, Chula Vista, CA 91913</p>
+      </div>
+    </div>
+    <p class="site-footer-bottom">&copy; Solivita Assisted Living</p>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
