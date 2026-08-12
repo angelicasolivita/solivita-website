@@ -266,7 +266,10 @@ a { color: inherit; }
    Real flex layout — no absolute positioning, no separate mobile
    markup. Three columns: page nav | logo + license blurb | contact
    details, divided by hairline rules, matching the original layout. */
-.site-footer { background: #F8F8F4; padding: 90px 60px 50px; }
+/* z-index above the About/Care sticky-pinned hero (position:fixed,
+   never releases — see initHeroPin() in js/main.js) so the footer
+   renders on top of it instead of the pinned photo bleeding through. */
+.site-footer { position: relative; z-index: 30; background: #F8F8F4; padding: 90px 60px 50px; }
 .site-footer-inner { max-width: 1200px; margin: 0 auto; display: flex; align-items: stretch; justify-content: space-between; gap: 40px; }
 .site-footer-nav { flex: 1 1 0; display: flex; flex-direction: column; justify-content: center; gap: 14px; padding-right: 40px; border-right: 1px solid rgba(0, 0, 0, 0.12); }
 .site-footer-nav a { font-family: 'DM Sans'; font-weight: 300; font-size: 14px; color: #000; text-decoration: none; transition: opacity 0.3s ease; }
