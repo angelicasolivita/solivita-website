@@ -1,40 +1,44 @@
 # Solivita Website
 
-Static HTML/CSS/JS site for Solivita Assisted Living, adapted from a Press & Palm (Showit "Aurea" template) mirror. Deployed via Vercel as a static site — no build step required.
+Static HTML/CSS/JS site for Solivita Assisted Living. Deployed via Vercel as a static site — no build step required.
 
 ## Status: work in progress — placeholder content still in use
 
 **Before this ships to production, replace:**
-- All photography in `images/` — currently the original Press & Palm reference site's photos (tulip bouquets, the "aurea" branding, the "jane smith" contact card mockup). None of this is licensed for Solivita and must be swapped for real Solivita photography.
-- **The entire footer is untouched Press & Palm content** — their script-logo image, "Press & Palm is a soul-led brand design studio led by Andrea" bio copy, `andrea@pressandpalm.com`, and nav links to their own Portfolio/Blog pages. This needs a full rewrite pass: Solivita contact info, real footer nav (or remove links that don't apply), Solivita logo lockup, appropriate copy. Not started yet.
-- Any remaining "Aurea" / Press & Palm copy not yet caught in a pass — search `index.html` for stray references.
-
-All Press & Palm CDN dependencies have been resolved — every image, font, and stylesheet is
-downloaded and served locally from this repo (verified 2026-08-06: 0 external requests on page
-load + full scroll). The footer's remaining Press & Palm *content* (copy/links/logo) still needs
-the rewrite described above — that's a content problem, not an asset-loading one.
+- Room photos in `images/rooms/` — the "Our Rooms" carousel on the homepage currently shows text placeholders. Each card comments the exact filename it expects (e.g. `room-la-jolla.jpg`); drop the photo in and swap the placeholder `<div class="cs-room-photo">` for an `<img>` pointing at that file.
+- Team photos in `images/about/` — the About page's Team section is a placeholder note until founder/caregiver photos and bios are available.
+- The homepage's second parallax band uses a Solivita photo (`images/hero/hero-greenroom.jpg`); confirm it's the final choice before launch.
 
 ## Structure
 
 ```
 solivita-website/
-├── index.html              the site (single page for now)
-├── mirror.js                custom JS: nav menu toggle, hero parallax
-├── css/                     stylesheet (Showit engine CSS, includes design tokens)
-├── fonts/                   webfonts (KT Quantum Light, Mattone, DM Mono, DM Sans)
-├── images/                  photos + logo/ subfolder for the site's active logo files
-│   └── logo/                the two logo files actually referenced by index.html
-├── brand-assets/            full brand kit — NOT loaded by the site, reference only
-│   ├── logos/
-│   │   ├── primary/          "SOLIVITA / ASSISTED LIVING" wordmark, all 9 brand colors
-│   │   ├── secondary/        stacked "SOLI / VITA" wordmark, all 9 brand colors
-│   │   └── submark/          "SV" monogram, all 9 brand colors
-│   └── guidelines/
-│       ├── Solivita Brand Guidelines (3).pdf
-│       └── Solivita_ Website Copy v1.md
-└── scripts/                  (empty) — build/capture tooling lived here during the
-                               original clone process, not needed for the live site
+├── index.html               homepage
+├── about.html                mission, story, values, team
+├── care-services.html        services & amenities detail
+├── css/
+│   └── styles.css            shared stylesheet — all 3 pages
+├── js/
+│   └── main.js                shared behaviors: nav glass-on-scroll,
+│                               About/Care sticky-pin hero, parallax bands
+├── images/
+│   ├── hero/                  hero section photos, per page
+│   ├── rooms/                 room carousel photos (sparse — placeholders
+│   │                           in index.html until real photos are added)
+│   ├── services/              Care & Services category photos
+│   ├── about/                 founder/team photos (sparse, none yet)
+│   ├── brand/                 logo (primary + submark SVGs)
+│   └── ui/                    decorative graphics: wave/texture patterns,
+│                               abstract coastline background
+├── fonts/                     KT Quantum Light, Mattone, DM Sans (2 subsets)
+├── brand-assets/               full brand kit — NOT loaded by the site,
+│                                reference only (all color variants + guidelines PDF)
+└── scripts/                   (empty) — build/capture tooling lived here
+                                 during the original clone process, not
+                                 needed for the live site
 ```
+
+All three pages share `css/styles.css` and `js/main.js` — edit once, applies everywhere. No page has inline styles or scripts beyond that.
 
 ## Brand colors (from brand-assets/guidelines)
 
@@ -52,18 +56,22 @@ solivita-website/
 
 - **KT Quantum Light** — display/headline serif (logo wordmark, hero headline, section headings)
 - **Mattone** — secondary display face
-- **DM Mono** — button/label text (uppercase, letter-spaced)
-- **DM Sans** — body copy
+- **DM Sans** — body copy, nav, buttons (ships as 2 subset files per Google Fonts convention — `dm-sans-latin.woff2` + `dm-sans-latin-ext.woff2`, both declared under the same `font-family: 'DM Sans'`)
 
-## Logo usage in the live site
+## Logo usage
 
-`index.html` currently references two files from `images/logo/`:
-- `solivita-primary-black.svg` — hero headline (replaces the "SOLIVITA" text)
-- `solivita-submark-black.svg` — nav header (replaces "PRESS & PALM")
+Every page references `images/brand/`:
+- `solivita-primary-black.svg` — full wordmark (homepage hero)
+- `solivita-submark-black.svg` — nav + footer monogram
 
-Both are the **Black** color variant. To swap to a different brand color, copy the matching
-file from `brand-assets/logos/primary/` or `brand-assets/logos/submark/` into `images/logo/`
-and update the color name in the filename + the `<img src>` reference in `index.html`.
+Both are the **Black** color variant. To swap to a different brand color, copy the matching file from `brand-assets/logos/primary/` or `brand-assets/logos/submark/` into `images/brand/` and update the `<img src>` references.
+
+## Interactive behavior (js/main.js)
+
+- **Nav glass-on-scroll** — transparent over the hero, blurred translucent card once scrolled past it. Runs on every page.
+- **Sticky-pin hero "lift"** — About and Care & Services pages only. The hero switches to `position: fixed` once you scroll past it and never releases; the next section scrolls up over it. The homepage hero does NOT use this — it scrolls away normally, matching the original site's behavior.
+- **Parallax image bands** — background photo drifts at roughly half the page's scroll speed. Used on the homepage (2 bands) via `.cs-parallax-band`.
+- **FAQ accordion** — native `<details>`/`<summary>`, no JS needed.
 
 ## Local development
 
@@ -85,7 +93,4 @@ This is a static site — Vercel will auto-detect it with no framework preset ne
 
 ## Origin note
 
-This site began as a local mirror of pressandpalm.com/aurea (a Showit template demo page),
-built with Anthropic's website-clone workflow, then restyled with Solivita's brand assets,
-copy, and layout adjustments. See `brand-assets/guidelines/` for the source brand guidelines
-this restyle is based on.
+This site began as a local mirror of pressandpalm.com/aurea (a Showit template demo page), built with Anthropic's website-clone workflow, then restyled with Solivita's brand assets, copy, and layout adjustments. In a later pass, all three pages were rebuilt from that Showit-generated markup into clean semantic HTML5 with a shared external stylesheet/script — see `brand-assets/guidelines/` for the source brand guidelines this restyle is based on.
