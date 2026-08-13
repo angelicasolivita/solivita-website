@@ -107,6 +107,12 @@ a { color: inherit; }
 .cs-hero-img-bg { position: absolute; top: 0; right: 0; width: 624px; height: 100%; object-fit: cover; }
 .cs-hero-img-fg { position: absolute; top: 67px; left: calc(100% - 624px - 95px); width: 216px; height: 257px; object-fit: cover; }
 
+/* Care & Services hero (this page only): narrower text column, wider
+   photo — the dining room photo reads better with more width and less
+   empty gap between the text block and the image edge. */
+.cs-hero-text-narrow { flex-basis: 34%; }
+.cs-hero-image-wide .cs-hero-img-bg { width: 100%; }
+
 /* Staggered pair (About hero): two equal-sized frames, top-left and
    bottom-right, overlapping slightly at the center. Images are
    transparent PNGs (framed art on a transparent background) — no
