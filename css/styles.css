@@ -240,6 +240,7 @@ a { color: inherit; }
 .cs-room-photo { height: 190px; display: flex; align-items: center; justify-content: center; font-family: 'KT Quantum Light'; font-weight: 400; font-size: 15px; letter-spacing: 0.05em; text-transform: uppercase; color: rgba(255, 255, 255, 0.5); background-size: cover; background-position: center; }
 .cs-room-body { padding: 24px 24px 28px; }
 .cs-room-name { font-family: 'KT Quantum Light'; font-weight: 400; font-size: 20px; color: #FFF; margin: 0 0 10px; }
+.cs-room-name-note { font-family: 'DM Sans'; font-weight: 300; font-size: 13px; color: rgba(255, 255, 255, 0.75); }
 .cs-room-tags { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 14px; }
 .cs-room-tag { font-family: 'DM Sans'; font-weight: 300; font-size: 11px; letter-spacing: 0.06em; text-transform: uppercase; color: rgba(255, 255, 255, 0.9); border: 1px solid rgba(255, 255, 255, 0.4); border-radius: 2px; padding: 5px 10px; }
 .cs-room-desc { font-family: 'DM Sans'; font-weight: 300; font-size: 17px; line-height: 1.6; color: rgba(255, 255, 255, 0.85); margin: 0; }
