@@ -236,13 +236,14 @@ a { color: inherit; }
 .cs-rooms-title { position: relative; z-index: 1; text-align: center; font-family: 'KT Quantum Light'; font-weight: 400; font-size: 31px; color: #FFF; margin: 0 0 12px; }
 .cs-rooms-sub { position: relative; z-index: 1; text-align: center; font-family: 'DM Sans'; font-weight: 300; font-size: 17px; color: rgba(255, 255, 255, 0.85); margin: 0 0 50px; }
 .cs-rooms-track { position: relative; z-index: 1; display: flex; gap: 24px; overflow-x: auto; padding: 4px 60px 20px; scroll-snap-type: x proximity; scrollbar-width: thin; }
-.cs-room-card { scroll-snap-align: start; flex: 0 0 320px; background: rgba(248, 248, 244, 0.22); backdrop-filter: blur(18px); -webkit-backdrop-filter: blur(18px); border: 1px solid rgba(255, 255, 255, 0.35); border-radius: 4px; overflow: hidden; }
+.cs-room-card { scroll-snap-align: start; flex: 0 0 384px; background: rgba(248, 248, 244, 0.22); backdrop-filter: blur(18px); -webkit-backdrop-filter: blur(18px); border: 1px solid rgba(255, 255, 255, 0.35); border-radius: 4px; overflow: hidden; }
 .cs-room-photo { height: 190px; display: flex; align-items: center; justify-content: center; font-family: 'KT Quantum Light'; font-weight: 400; font-size: 15px; letter-spacing: 0.05em; text-transform: uppercase; color: rgba(255, 255, 255, 0.5); background-size: cover; background-position: center; }
 .cs-room-body { padding: 24px 24px 28px; }
 .cs-room-name { font-family: 'KT Quantum Light'; font-weight: 400; font-size: 20px; color: #FFF; margin: 0 0 10px; }
 .cs-room-name-note { font-family: 'DM Sans'; font-weight: 300; font-size: 13px; color: rgba(255, 255, 255, 0.75); }
-.cs-room-tags { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 14px; }
-.cs-room-tag { font-family: 'DM Sans'; font-weight: 300; font-size: 11px; letter-spacing: 0.06em; text-transform: uppercase; color: rgba(255, 255, 255, 0.9); border: 1px solid rgba(255, 255, 255, 0.4); border-radius: 2px; padding: 5px 10px; }
+.cs-room-tags { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; margin: 0 0 14px; font-family: 'DM Sans'; font-weight: 300; font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: rgba(255, 255, 255, 0.85); }
+.cs-room-tag::after { content: '\00b7'; margin-left: 10px; font-size: 18px; line-height: 0; color: rgba(255, 255, 255, 0.7); position: relative; top: 2px; }
+.cs-room-tag:last-child::after { content: ''; margin: 0; }
 .cs-room-desc { font-family: 'DM Sans'; font-weight: 300; font-size: 17px; line-height: 1.6; color: rgba(255, 255, 255, 0.85); margin: 0; }
 
 /* ---- FAQ accordion (index) ---------------------------------------
