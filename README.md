@@ -100,4 +100,7 @@ This is a static site — Vercel will auto-detect it with no framework preset ne
 
 This site began as a local mirror of pressandpalm.com/aurea (a Showit template demo page), built with Anthropic's website-clone workflow, then restyled with Solivita's brand assets, copy, and layout adjustments. In a later pass, all three pages were rebuilt from that Showit-generated markup into clean semantic HTML5 with a shared external stylesheet/script — see `brand-assets/guidelines/` for the source brand guidelines this restyle is based on.
 
-<!-- vercel-auto-deploy-test 1786712334 -->
+## Deployment
+
+Connected to Vercel via GitHub — every push to `main` auto-deploys to production at
+[solivita-website.vercel.app](https://solivita-website.vercel.app). No manual `vercel` CLI step needed.
