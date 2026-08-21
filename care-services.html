@@ -11,10 +11,13 @@
 <body>
   <nav class="site-nav" id="site-nav">
     <a href="/" class="site-nav-logo"><img src="images/brand/solivita-submark-black.svg" alt="Solivita"></a>
-    <div class="site-nav-links">
+    <button type="button" class="site-nav-toggle" id="site-nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="site-nav-links">
+      <span></span><span></span><span></span>
+    </button>
+    <div class="site-nav-links" id="site-nav-links">
       <a href="about.html">About</a>
       <a href="care-services.html">Services &amp; Amenities</a>
-      <a href="/contact">Book a Tour</a>
+      <a href="get-in-touch.html" class="site-nav-cta">Get in Touch</a>
     </div>
   </nav>
 
@@ -133,8 +136,7 @@
       <section class="cs-cta">
         <p class="cs-cta-text">We'd love to show you what life is like at Solivita.</p>
         <div class="cs-btn-row">
-          <a href="/contact" class="cs-btn">Book a Tour</a>
-          <a href="/contact" class="cs-btn">Get in Touch</a>
+          <a href="get-in-touch.html" class="cs-btn">Get in Touch</a>
         </div>
       </section>
     </section>

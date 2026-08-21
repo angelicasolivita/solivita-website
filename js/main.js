@@ -21,15 +21,16 @@
   // Pins the hero to the viewport once you scroll past it: writes
   // position:fixed on scroll and never releases it, so the hero stays
   // fixed behind everything while the next section scrolls over it
-  // (the "lift" effect). Disabled below the mobile breakpoint, where
-  // the hero reverts to a normal stacked layout.
+  // (the "lift" effect). Disabled below the tablet breakpoint (see
+  // the matching 1100px cutoff in css/styles.css), where the hero
+  // reverts to a normal stacked layout.
   function initHeroPin() {
     var hero = document.getElementById('cs-hero');
     var spacer = document.getElementById('cs-hero-spacer');
     if (!hero || !spacer) return;
 
     function onScroll() {
-      if (window.matchMedia('(max-width: 900px)').matches) return;
+      if (window.matchMedia('(max-width: 1100px)').matches) return;
       var pinned = window.scrollY > 0;
       hero.classList.toggle('cs-hero-fixed', pinned);
       spacer.classList.toggle('cs-hero-spacer-active', pinned);
@@ -79,10 +80,58 @@
     update();
   }
 
+  // "About the House" photo slot (homepage): crossfades between
+  // slides on a timer rather than a scrolling carousel — one photo
+  // visible at a time, no user interaction required.
+  function initHouseRotator() {
+    var rotator = document.getElementById('house-rotator');
+    if (!rotator) return;
+    var slides = Array.prototype.slice.call(rotator.querySelectorAll('.cs-house-rotator-slide'));
+    if (slides.length < 2) return;
+
+    var current = 0;
+    setInterval(function () {
+      slides[current].classList.remove('cs-house-rotator-slide-active');
+      current = (current + 1) % slides.length;
+      slides[current].classList.add('cs-house-rotator-slide-active');
+    }, 3500);
+  }
+
+  // Hamburger toggle (tablet/mobile): opens/closes the full-screen
+  // overlay menu. Closes automatically on link tap and on resize past
+  // the collapse breakpoint, so it can't get stuck open if the
+  // viewport grows back to desktop width.
+  function initNavToggle() {
+    var toggle = document.getElementById('site-nav-toggle');
+    var links = document.getElementById('site-nav-links');
+    if (!toggle || !links) return;
+
+    function setOpen(open) {
+      toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+      toggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+      links.classList.toggle('site-nav-links-open', open);
+      document.body.style.overflow = open ? 'hidden' : '';
+    }
+
+    toggle.addEventListener('click', function () {
+      setOpen(toggle.getAttribute('aria-expanded') !== 'true');
+    });
+
+    links.querySelectorAll('a').forEach(function (a) {
+      a.addEventListener('click', function () { setOpen(false); });
+    });
+
+    window.addEventListener('resize', function () {
+      if (window.innerWidth > 1100) setOpen(false);
+    });
+  }
+
   function init() {
     initNav();
     initHeroPin();
     initParallax();
+    initHouseRotator();
+    initNavToggle();
   }
 
   if (document.readyState === 'loading') {

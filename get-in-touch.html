@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Get in Touch | Solivita Assisted Living</title>
+  <link rel="icon" type="image/svg+xml" href="images/brand/solivita-submark-black.svg">
+  <meta name="description" content="Get in touch with Solivita Assisted Living. Tell us a bit about what you're looking for and we'll follow up to schedule a tour.">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <nav class="site-nav" id="site-nav">
+    <a href="/" class="site-nav-logo"><img src="images/brand/solivita-submark-black.svg" alt="Solivita"></a>
+    <button type="button" class="site-nav-toggle" id="site-nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="site-nav-links">
+      <span></span><span></span><span></span>
+    </button>
+    <div class="site-nav-links" id="site-nav-links">
+      <a href="about.html">About</a>
+      <a href="care-services.html">Services &amp; Amenities</a>
+      <a href="get-in-touch.html" class="site-nav-cta">Get in Touch</a>
+    </div>
+  </nav>
+
+  <main>
+    <section class="cs-gform-section">
+      <img class="cs-gform-bg" src="images/ui/texture-seashells.png" alt="">
+      <div class="cs-gform-card">
+        <h1 class="cs-h1 cs-gform-title">Get in Touch</h1>
+        <p class="cs-intro-text cs-gform-intro">We'd love to learn more about what you're looking for. Fill out a few quick questions below and our team will follow up to schedule a time for you to visit.</p>
+
+        <form class="cs-gform" id="get-in-touch-form" novalidate>
+          <div class="cs-gform-row">
+            <div class="cs-gform-field">
+              <label for="first-name">First name <span class="cs-gform-required">*</span></label>
+              <input type="text" id="first-name" name="firstName" required>
+            </div>
+            <div class="cs-gform-field">
+              <label for="last-name">Last name <span class="cs-gform-required">*</span></label>
+              <input type="text" id="last-name" name="lastName" required>
+            </div>
+          </div>
+
+          <div class="cs-gform-row">
+            <div class="cs-gform-field">
+              <label for="phone">Phone <span class="cs-gform-required">*</span></label>
+              <input type="tel" id="phone" name="phone" required>
+            </div>
+            <div class="cs-gform-field">
+              <label for="email">Email <span class="cs-gform-required">*</span></label>
+              <input type="email" id="email" name="email" required>
+            </div>
+          </div>
+
+          <div class="cs-gform-field">
+            <label for="relationship">I'm reaching out as a...</label>
+            <div class="cs-gform-select-wrap">
+              <select id="relationship" name="relationship">
+                <option value="">Select one</option>
+                <option value="Myself">Myself, a prospective resident</option>
+                <option value="Family member">Family member</option>
+                <option value="Other">Other</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="cs-gform-field">
+            <label for="reason">Reason for inquiry</label>
+            <div class="cs-gform-select-wrap">
+              <select id="reason" name="reason">
+                <option value="">Select one</option>
+                <option value="Schedule a tour">Schedule a tour</option>
+                <option value="Room availability">Room availability</option>
+                <option value="General question">General question</option>
+                <option value="Other">Other</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="cs-gform-field">
+            <label for="timeframe">Desired move-in timeframe</label>
+            <div class="cs-gform-select-wrap">
+              <select id="timeframe" name="timeframe">
+                <option value="">Select one</option>
+                <option value="ASAP">ASAP</option>
+                <option value="1-3 months">1-3 months</option>
+                <option value="3-6 months">3-6 months</option>
+                <option value="Just researching">Just researching</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="cs-gform-field">
+            <label for="referral">How did you hear about us?</label>
+            <div class="cs-gform-select-wrap">
+              <select id="referral" name="referral">
+                <option value="">Select one</option>
+                <option value="Google search">Google search</option>
+                <option value="Social media">Social media</option>
+                <option value="Referral from a friend or family member">Referral from a friend or family member</option>
+                <option value="Healthcare provider or placement agency">Healthcare provider or placement agency</option>
+                <option value="Drove by / saw the home">Drove by / saw the home</option>
+                <option value="Other">Other</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="cs-gform-field cs-gform-field-other" id="referral-other-field" hidden>
+            <label for="referral-other">Please specify</label>
+            <input type="text" id="referral-other" name="referralOther">
+          </div>
+
+          <div class="cs-gform-field">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="4" placeholder="Tell us a bit about what you're looking for..."></textarea>
+          </div>
+
+          <button type="submit" class="cs-btn cs-btn-dark cs-gform-submit">Submit</button>
+          <p class="cs-gform-status" id="gform-status" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="site-footer-inner">
+      <nav class="site-footer-nav" aria-label="Footer">
+        <a href="/">Home</a>
+        <a href="about.html">About</a>
+        <a href="care-services.html">Services &amp; Amenities</a>
+      </nav>
+      <div class="site-footer-brand">
+        <img src="images/brand/solivita-submark-black.svg" alt="Solivita">
+        <p class="site-footer-license">Solivita is a licensed Residential Care Facility for the Elderly in Chula Vista, California.</p>
+      </div>
+      <div class="site-footer-contact">
+        <p>License #374605053</p>
+        <p><a href="mailto:Solivitaassistedliving@gmail.com">Solivitaassistedliving@gmail.com</a></p>
+        <p>1655 View Park Way, Chula Vista, CA 91913</p>
+      </div>
+    </div>
+    <p class="site-footer-bottom">&copy; Solivita Assisted Living</p>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script src="js/get-in-touch.js"></script>
+</body>
+</html>

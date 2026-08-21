@@ -11,10 +11,13 @@
 <body>
   <nav class="site-nav" id="site-nav">
     <a href="/" class="site-nav-logo"><img src="images/brand/solivita-submark-black.svg" alt="Solivita"></a>
-    <div class="site-nav-links">
+    <button type="button" class="site-nav-toggle" id="site-nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="site-nav-links">
+      <span></span><span></span><span></span>
+    </button>
+    <div class="site-nav-links" id="site-nav-links">
       <a href="about.html">About</a>
       <a href="care-services.html">Services &amp; Amenities</a>
-      <a href="/contact">Book a Tour</a>
+      <a href="get-in-touch.html" class="site-nav-cta">Get in Touch</a>
     </div>
   </nav>
 
@@ -29,13 +32,14 @@
     <div class="cs-hero-stage">
       <div class="cs-hero cs-hero-home">
         <div class="cs-hero-home-container">
-          <img class="cs-hero-home-wordmark" src="images/brand/solivita-primary-black.svg" alt="Solivita Assisted Living">
-          <p class="cs-hero-home-tagline">a bright new chapter of life</p>
-          <div class="cs-hero-home-body">
-            <p class="cs-intro-text">Assisted Living in the Otay Lakes community of Southern San Diego, built on the standard of care our founder spent her career enforcing.</p>
-            <p class="cs-intro-text">Solivita is a senior living home where peace, purpose, and connection come together under one roof. Designed to feel like a breath of fresh air, every detail of our home is curated to support residents in living this next chapter fully. We believe that transitioning into this new stage of life is the start of something meaningful, because there's still so much life to live.</p>
+          <div class="cs-hero-home-text-col">
+            <img class="cs-hero-home-wordmark" src="images/brand/solivita-primary-black.svg" alt="Solivita Assisted Living">
+            <div class="cs-hero-home-body">
+              <p class="cs-intro-text">Nestled in the Otay Lakes community of Southern San Diego, Solivita is a boutique assisted living home where personalized care meets quiet luxury.</p>
+              <p class="cs-intro-text">Every detail of our home is intentionally curated to make senior living a bright new chapter, where every day is full of life.</p>
+            </div>
+            <a href="get-in-touch.html" class="cs-btn cs-btn-dark cs-hero-home-btn">Get in Touch</a>
           </div>
-          <a href="/contact" class="cs-btn cs-btn-dark cs-hero-home-btn">Get in Touch</a>
           <div class="cs-hero-home-image">
             <img src="images/hero/hero-livingroom.jpg" alt="Solivita living room, coastal-inspired interior">
           </div>
@@ -50,10 +54,24 @@
 
     <section class="cs-lift">
       <section class="cs-approach-section">
-        <div class="cs-approach-inner">
-          <h2 class="cs-h2">Our Approach</h2>
-          <p class="cs-body">The name Solivita means sun and life, chosen to reflect the belief that senior living can be a bright new chapter. Our founder created Solivita with a clear vision for what senior living should feel like. Intentionally small, with a maximum of six residents, so every person receives the kind of personalized care that larger facilities simply cannot provide.</p>
-          <p class="cs-body">From the coastal-inspired rooms to the enrichment programming designed around our residents, every part of Solivita is built with the same level of thought and intention as the care.</p>
+        <div class="cs-approach-split">
+          <div class="cs-approach-text">
+            <h2 class="cs-h2 cs-h2-left">Boutique Senior Living</h2>
+            <p class="cs-body">The name Solivita means sun and life, chosen to reflect the belief that senior living can be a bright new chapter. Our founder created Solivita with a clear vision for what senior living should feel like. Intentionally small, with a maximum of six residents, so every person receives the kind of personalized care that larger facilities simply cannot provide.</p>
+            <p class="cs-body">From the coastal-inspired rooms to the enrichment programming designed around our residents, every part of Solivita is built with the same level of thought and intention as the care.</p>
+            <div class="cs-house-stats">
+              <p class="cs-house-stat-line">2,850 Sq Ft <span class="cs-house-stat-dot">&middot;</span> Single Story</p>
+              <p class="cs-house-stat-line">Open Floor Plan <span class="cs-house-stat-dot">&middot;</span> 5 Bedrooms</p>
+              <p class="cs-house-stat-line">Private Backyard <span class="cs-house-stat-dot">&middot;</span> Sunset-Facing</p>
+              <p class="cs-house-stat-line">Family Owned &amp; Operated</p>
+            </div>
+          </div>
+          <div class="cs-house-rotator" id="house-rotator">
+            <div class="cs-house-rotator-slide cs-house-rotator-slide-active"><span class="cs-house-photo-placeholder">Photo coming soon</span></div>
+            <div class="cs-house-rotator-slide"><span class="cs-house-photo-placeholder">Photo coming soon</span></div>
+            <div class="cs-house-rotator-slide"><span class="cs-house-photo-placeholder">Photo coming soon</span></div>
+            <div class="cs-house-rotator-slide"><span class="cs-house-photo-placeholder">Photo coming soon</span></div>
+          </div>
         </div>
         <div class="cs-shape-divider">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 100" preserveAspectRatio="none">
@@ -143,7 +161,7 @@
                 <span class="cs-room-tag">11' x 13'</span>
                 <span class="cs-room-tag">Jack &amp; Jill Bath</span>
               </div>
-              <p class="cs-room-desc">Soft sky-blue walls and natural corner light make this the airiest room in the house. Nestled near the garage entry for an easy, low-traffic path in and out.</p>
+              <p class="cs-room-desc">Soft sky-blue walls and natural corner light make this the airiest room in the house.</p>
             </div>
           </div>
           <div class="cs-room-card">
@@ -182,7 +200,7 @@
           </details>
           <details class="cs-faq-item">
             <summary>How do I schedule a tour?<span class="cs-faq-icon"></span></summary>
-            <p class="cs-faq-answer">Click "Book a Tour" anywhere on our site. We'll ask a few quick questions to make sure Solivita is the right fit, then schedule a time for you to visit in person.</p>
+            <p class="cs-faq-answer">Click "Get in Touch" anywhere on our site to fill out a short survey. We'll ask a few quick questions to make sure Solivita is the right fit, then follow up to schedule a time for you to visit in person.</p>
           </details>
         </div>
       </section>
@@ -194,8 +212,7 @@
       <section class="cs-cta">
         <p class="cs-cta-text">We'd love to show you what life is like at Solivita.</p>
         <div class="cs-btn-row">
-          <a href="/contact" class="cs-btn">Book a Tour</a>
-          <a href="/contact" class="cs-btn">Get in Touch</a>
+          <a href="get-in-touch.html" class="cs-btn">Get in Touch</a>
         </div>
       </section>
     </section>

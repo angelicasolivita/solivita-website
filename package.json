@@ -1,0 +1,8 @@
+{
+  "name": "solivita-website",
+  "private": true,
+  "description": "Static site + Vercel serverless function for the Get in Touch form.",
+  "dependencies": {
+    "googleapis": "^144.0.0"
+  }
+}
