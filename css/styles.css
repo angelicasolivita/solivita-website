@@ -500,9 +500,19 @@ a { color: inherit; }
     gap: 36px;
     background: rgba(248, 248, 244, 0.92);
     backdrop-filter: blur(24px); -webkit-backdrop-filter: blur(24px);
+    /* On a short viewport (small phone, landscape, browser chrome
+       eating vertical space), 3 links + gaps centered via
+       justify-content: center can be taller than the screen — with no
+       scroll, the overflow just clips silently and the first link(s)
+       vanish above the visible top edge. Let it scroll instead of
+       clipping, and pad top/bottom so items never sit flush against
+       the edge even when scrolled all the way. */
+    overflow-y: auto;
+    padding: 100px 24px 40px;
+    box-sizing: border-box;
   }
   .site-nav-links.site-nav-links-open { display: flex; }
-  .site-nav-links a { font-size: 16px; text-shadow: none; }
+  .site-nav-links a { font-size: 16px; text-shadow: none; flex: 0 0 auto; }
   .site-nav-cta { padding: 14px 30px; border: 1px solid #000; border-radius: 2px; }
 }
 
