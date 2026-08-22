@@ -69,6 +69,10 @@ a { color: inherit; }
 .site-nav-logo { display: flex; align-items: center; }
 .site-nav-logo img { height: 46px; width: auto; display: block; }
 .site-nav-links { display: flex; align-items: center; gap: 40px; }
+/* Home link: only shown in the mobile/tablet overlay menu (see the
+   override below at the nav-collapse breakpoint) — on desktop the
+   logo already links home, so a redundant text link is hidden here. */
+.site-nav-home { display: none; }
 .site-nav-links a {
   font-family: 'DM Sans';
   font-weight: 300;
@@ -513,6 +517,7 @@ a { color: inherit; }
   }
   .site-nav-links.site-nav-links-open { display: flex; }
   .site-nav-links a { font-size: 16px; text-shadow: none; flex: 0 0 auto; }
+  .site-nav-home { display: block; }
   .site-nav-cta { padding: 14px 30px; border: 1px solid #000; border-radius: 2px; }
 }
 
