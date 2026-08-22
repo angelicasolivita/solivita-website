@@ -682,6 +682,18 @@ a { color: inherit; }
   .cs-story-text .cs-h2 { text-align: center; }
   .cs-story-text .cs-body { text-align: center; }
 
+  /* Our Story full-bleed variant: text first (full width, fully
+     visible), photo stacked below it — same pattern as Our Approach
+     on the home page. The photo is the first child in markup (it's
+     full-bleed on desktop, so it has to lead for the left-edge
+     layout), so column-reverse flips the visual order to put it
+     after the text without changing the HTML. */
+  .cs-story-section-full { flex-direction: column-reverse; padding: 60px 24px; gap: 28px; }
+  .cs-story-photo-full { flex: 0 0 auto; width: 100%; height: 260px; }
+  .cs-story-text-full { width: 100%; text-align: center; padding: 0; }
+  .cs-story-text-full .cs-h2 { text-align: center; }
+  .cs-story-text-full .cs-body { text-align: center; }
+
   .cs-approach-section { padding: 70px 0 90px; }
   .cs-approach-split { flex-direction: column; gap: 36px; }
   .cs-approach-text { padding-left: 24px; padding-right: 24px; }
