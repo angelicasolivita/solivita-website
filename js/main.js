@@ -102,6 +102,7 @@
   // the collapse breakpoint, so it can't get stuck open if the
   // viewport grows back to desktop width.
   function initNavToggle() {
+    var nav = document.getElementById('site-nav');
     var toggle = document.getElementById('site-nav-toggle');
     var links = document.getElementById('site-nav-links');
     if (!toggle || !links) return;
@@ -110,6 +111,13 @@
       toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
       toggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
       links.classList.toggle('site-nav-links-open', open);
+      // The nav bar's own "glass" backdrop-filter (applied once
+      // scrolled past the hero) creates a new containing block for
+      // any descendant position:fixed element, which broke the
+      // full-screen menu overlay's positioning once you'd scrolled —
+      // see the CSS rule this class drives. Drop the filter while the
+      // menu is open so the overlay is fixed to the real viewport.
+      if (nav) nav.classList.toggle('site-nav-menu-open', open);
       document.body.style.overflow = open ? 'hidden' : '';
     }
 
