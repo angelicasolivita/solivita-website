@@ -159,9 +159,10 @@ a { color: inherit; }
 .cs-hero-home { display: block; padding: 0; height: 844px; min-height: 844px; overflow: hidden; }
 .cs-hero-home-container { position: relative; max-width: 1200px; height: 100%; margin: 0 auto; }
 .cs-hero-home-wordmark { position: absolute; left: 35px; top: 169px; width: 471px; height: auto; }
-.cs-hero-home-body { position: absolute; left: -35px; top: 300px; width: 640px; text-align: center; }
+.cs-hero-home-tagline { position: absolute; left: 67px; top: 280px; width: 421px; margin: 0; text-align: center; font-family: 'DM Sans'; font-weight: 300; font-size: 16px; text-transform: uppercase; letter-spacing: 0.1em; color: #000; }
+.cs-hero-home-body { position: absolute; left: -35px; top: 336px; width: 640px; text-align: center; }
 .cs-hero-home-body .cs-intro-text { text-align: center; max-width: none; margin: 0 0 24px; }
-.cs-hero-home-btn { position: absolute; left: 220px; top: 560px; }
+.cs-hero-home-btn { position: absolute; left: 220px; top: 595px; }
 .cs-hero-home-image { position: absolute; left: 634px; top: 0; width: 687px; height: 844px; overflow: hidden; }
 .cs-hero-home-image img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 50%; opacity: 0.86; }
 .visually-hidden { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
@@ -219,12 +220,59 @@ a { color: inherit; }
    matches the source photo's (1206x1487) so object-fit: cover only
    trims empty sky/road at top and bottom — never the family at the
    sides, who fill nearly the photo's full width. ---- */
-.cs-story-section { max-width: 1200px; margin: 0 auto; padding: 110px 60px; display: flex; align-items: center; gap: 70px; }
+.cs-story-section { max-width: 1320px; margin: 0 auto; padding: 110px 60px; display: flex; align-items: center; gap: 70px; }
 .cs-story-photo-wrap { flex: 0 0 437px; }
-.cs-story-photo-blob { position: relative; width: 437px; height: 538px; border-radius: 62% 38% 55% 45% / 45% 55% 45% 55%; overflow: hidden; }
+.cs-story-photo-blob { position: relative; width: 437px; height: 538px; border-radius: 62% 38% 55% 45% / 45% 55% 45% 55%; overflow: hidden; background: #EDE7DC; display: flex; align-items: center; justify-content: center; }
 .cs-story-photo-blob img { width: 100%; height: 100%; object-fit: cover; object-position: center 15%; }
 .cs-story-text { flex: 1 1 auto; text-align: left; }
 .cs-story-text .cs-h2 { text-align: left; }
+.cs-story-text .cs-body { text-wrap: pretty; }
+
+/* Our Story, full-bleed variant: photo runs edge to edge on the left
+   (mirrors the home page's Our Approach photo, which runs full-bleed
+   right — see .cs-approach-split/.cs-approach-text/.cs-house-rotator
+   above), a plain rectangular photo instead of the blob shape, text
+   column keeps the site's normal right margin. */
+.cs-story-section-full { display: flex; align-items: center; gap: 70px; padding: 110px 60px; }
+.cs-story-photo-full { position: relative; flex: 0 0 33%; height: 460px; overflow: hidden; background: #EDE7DC; border-radius: 4px; }
+.cs-story-photo-full img { width: 100%; height: 100%; object-fit: cover; object-position: right center; display: block; }
+.cs-story-text-full { flex: 1 1 auto; min-width: 0; text-align: left; padding-right: max(0px, calc(50vw - 600px)); }
+.cs-story-text-full .cs-h2 { text-align: left; }
+.cs-story-text-full .cs-body { text-align: left; text-wrap: pretty; }
+
+/* ---- Team pair (about): Angelica and Giovanni side by side, each
+   column its own photo-beside-text row (not stacked) so the photo
+   anchors the outer edge of the section and text fills the wide
+   middle space — both photos left, text right. Two full-width
+   columns rather than two narrow centered blocks gives each side
+   real breathing room instead of both being squeezed toward the
+   page center. Name + title sit centered above the bio paragraph
+   (inside .cs-story-text), not under the photo. */
+/* align-items: flex-start (not center) on both levels — anchors
+   photo and name/title to the same top edge across both columns
+   regardless of how many lines each bio wraps to, so Angelica's and
+   Giovanni's name/title land at identical heights instead of drifting
+   based on their own column's content length. */
+.cs-team-pair { display: flex; align-items: flex-start; gap: 50px; }
+.cs-team-col { flex: 1 1 0; min-width: 0; display: flex; align-items: flex-start; gap: 28px; }
+.cs-team-col .cs-story-photo-wrap { flex: 0 0 auto; }
+.cs-team-col .cs-story-photo-blob { width: 290px; height: 355px; margin: 0 auto; }
+.cs-team-col .cs-story-text { flex: 1 1 auto; min-width: 0; text-align: left; }
+.cs-team-col .cs-story-text .cs-body { text-align: left; margin: 0; }
+/* Name + title use an absolute pixel line-height (not a font-size
+   multiplier) — KT Quantum Light's own internal leading is tall
+   enough that even a tight multiplier like 1.1 still left visible
+   whitespace; a fixed px value gives exact control regardless of the
+   font's metrics. Left-aligned to share the bio's own left edge
+   rather than centered against the full (wider) column width, which
+   is what made them visually drift left of where the bio's text
+   actually sits. */
+.cs-story-text .cs-team-name { text-align: left; font-size: 22px; line-height: 24px; margin: 0 0 4px; }
+.cs-team-title {
+  margin: 0 0 14px; text-align: left; line-height: 16px;
+  font-family: 'DM Sans'; font-weight: 300; font-size: 14px;
+  text-transform: uppercase; letter-spacing: 0.1em; color: rgba(0, 0, 0, 0.6);
+}
 
 /* ---- Our Approach (index) --------------------------------------- */
 .cs-approach-section { position: relative; background: #F8F8F4; padding: 110px 0; }
@@ -232,14 +280,28 @@ a { color: inherit; }
 .cs-shape-divider svg { display: block; position: relative; left: 50%; width: calc(100% + 1.3px); height: 60px; transform: translateX(-50%); }
 .cs-shape-divider svg path { fill: #EDE7DC; }
 
+/* Chevron dividers on the About page (Our Story → Our Values →
+   Our Team): same mechanism as .cs-shape-divider above — nested as
+   the LAST CHILD of the section it overlaps (not a standalone
+   element between two sections, which left a rendering seam since
+   there was no shared edge to sit flush against). Needs
+   position: relative on the parent section for the divider's
+   position: absolute to anchor to bottom: -1px of that section,
+   exactly like .cs-approach-section does on the home page.
+   -cream announces the #EDE7DC Our Values background coming next;
+   -linen announces the #F8F8F4 background Our Team returns to. */
+.cs-story-section-with-divider { position: relative; }
+.cs-shape-divider-cream svg path { fill: #EDE7DC; }
+.cs-shape-divider-linen svg path { fill: #F8F8F4; }
+
 /* ---- Boutique Senior Living / About the House (index) ---------------
    Text column keeps the site's normal left margin; photo column runs
    full-bleed to the true right edge of the viewport (not just the
    1200px content container) for an airy, breathing-room feel. */
 .cs-approach-split { display: flex; align-items: center; gap: 70px; }
-.cs-approach-text { flex: 1 1 0; min-width: 0; padding-left: max(60px, calc(50vw - 600px + 60px)); }
+.cs-approach-text { flex: 1 1 0; min-width: 0; padding-left: max(0px, calc(50vw - 600px)); }
 .cs-h2-left { text-align: left; }
-.cs-approach-text .cs-body { text-align: left; }
+.cs-approach-text .cs-body { text-align: left; text-wrap: pretty; }
 
 .cs-house-stats { display: flex; flex-direction: column; gap: 12px; margin: 32px 0 0; }
 .cs-house-stat-line { font-family: 'KT Quantum Light'; font-weight: 400; font-size: 17px; letter-spacing: 0.06em; text-transform: uppercase; color: rgba(0, 0, 0, 0.75); margin: 0; }
@@ -317,27 +379,24 @@ a { color: inherit; }
 .cs-parallax-band { position: relative; height: 694px; overflow: hidden; background: #F8F8F4; }
 .cs-parallax-band img { position: absolute; top: 0; left: 0; width: 100%; height: 145%; object-fit: cover; will-change: transform; }
 
-/* ---- Our Values (about) ------------------------------------------- */
-.cs-values-section { position: relative; background: #F8F8F4; padding: 0 60px 110px; }
-.cs-values-list { max-width: 1160px; margin: 0 auto; }
-.cs-value-row { display: flex; align-items: baseline; gap: 60px; padding: 32px 0; border-bottom: 1px solid rgba(0, 0, 0, 0.12); text-align: left; }
+/* ---- Our Values (about) -------------------------------------------
+   Compact table: name + description per row, hairline dividers.
+   Tighter padding/gap than the original version so 5 rows don't add
+   up to a huge section. */
+.cs-values-section { position: relative; background: #EDE7DC; padding: 70px 60px 80px; }
+.cs-values-list { max-width: 1220px; margin: 0 auto; }
+.cs-value-row { display: flex; align-items: baseline; gap: 50px; padding: 18px 0; border-bottom: 1px solid rgba(0, 0, 0, 0.12); text-align: left; }
 .cs-value-row:first-child { border-top: 1px solid rgba(0, 0, 0, 0.12); }
-.cs-value-name { flex: 0 0 220px; font-family: 'KT Quantum Light'; font-weight: 400; font-size: 20px; color: #000; margin: 0; }
-.cs-value-desc { flex: 1 1 auto; max-width: 760px; font-family: 'DM Sans'; font-weight: 300; font-size: 17px; line-height: 1.7; color: rgba(0, 0, 0, 0.75); margin: 0; }
+.cs-value-name { flex: 0 0 180px; font-family: 'KT Quantum Light'; font-weight: 400; font-size: 18px; color: #000; margin: 0; }
+.cs-value-desc { flex: 1 1 auto; max-width: 880px; font-family: 'DM Sans'; font-weight: 300; font-size: 17px; line-height: 1.7; color: rgba(0, 0, 0, 0.75); margin: 0; text-wrap: pretty; }
 
 /* ---- Team (about) ---------------------------------------------------
-   Photo + bio cards, Angelica (founder) and Giovanni (administrator). */
-.cs-team-section { position: relative; z-index: 10; background: #F8F8F4; padding: 90px 60px; }
+   Section wrapper — see .cs-team-pair/.cs-team-col above for the
+   Angelica/Giovanni layout. */
+.cs-team-section { position: relative; z-index: 10; background: #F8F8F4; padding: 70px 60px; }
 .cs-team-inner { max-width: 1200px; margin: 0 auto; }
 .cs-team-section .cs-h2 { margin: 0 0 40px; }
-.cs-team-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 300px)); justify-content: center; gap: 40px; }
-.cs-team-card { text-align: center; }
-.cs-team-photo { width: 170px; height: 170px; margin: 0 auto 18px; border-radius: 50%; overflow: hidden; background: #EDE7DC; display: flex; align-items: center; justify-content: center; }
-.cs-team-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
 .cs-team-photo-placeholder { font-family: 'DM Sans'; font-weight: 300; font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: rgba(0, 0, 0, 0.35); }
-.cs-team-name { font-family: 'KT Quantum Light'; font-weight: 400; font-size: 20px; color: #000; margin: 0 0 4px; }
-.cs-team-title { font-family: 'DM Sans'; font-weight: 300; font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: rgba(0, 0, 0, 0.5); margin: 0 0 12px; }
-.cs-team-bio { font-family: 'DM Sans'; font-weight: 300; font-size: 14px; line-height: 1.6; color: rgba(0, 0, 0, 0.75); margin: 0; max-width: 300px; margin-left: auto; margin-right: auto; }
 
 /* ---- Get in Touch form (get-in-touch.html) --------------------------- */
 .cs-gform-section { position: relative; min-height: 100vh; display: flex; align-items: center; justify-content: center; padding: 170px 40px 100px; overflow: hidden; background: #EDE7DC; }
@@ -506,7 +565,8 @@ a { color: inherit; }
   }
   .cs-hero-home-text-col { flex: 1 1 0; min-width: 0; }
   .cs-hero-home-image { position: static; flex: 1 1 0; min-width: 0; width: auto; height: auto; aspect-ratio: 3 / 4; margin: 0; border-radius: 6px; }
-  .cs-hero-home-wordmark { position: static; display: block; width: 100%; max-width: 340px; margin: 0 0 24px; }
+  .cs-hero-home-wordmark { position: static; display: block; width: 100%; max-width: 340px; margin: 0 0 20px; }
+  .cs-hero-home-tagline { position: static; display: block; width: 100%; text-align: left; margin: 0 0 24px; }
   .cs-hero-home-body { position: static; width: 100%; text-align: left; margin: 0 0 28px; }
   .cs-hero-home-body .cs-intro-text { text-align: left; }
   .cs-hero-home-btn { position: static; display: inline-block; margin: 0 0 40px; }
@@ -522,6 +582,29 @@ a { color: inherit; }
     position: relative; width: 100%; margin-top: -40px; padding: 40px 50px 44px;
     border-radius: 14px; box-shadow: 0 -12px 30px rgba(0, 0, 0, 0.08);
   }
+
+  /* Our Story: stack photo above text at iPad width — the 437px blob
+     + text side-by-side has no room to breathe once the 1200px
+     container shrinks to tablet width. */
+  .cs-story-section { flex-direction: column; text-align: center; padding: 60px 50px; gap: 32px; }
+  .cs-story-photo-wrap { flex: 0 0 auto; }
+  .cs-story-photo-blob { width: 340px; height: 419px; margin: 0 auto; }
+  .cs-story-text { text-align: center; }
+  .cs-story-text .cs-h2 { text-align: center; }
+
+  /* Our Story full-bleed variant: a 33%-width photo has no room to
+     breathe at tablet width either — stack it full-width above the
+     text instead. */
+  .cs-story-section-full { flex-direction: column; padding: 60px 50px; gap: 32px; }
+  .cs-story-photo-full { flex: 0 0 auto; width: 100%; height: 340px; }
+  .cs-story-text-full { text-align: center; padding: 0; }
+  .cs-story-text-full .cs-h2 { text-align: center; }
+  .cs-story-text-full .cs-body { text-align: center; }
+
+  /* Team pair: stack Angelica/Giovanni vertically at iPad width — two
+     380px columns plus gap don't fit side by side once the container
+     narrows this much. */
+  .cs-team-pair { flex-direction: column; align-items: center; gap: 60px; }
 }
 
 /* ============================================================
@@ -566,7 +649,8 @@ a { color: inherit; }
   }
   .cs-hero-home-container { max-width: none; width: 100%; height: auto; padding: 0 24px; text-align: center; }
   .cs-hero-home-image { position: static; width: 100%; height: auto; aspect-ratio: 4 / 3; margin: 0 0 28px; border-radius: 6px; }
-  .cs-hero-home-wordmark { position: static; display: block; width: 100%; max-width: 320px; margin: 0 auto 24px; }
+  .cs-hero-home-wordmark { position: static; display: block; width: 100%; max-width: 320px; margin: 0 auto 20px; }
+  .cs-hero-home-tagline { position: static; display: block; width: 100%; margin: 0 0 24px; }
   .cs-hero-home-body { position: static; width: 100%; margin: 0 auto 24px; }
   .cs-hero-home-body .cs-intro-text { max-width: 420px; margin-left: auto; margin-right: auto; text-wrap: balance; }
   .cs-hero-home-btn { position: static; display: inline-block; margin: 0 0 32px; }
@@ -621,14 +705,16 @@ a { color: inherit; }
 
   .cs-parallax-band { height: 400px; }
 
-  .cs-values-section { padding: 0 24px 70px; }
-  .cs-value-row { flex-direction: column; gap: 8px; }
+  .cs-values-section { padding: 50px 24px 60px; }
+  .cs-value-row { flex-direction: column; gap: 6px; padding: 14px 0; }
   .cs-value-name { flex: 0 0 auto; }
   .cs-value-desc { max-width: none; }
 
   .cs-team-section { padding: 60px 24px; }
-  .cs-team-grid { grid-template-columns: 1fr; gap: 40px; }
-  .cs-team-photo { width: 150px; height: 150px; }
+  .cs-team-pair { flex-direction: column; gap: 48px; }
+  .cs-team-col { flex-direction: column; text-align: center; gap: 20px; }
+  .cs-team-col .cs-story-text { text-align: center; }
+  .cs-team-col .cs-story-text .cs-body { text-align: center; }
 
   .cs-gform-section { padding: 110px 20px 60px; min-height: auto; }
   .cs-gform-card { padding: 36px 24px 32px; }

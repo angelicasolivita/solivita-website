@@ -94,7 +94,7 @@
       slides[current].classList.remove('cs-house-rotator-slide-active');
       current = (current + 1) % slides.length;
       slides[current].classList.add('cs-house-rotator-slide-active');
-    }, 3500);
+    }, 3000);
   }
 
   // Hamburger toggle (tablet/mobile): opens/closes the full-screen
