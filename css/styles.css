@@ -613,7 +613,33 @@ button.cs-gform-submit:disabled { opacity: 0.6; cursor: default; }
   .cs-hero-home-body .cs-intro-text { text-align: left; }
   .cs-hero-home-btn { position: static; display: inline-block; margin: 0 0 40px; }
   .cs-intro-text, .cs-hero-list { max-width: none; }
+}
 
+/* Home hero, iPad portrait only: the side-by-side split above reads
+   well in landscape (short, wide viewport), but in portrait the
+   forced min-height fills the whole tall screen while the
+   now-narrower squeezed columns run out of content well before that,
+   leaving a block of empty space at the bottom. Stack text above
+   image instead, same pattern as mobile — no forced full-screen
+   height, so the section is only ever as tall as its own content. */
+@media (min-width: 744px) and (max-width: 1400px) and (orientation: portrait) {
+  .cs-hero-home {
+    height: auto; min-height: auto; overflow: visible;
+    display: block; padding: 110px 0 40px;
+  }
+  .cs-hero-home-container { display: block; padding: 0 50px; }
+  .cs-hero-home-text-col { text-align: center; }
+  .cs-hero-home-wordmark { max-width: 400px; margin: 0 auto 20px; }
+  .cs-hero-home-tagline { text-align: center; }
+  .cs-hero-home-body { text-align: center; margin: 0 auto 28px; }
+  .cs-hero-home-body .cs-intro-text { text-align: center; max-width: 520px; margin-left: auto; margin-right: auto; }
+  .cs-hero-home-btn { display: inline-block; margin: 0 auto 40px; }
+  .cs-hero-home-image {
+    flex: none; width: 100%; height: auto; aspect-ratio: 4 / 3; margin: 0 auto;
+  }
+}
+
+@media (min-width: 744px) and (max-width: 1400px) {
   /* Category rows: same overlap-card treatment as mobile — the 50/50
      desktop split gets cramped at iPad width with the wide 90px side
      padding, so stack it here too. */
