@@ -345,7 +345,11 @@ a { color: inherit; }
    text actually sits (top-left on mobile/tablet, center on desktop)
    and fading out, so legibility holds regardless of what's in the
    photo underneath without darkening the whole image uniformly. */
-.cs-cat-image::after { content: ''; position: absolute; inset: 0; background: linear-gradient(160deg, rgba(0, 0, 0, 0.55) 0%, rgba(0, 0, 0, 0.28) 35%, rgba(0, 0, 0, 0.12) 60%, rgba(0, 0, 0, 0.05) 100%); z-index: 0; }
+/* Radial scrim centered on the box, matching the label's centered
+   position at every breakpoint (mobile/tablet used to top-align the
+   label, hence the old diagonal gradient — now all sizes center it,
+   so contrast needs to concentrate in the middle, not a corner). */
+.cs-cat-image::after { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.45) 0%, rgba(0, 0, 0, 0.25) 45%, rgba(0, 0, 0, 0.08) 80%); z-index: 0; }
 .cs-cat .cs-h2 { text-align: left; margin: 0 0 20px; }
 .cs-cat .cs-body { margin: 0 0 14px; }
 .cs-cat .cs-list { margin: 0; }
@@ -610,7 +614,7 @@ a { color: inherit; }
      padding, so stack it here too. */
   .cs-cat-row, .cs-cat-row:nth-child(even) { display: block; height: auto; padding: 0 50px; margin-bottom: 24px; }
   .cs-cat-image { position: relative; width: 100%; height: 220px; border-radius: 10px 10px 0 0; }
-  .cs-h2-overlay { font-size: 30px; align-items: flex-start; padding: 26px 30px; }
+  .cs-h2-overlay { font-size: 30px; align-items: center; padding: 26px 30px; }
   .cs-cat {
     position: relative; width: 100%; margin-top: -40px; padding: 40px 50px 44px;
     border-radius: 14px; box-shadow: 0 -12px 30px rgba(0, 0, 0, 0.08);
@@ -757,7 +761,7 @@ a { color: inherit; }
      detail content. */
   .cs-cat-row, .cs-cat-row:nth-child(even) { display: block; height: auto; padding: 0 16px; margin-bottom: 16px; }
   .cs-cat-image { position: relative; width: 100%; height: 180px; border-radius: 10px 10px 0 0; }
-  .cs-h2-overlay { font-size: 24px; align-items: flex-start; padding: 20px 22px; }
+  .cs-h2-overlay { font-size: 24px; align-items: center; padding: 20px 22px; }
   .cs-cat {
     position: relative; width: 100%; margin-top: -32px; padding: 32px 24px 36px;
     border-radius: 14px; box-shadow: 0 -12px 30px rgba(0, 0, 0, 0.08);
