@@ -384,7 +384,7 @@ a { color: inherit; }
 .cs-faq-icon::before { top: 50%; left: 0; width: 16px; height: 1px; transform: translateY(-50%); }
 .cs-faq-icon::after { left: 50%; top: 0; width: 1px; height: 16px; transform: translateX(-50%); }
 .cs-faq-item[open] .cs-faq-icon::after { transform: translateX(-50%) rotate(90deg); opacity: 0; }
-.cs-faq-answer { padding: 0 0 26px; margin: 0; max-width: 680px; font-family: 'DM Sans'; font-weight: 300; font-size: 17px; line-height: 1.65; color: rgba(0, 0, 0, 0.75); }
+.cs-faq-answer { padding: 0 0 26px; margin: 0; max-width: 680px; font-family: 'DM Sans'; font-weight: 300; font-size: 17px; line-height: 1.65; color: rgba(0, 0, 0, 0.88); }
 
 /* ---- Parallax image bands ----------------------------------------
    Background photo drifts slower than page scroll. See js/main.js. */
