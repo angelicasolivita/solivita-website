@@ -665,6 +665,15 @@ a { color: inherit; }
   .site-nav-links.site-nav-links-open { gap: 30px; }
   .site-nav-links.site-nav-links-open a { font-size: 15px; }
 
+  /* Care & Services hero photo: crop is anchored fully left on
+     desktop (object-position: left center, set inline) to show the
+     dining table; at mobile crop width that same anchor shows too
+     much of the wood accent wall on the left edge. Shift the visible
+     crop right (toward center) by ~20%. Needs !important since an
+     inline style attribute otherwise always wins over a class rule
+     regardless of specificity or source order. */
+  .cs-hero-dining-photo { object-position: 20% center !important; }
+
   .cs-hero-stage { height: auto; }
   .cs-hero, .cs-hero.cs-hero-fixed { position: relative !important; flex-direction: column; min-height: auto; height: auto; padding-top: 70px; }
   .cs-hero-spacer { display: none !important; }
