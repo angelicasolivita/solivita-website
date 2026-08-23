@@ -455,12 +455,17 @@ a { color: inherit; }
 .cs-gform-select-wrap select:focus { outline: none; border-color: #3D6B8E; }
 .cs-gform-field-other { margin-top: -6px; padding-left: 4px; border-left: 2px solid rgba(61, 107, 142, 0.3); padding-left: 16px; }
 
-.cs-gform-submit {
+/* button.cs-gform-submit (element + class) beats the shared .cs-btn
+   rule's black border/text on specificity, regardless of which comes
+   later in the file — .cs-btn's border: 1px solid #000 was winning
+   the cascade tie since both are single-class selectors and .cs-btn
+   is defined after this rule. */
+button.cs-gform-submit {
   align-self: center; margin-top: 12px; cursor: pointer;
   background: #3D6B8E; border: none; color: #FFF;
 }
-.cs-gform-submit:hover { letter-spacing: 0.2em; background: #345c7a; color: #FFF; }
-.cs-gform-submit:disabled { opacity: 0.6; cursor: default; }
+button.cs-gform-submit:hover { letter-spacing: 0.2em; background: #345c7a; color: #FFF; }
+button.cs-gform-submit:disabled { opacity: 0.6; cursor: default; }
 .cs-gform-status { text-align: center; font-family: 'DM Sans'; font-weight: 300; font-size: 14px; margin: 4px 0 0; min-height: 20px; }
 .cs-gform-status.cs-gform-status-error { color: #8a2a2a; }
 .cs-gform-status.cs-gform-status-success { color: #2a6a3a; }
