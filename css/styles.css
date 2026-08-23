@@ -340,8 +340,12 @@ a { color: inherit; }
 .cs-cat-image { flex: 0 0 50%; position: relative; overflow: hidden; }
 .cs-cat-image img { width: 100%; height: 100%; object-fit: cover; display: block; }
 .cs-cat { flex: 0 0 50%; display: flex; flex-direction: column; justify-content: center; text-align: left; padding: 40px 90px; background: #F8F8F4; overflow: auto; }
-.cs-h2-overlay { position: absolute; inset: 0; margin: 0; padding: 0 24px; display: flex; align-items: center; justify-content: center; text-align: center; font-size: 44px; color: #FFF; z-index: 1; text-shadow: 0 2px 12px rgba(0, 0, 0, 0.55); }
-.cs-cat-image::after { content: ''; position: absolute; inset: 0; background: rgba(0, 0, 0, 0.22); z-index: 0; }
+.cs-h2-overlay { position: absolute; inset: 0; margin: 0; padding: 0 24px; display: flex; align-items: center; justify-content: center; text-align: center; font-size: 44px; color: #FFF; z-index: 1; text-shadow: 0 2px 16px rgba(0, 0, 0, 0.75), 0 1px 4px rgba(0, 0, 0, 0.9); }
+/* Gradient scrim instead of a flat tint — darkest where the label
+   text actually sits (top-left on mobile/tablet, center on desktop)
+   and fading out, so legibility holds regardless of what's in the
+   photo underneath without darkening the whole image uniformly. */
+.cs-cat-image::after { content: ''; position: absolute; inset: 0; background: linear-gradient(160deg, rgba(0, 0, 0, 0.55) 0%, rgba(0, 0, 0, 0.28) 35%, rgba(0, 0, 0, 0.12) 60%, rgba(0, 0, 0, 0.05) 100%); z-index: 0; }
 .cs-cat .cs-h2 { text-align: left; margin: 0 0 20px; }
 .cs-cat .cs-body { margin: 0 0 14px; }
 .cs-cat .cs-list { margin: 0; }
@@ -605,8 +609,8 @@ a { color: inherit; }
      desktop split gets cramped at iPad width with the wide 90px side
      padding, so stack it here too. */
   .cs-cat-row, .cs-cat-row:nth-child(even) { display: block; height: auto; padding: 0 50px; margin-bottom: 24px; }
-  .cs-cat-image { position: relative; width: 100%; height: 320px; border-radius: 10px 10px 0 0; }
-  .cs-h2-overlay { font-size: 34px; align-items: flex-start; padding: 30px; }
+  .cs-cat-image { position: relative; width: 100%; height: 220px; border-radius: 10px 10px 0 0; }
+  .cs-h2-overlay { font-size: 30px; align-items: flex-start; padding: 26px 30px; }
   .cs-cat {
     position: relative; width: 100%; margin-top: -40px; padding: 40px 50px 44px;
     border-radius: 14px; box-shadow: 0 -12px 30px rgba(0, 0, 0, 0.08);
@@ -743,8 +747,8 @@ a { color: inherit; }
      than two stacked blocks. Standard mobile pattern for photo +
      detail content. */
   .cs-cat-row, .cs-cat-row:nth-child(even) { display: block; height: auto; padding: 0 16px; margin-bottom: 16px; }
-  .cs-cat-image { position: relative; width: 100%; height: 260px; border-radius: 10px 10px 0 0; }
-  .cs-h2-overlay { font-size: 26px; align-items: flex-start; padding: 22px 24px; }
+  .cs-cat-image { position: relative; width: 100%; height: 180px; border-radius: 10px 10px 0 0; }
+  .cs-h2-overlay { font-size: 24px; align-items: flex-start; padding: 20px 22px; }
   .cs-cat {
     position: relative; width: 100%; margin-top: -32px; padding: 32px 24px 36px;
     border-radius: 14px; box-shadow: 0 -12px 30px rgba(0, 0, 0, 0.08);
