@@ -22,7 +22,7 @@
   // position:fixed on scroll and never releases it, so the hero stays
   // fixed behind everything while the next section scrolls over it
   // (the "lift" effect). Disabled below the tablet breakpoint (see
-  // the matching 1100px cutoff in css/styles.css), where the hero
+  // the matching 1400px cutoff in css/styles.css), where the hero
   // reverts to a normal stacked layout.
   function initHeroPin() {
     var hero = document.getElementById('cs-hero');
@@ -30,7 +30,7 @@
     if (!hero || !spacer) return;
 
     function onScroll() {
-      if (window.matchMedia('(max-width: 1100px)').matches) return;
+      if (window.matchMedia('(max-width: 1400px)').matches) return;
       var pinned = window.scrollY > 0;
       hero.classList.toggle('cs-hero-fixed', pinned);
       spacer.classList.toggle('cs-hero-spacer-active', pinned);
@@ -130,7 +130,7 @@
     });
 
     window.addEventListener('resize', function () {
-      if (window.innerWidth > 1100) setOpen(false);
+      if (window.innerWidth > 1400) setOpen(false);
     });
   }
 
