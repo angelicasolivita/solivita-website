@@ -637,6 +637,13 @@ a { color: inherit; }
      380px columns plus gap don't fit side by side once the container
      narrows this much. */
   .cs-team-pair { flex-direction: column; align-items: center; gap: 60px; }
+
+  /* Our Approach: the desktop left padding formula
+     (calc(50vw - 600px)) is tuned for the 1200px content container
+     and resolves to 0px at every tablet width up to ~1366px, leaving
+     the text flush against the true screen edge with no breathing
+     room. Use a fixed padding here instead. */
+  .cs-approach-text { padding-left: 50px; }
 }
 
 /* ============================================================
