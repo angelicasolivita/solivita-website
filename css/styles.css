@@ -637,6 +637,12 @@ a { color: inherit; }
      380px columns plus gap don't fit side by side once the container
      narrows this much. */
   .cs-team-pair { flex-direction: column; align-items: center; gap: 60px; }
+  /* .cs-team-col itself keeps its row layout (photo left, text
+     right) at this width, but align-items: center on the pair above
+     can shrink each column to content width — pin the name/title
+     explicitly left so nothing drifts centered. */
+  .cs-team-col .cs-story-text .cs-team-name { text-align: left; }
+  .cs-team-col .cs-team-title { text-align: left; }
 
   /* Our Approach: the desktop left padding formula
      (calc(50vw - 600px)) is tuned for the 1200px content container
@@ -763,9 +769,14 @@ a { color: inherit; }
 
   .cs-team-section { padding: 60px 24px; }
   .cs-team-pair { flex-direction: column; gap: 48px; }
-  .cs-team-col { flex-direction: column; text-align: center; gap: 20px; }
-  .cs-team-col .cs-story-text { text-align: center; }
-  .cs-team-col .cs-story-text .cs-body { text-align: center; }
+  .cs-team-col { flex-direction: column; align-items: center; gap: 20px; }
+  /* Photo (fixed width, centered by its own margin) stays centered;
+     name/title/bio left-align as one consistent text block instead
+     of centering under the photo. */
+  .cs-team-col .cs-story-text { width: 100%; max-width: 320px; text-align: left; }
+  .cs-team-col .cs-story-text .cs-body { text-align: left; }
+  .cs-team-col .cs-story-text .cs-team-name { text-align: left; }
+  .cs-team-col .cs-team-title { text-align: left; }
 
   .cs-gform-section { padding: 110px 20px 60px; min-height: auto; }
   .cs-gform-card { padding: 36px 24px 32px; }
