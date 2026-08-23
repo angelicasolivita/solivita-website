@@ -511,7 +511,9 @@ a { color: inherit; }
   }
   .site-nav-links {
     display: none;
-    position: fixed; inset: 0; z-index: 610;
+    position: fixed; top: 0; left: 0; right: 0; bottom: 0;
+    width: 100vw; height: 100vh; height: 100dvh;
+    z-index: 610;
     flex-direction: column; align-items: center; justify-content: center;
     gap: 36px;
     background: rgba(248, 248, 244, 0.92);
@@ -620,9 +622,12 @@ a { color: inherit; }
   .cs-story-text .cs-h2 { text-align: center; }
 
   /* Our Story full-bleed variant: a 33%-width photo has no room to
-     breathe at tablet width either — stack it full-width above the
-     text instead. */
-  .cs-story-section-full { flex-direction: column; padding: 60px 50px; gap: 32px; }
+     breathe at tablet width either — stack it full-width, text
+     first. The photo is the first child in markup (it has to lead
+     for the desktop full-bleed-left layout), so column-reverse flips
+     the visual order to put it after the text/heading instead of
+     before, matching the mobile treatment below. */
+  .cs-story-section-full { flex-direction: column-reverse; padding: 60px 50px; gap: 32px; }
   .cs-story-photo-full { flex: 0 0 auto; width: 100%; height: 340px; }
   .cs-story-text-full { text-align: center; padding: 0; }
   .cs-story-text-full .cs-h2 { text-align: center; }
