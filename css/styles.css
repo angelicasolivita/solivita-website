@@ -778,6 +778,16 @@ a { color: inherit; }
   .cs-faq-answer { padding-bottom: 20px; }
 
   .cs-parallax-band { height: 400px; }
+  /* The parallax drift math (see initParallax() in js/main.js) was
+     tuned against the desktop 694px band height, where the image's
+     145% oversize gives ~157px of overflow buffer on each side —
+     enough to always stay covered by the calculated translateY
+     offset. At mobile's shorter 400px band, that same 145% only
+     gives ~90px of buffer per side, which isn't enough: the offset
+     can shift the image far enough to expose the band's own
+     background color at the bottom edge. Oversize further here to
+     give mobile a bigger buffer. */
+  .cs-parallax-band img { height: 220%; }
 
   .cs-values-section { padding: 50px 24px 60px; }
   .cs-value-row { flex-direction: column; gap: 6px; padding: 14px 0; }
