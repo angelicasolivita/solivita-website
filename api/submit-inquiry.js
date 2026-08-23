@@ -58,14 +58,15 @@ module.exports = async function handler(req, res) {
     body.relationship || '',
     body.reason || '',
     body.timeframe || '',
-    body.referral === 'Other' ? (body.referralOther || 'Other') : (body.referral || ''),
+    body.referral || '',
+    body.referral === 'Other' ? (body.referralOther || '') : '',
     body.message || '',
   ];
 
   try {
     await sheets.spreadsheets.values.append({
       spreadsheetId: process.env.GOOGLE_SHEET_ID,
-      range: 'Sheet1!A:J',
+      range: 'Sheet1!A:K',
       valueInputOption: 'USER_ENTERED',
       requestBody: { values: [row] },
     });
