@@ -346,7 +346,7 @@ a { color: inherit; }
 .svc-text .cs-body { margin: 0 0 20px; }
 
 /* Our Home: short facts, two-column bullet grid */
-.svc-home-grid { display: grid; grid-template-columns: 1fr 1fr; grid-auto-flow: column; grid-template-rows: repeat(4, auto); gap: 4px 32px; margin: 0; padding: 0; list-style: none; font-family: 'DM Sans'; font-weight: 300; font-size: 17px; color: rgba(0, 0, 0, 0.8); line-height: 1.5; }
+.svc-home-grid { display: grid; grid-template-columns: 1fr 1fr; grid-auto-flow: column; grid-template-rows: repeat(4, auto); gap: 4px 32px; margin: 0; padding: 0; list-style: none; font-family: 'DM Sans'; font-weight: 300; font-size: 17px; color: rgba(0, 0, 0, 0.8); line-height: 1.5; text-align: left; }
 .svc-home-grid li { position: relative; padding-left: 20px; }
 .svc-home-grid li::before { content: ''; position: absolute; left: 0; top: 9px; width: 6px; height: 6px; border-radius: 50%; background: #7A9BB5; }
 /* Our Home: single column so every item — including the longer ones
@@ -365,6 +365,14 @@ a { color: inherit; }
    (matches the brochure's panel treatment) instead of a 50/50 split —
    text panel takes up the majority of the row. */
 .svc-photo-strip { flex: 0 0 26%; }
+/* These two portrait photos (724x2172) are extremely tall relative to
+   their box at every breakpoint, and the box's own aspect ratio flips
+   from tall-narrow (desktop strip) to short-wide (mobile stacked band)
+   — object-fit: cover crops a completely different amount of the image
+   at each, so the vertical anchor needs separate values per breakpoint
+   rather than one position working everywhere. */
+.cs-photo-faq { object-position: center 20%; }
+.cs-photo-additional-support { object-position: center 15%; }
 .svc-text-wide { flex: 1 1 auto; }
 
 /* FAQ row: taller than the tightest-fit version so there's room to
@@ -710,10 +718,17 @@ button.cs-gform-submit:disabled { opacity: 0.6; cursor: default; }
   .svc-row, .svc-row:nth-child(even) { flex-direction: column; height: auto; }
   .svc-photo { flex: 0 0 auto; width: 100%; height: 240px; }
   .svc-text { padding: 40px 50px; }
+  .cs-photo-faq { object-position: center 30%; }
+  .cs-photo-additional-support { object-position: center 22%; }
   .svc-home-grid, .svc-home-grid-3col { grid-template-columns: 1fr; grid-auto-flow: row; grid-template-rows: none; }
   .svc-home-photo { width: 100%; height: 260px; }
   .svc-row-tan .svc-support-desc, .svc-row-tan .svc-support-label { white-space: normal; font-size: 17px; }
   .svc-photo-placeholder { height: 200px; }
+  /* Our Comprehensive Services (svc-row-tan) has text before photo in
+     the DOM (needed for the desktop row-reverse layout), so the
+     generic column stacking above puts the photo last — reverse it
+     here so photo still leads on mobile like every other row. */
+  .svc-row.svc-row-tan { flex-direction: column-reverse; }
 
   /* Our Story: stack photo above text at iPad width — the 437px blob
      + text side-by-side has no room to breathe once the 1200px
@@ -735,6 +750,7 @@ button.cs-gform-submit:disabled { opacity: 0.6; cursor: default; }
   .cs-story-text-full { text-align: center; padding: 0; }
   .cs-story-text-full .cs-h2 { text-align: center; }
   .cs-story-text-full .cs-body { text-align: center; }
+  .cs-story-section-full.svc-home-section { flex-direction: column; }
 
   /* Team pair: stack Angelica/Giovanni vertically at iPad width — two
      380px columns plus gap don't fit side by side once the container
@@ -835,6 +851,9 @@ button.cs-gform-submit:disabled { opacity: 0.6; cursor: default; }
   .cs-story-text-full { width: 100%; text-align: center; padding: 0; }
   .cs-story-text-full .cs-h2 { text-align: center; }
   .cs-story-text-full .cs-body { text-align: center; }
+  /* Our Home: photo leads in markup and should stay first visually
+     (unlike Our Story, which reverses to put photo after text). */
+  .cs-story-section-full.svc-home-section { flex-direction: column; }
 
   .cs-approach-section { padding: 70px 0 90px; }
   .cs-approach-split { flex-direction: column; gap: 36px; }
@@ -854,8 +873,12 @@ button.cs-gform-submit:disabled { opacity: 0.6; cursor: default; }
   .svc-row, .svc-row:nth-child(even) { flex-direction: column; height: auto; }
   .svc-photo { flex: 0 0 auto; width: 100%; height: 200px; }
   .svc-text { padding: 32px 24px; }
+  .cs-photo-faq { object-position: center 30%; }
+  .cs-photo-additional-support { object-position: center 30%; }
+  .cs-photo-services { object-position: center 33%; }
   .svc-home-grid, .svc-home-grid-3col { grid-template-columns: 1fr; grid-auto-flow: row; grid-template-rows: none; }
   .svc-home-photo { width: 100%; height: 260px; }
+  .svc-row.svc-row-tan { flex-direction: column-reverse; }
   .svc-row-tan .svc-support-desc, .svc-row-tan .svc-support-label { white-space: normal; font-size: 17px; }
   .svc-photo-placeholder { height: 180px; }
 
