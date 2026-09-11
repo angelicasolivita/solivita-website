@@ -718,8 +718,10 @@ button.cs-gform-submit:disabled { opacity: 0.6; cursor: default; }
   .svc-row, .svc-row:nth-child(even) { flex-direction: column; height: auto; }
   .svc-photo { flex: 0 0 auto; width: 100%; height: 240px; }
   .svc-text { padding: 40px 50px; }
+  .svc-photo-strip { height: 420px; }
   .cs-photo-faq { object-position: center 30%; }
-  .cs-photo-additional-support { object-position: center 22%; }
+  .cs-photo-additional-support { object-position: center 27%; }
+  .cs-photo-services { object-position: center 35%; }
   .svc-home-grid, .svc-home-grid-3col { grid-template-columns: 1fr; grid-auto-flow: row; grid-template-rows: none; }
   .svc-home-photo { width: 100%; height: 260px; }
   .svc-row-tan .svc-support-desc, .svc-row-tan .svc-support-label { white-space: normal; font-size: 17px; }
