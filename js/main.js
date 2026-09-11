@@ -31,7 +31,12 @@
 
     function onScroll() {
       if (window.matchMedia('(max-width: 1400px)').matches) return;
-      var pinned = window.scrollY > 0;
+      // Unpin once scrolled to (or bounced past, via trackpad/Safari
+      // rubber-banding) the actual bottom of the document — otherwise
+      // the fixed hero has nothing covering it in that overscroll gap
+      // and a sliver of it shows through below the footer.
+      var atBottom = window.scrollY + window.innerHeight >= document.documentElement.scrollHeight - 2;
+      var pinned = window.scrollY > 0 && !atBottom;
       hero.classList.toggle('cs-hero-fixed', pinned);
       spacer.classList.toggle('cs-hero-spacer-active', pinned);
     }

@@ -304,12 +304,10 @@ a { color: inherit; }
    1200px content container) for an airy, breathing-room feel. */
 .cs-approach-split { display: flex; align-items: center; gap: 70px; }
 .cs-approach-text { flex: 1 1 0; min-width: 0; padding-left: max(0px, calc(50vw - 600px)); }
+.cs-approach-text .cs-btn { margin-top: 12px; }
 .cs-h2-left { text-align: left; }
 .cs-approach-text .cs-body { text-align: left; text-wrap: pretty; }
 
-.cs-house-stats { display: flex; flex-direction: column; gap: 12px; margin: 32px 0 0; }
-.cs-house-stat-line { font-family: 'KT Quantum Light'; font-weight: 400; font-size: 17px; letter-spacing: 0.06em; text-transform: uppercase; color: rgba(0, 0, 0, 0.75); margin: 0; }
-.cs-house-stat-dot { color: rgba(0, 0, 0, 0.35); margin: 0 4px; }
 
 .cs-house-rotator { position: relative; flex: 1 1 auto; height: 520px; overflow: hidden; background: #EDE7DC; }
 .cs-house-rotator-slide {
@@ -332,59 +330,116 @@ a { color: inherit; }
 .cs-services-cta { text-align: center; }
 .cs-services-cta .cs-btn { border-color: #000; color: #000; }
 
-/* ---- Category rows (care-services detail) ------------------------
-   Full-bleed 50/50 split, one side solid color, the other a
-   full-height photo, edge to edge, flush stacked rows. */
-.cs-cat-row { display: flex; align-items: stretch; height: 364px; }
-.cs-cat-row:nth-child(even) { flex-direction: row-reverse; }
-.cs-cat-image { flex: 0 0 50%; position: relative; overflow: hidden; }
-.cs-cat-image img { width: 100%; height: 100%; object-fit: cover; display: block; }
-.cs-cat { flex: 0 0 50%; display: flex; flex-direction: column; justify-content: center; text-align: left; padding: 40px 90px; background: #F8F8F4; overflow: auto; }
-.cs-h2-overlay { position: absolute; inset: 0; margin: 0; padding: 0 24px; display: flex; align-items: center; justify-content: center; text-align: center; font-size: 44px; color: #FFF; z-index: 1; text-shadow: 0 2px 16px rgba(0, 0, 0, 0.75), 0 1px 4px rgba(0, 0, 0, 0.9); }
-/* Gradient scrim instead of a flat tint — darkest where the label
-   text actually sits (top-left on mobile/tablet, center on desktop)
-   and fading out, so legibility holds regardless of what's in the
-   photo underneath without darkening the whole image uniformly. */
-/* Radial scrim centered on the box, matching the label's centered
-   position at every breakpoint (mobile/tablet used to top-align the
-   label, hence the old diagonal gradient — now all sizes center it,
-   so contrast needs to concentrate in the middle, not a corner). */
-.cs-cat-image::after { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.45) 0%, rgba(0, 0, 0, 0.25) 45%, rgba(0, 0, 0, 0.08) 80%); z-index: 0; }
-.cs-cat .cs-h2 { text-align: left; margin: 0 0 20px; }
-.cs-cat .cs-body { margin: 0 0 14px; }
-.cs-cat .cs-list { margin: 0; }
+/* ---- Service rows (care-services detail) --------------------------
+   Full-bleed split, one side a full-height photo (purely visual, no
+   text ever overlays it), the other a solid-color text panel. Replaces
+   the old .cs-cat-row white-text-on-photo pattern, which had
+   inconsistent contrast depending on the photo underneath. */
+.svc-row { display: flex; align-items: stretch; height: 660px; }
+.svc-row:nth-child(even) { flex-direction: row-reverse; }
+.svc-row + .svc-row { border-top: 1px solid rgba(0, 0, 0, 0.08); }
+.svc-photo { flex: 0 0 50%; position: relative; overflow: hidden; }
+.svc-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.svc-text { flex: 0 0 50%; display: flex; flex-direction: column; justify-content: center; text-align: left; padding: 32px 90px; background: #F8F8F4; }
+.svc-row:nth-child(2) .svc-text { background: #FFFCF6; }
+.svc-text .cs-h2 { margin: 0 0 14px; }
+.svc-text .cs-body { margin: 0 0 20px; }
 
-/* ---- Our Rooms carousel (index) ---------------------------------- */
-.cs-rooms-section { position: relative; padding: 100px 0 120px; background-size: cover; background-position: center; }
-.cs-rooms-section::before { content: ''; position: absolute; inset: 0; background: rgba(20, 24, 28, 0.35); }
-.cs-rooms-title { position: relative; z-index: 1; text-align: center; font-family: 'KT Quantum Light'; font-weight: 400; font-size: 31px; color: #FFF; margin: 0 0 12px; }
-.cs-rooms-sub { position: relative; z-index: 1; text-align: center; font-family: 'DM Sans'; font-weight: 300; font-size: 17px; color: rgba(255, 255, 255, 0.85); margin: 0 0 50px; }
+/* Our Home: short facts, two-column bullet grid */
+.svc-home-grid { display: grid; grid-template-columns: 1fr 1fr; grid-auto-flow: column; grid-template-rows: repeat(4, auto); gap: 4px 32px; margin: 0; padding: 0; list-style: none; font-family: 'DM Sans'; font-weight: 300; font-size: 17px; color: rgba(0, 0, 0, 0.8); line-height: 1.5; }
+.svc-home-grid li { position: relative; padding-left: 20px; }
+.svc-home-grid li::before { content: ''; position: absolute; left: 0; top: 9px; width: 6px; height: 6px; border-radius: 50%; background: #7A9BB5; }
+/* Our Home: single column so every item — including the longer ones
+   like "5 Beautifully Designed Bedrooms" — stays on exactly one line.
+   A multi-column grid forced several items to wrap, breaking alignment. */
+.svc-home-grid-3col { grid-template-columns: 1fr; grid-auto-flow: row; grid-template-rows: none; gap: 8px; }
+
+/* Our Home section: wider photo (shows the full landscape shot instead
+   of a heavily cropped narrow column), text shifted right to fill the
+   remaining space. Scoped so it doesn't affect Our Story on About. */
+.svc-home-section { gap: 50px; }
+.svc-home-photo { flex: 0 0 48%; height: 360px; }
+.svc-home-photo img { object-position: center center; }
+
+/* Additional Support: a narrow vertical photo strip on the edge
+   (matches the brochure's panel treatment) instead of a 50/50 split —
+   text panel takes up the majority of the row. */
+.svc-photo-strip { flex: 0 0 26%; }
+.svc-text-wide { flex: 1 1 auto; }
+
+/* FAQ row: taller than the tightest-fit version so there's room to
+   read a couple of expanded answers, but the list itself scrolls
+   internally (see .cs-faq-list-scroll) so expanding every question at
+   once never gets clipped or forces the whole row to grow unbounded.
+   Also forced to row (not row-reverse) so the photo strip sits on the
+   left and text on the right, overriding the even/odd row default. */
+.svc-row.svc-row-faq { height: 560px; flex-direction: row; scroll-margin-top: 100px; }
+
+/* Personalized Care & Support: tan background, photo strip on the
+   right (placeholder until a real photo is provided). Descriptions
+   are sized down slightly and kept to one line — the fuller-width
+   .svc-support-list used in Additional Support can afford 17px, but
+   this row's narrower text column (photo strip takes 26%) cannot. */
+.svc-row.svc-row-tan { background: #EDE7DC; flex-direction: row; }
+.svc-row-tan .svc-text-wide { background: transparent; }
+.svc-photo-placeholder { background: repeating-linear-gradient(45deg, #D8D0C2, #D8D0C2 10px, #EDE7DC 10px, #EDE7DC 20px); display: flex; align-items: center; justify-content: center; }
+
+/* Comprehensive Services: bold label + short inline description */
+.svc-list { list-style: none; margin: 0; padding: 0; }
+.svc-list li { padding: 12px 0; border-bottom: 1px solid rgba(0, 0, 0, 0.1); }
+.svc-list li:first-child { border-top: 1px solid rgba(0, 0, 0, 0.1); }
+.svc-list-label { font-family: 'DM Sans'; font-weight: 700; font-size: 17px; color: #000; }
+.svc-list-desc { font-family: 'DM Sans'; font-weight: 300; font-size: 17px; color: rgba(0, 0, 0, 0.65); margin-left: 6px; }
+
+/* Additional Support: bold label on its own line + fuller description */
+.svc-support-list { list-style: none; margin: 0; padding: 0; }
+.svc-support-list li { padding: 14px 0; border-bottom: 1px solid rgba(0, 0, 0, 0.1); }
+.svc-support-list li:first-child { border-top: 1px solid rgba(0, 0, 0, 0.1); }
+.svc-support-list-centered { max-width: 1100px; margin: 0 auto; padding: 0 60px; text-align: left; display: grid; grid-template-columns: 1fr 1fr; column-gap: 60px; }
+.svc-support-list-centered li { border-bottom: 1px solid rgba(0, 0, 0, 0.1); }
+.svc-support-list-centered li:nth-child(1), .svc-support-list-centered li:nth-child(2) { border-top: 1px solid rgba(0, 0, 0, 0.1); }
+.svc-support-label { font-family: 'DM Sans'; font-weight: 700; font-size: 17px; color: #000; display: block; margin-bottom: 4px; }
+.svc-support-desc { font-family: 'DM Sans'; font-weight: 300; font-size: 17px; line-height: 1.7; color: rgba(0, 0, 0, 0.7); }
+
+/* ---- Our Rooms carousel (index) ----------------------------------
+   Light wash over the seashell/plaster photo (not a dark scrim) plus
+   near-opaque white cards and dark text — matches the Get in Touch
+   page's card treatment (.cs-gform-section/.cs-gform-card) instead of
+   the frosted dark-glass look this section used before. */
+.cs-rooms-section { position: relative; padding: 60px 0 70px; background-size: cover; background-position: center; }
+.cs-rooms-section::before { content: ''; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(248, 248, 244, 0.7), rgba(237, 231, 220, 0.8)); }
+.cs-rooms-title { position: relative; z-index: 1; text-align: center; font-family: 'KT Quantum Light'; font-weight: 400; font-size: 31px; color: #000; margin: 0 0 12px; }
+.cs-rooms-sub { position: relative; z-index: 1; text-align: center; font-family: 'DM Sans'; font-weight: 300; font-size: 17px; color: rgba(0, 0, 0, 0.7); margin: 0 0 32px; }
 .cs-rooms-track { position: relative; z-index: 1; display: flex; gap: 24px; overflow-x: auto; padding: 4px 60px 20px; scroll-snap-type: x proximity; scrollbar-width: thin; }
-.cs-room-card { scroll-snap-align: start; flex: 0 0 384px; background: rgba(248, 248, 244, 0.22); backdrop-filter: blur(18px); -webkit-backdrop-filter: blur(18px); border: 1px solid rgba(255, 255, 255, 0.35); border-radius: 4px; overflow: hidden; }
-.cs-room-photo { height: 190px; display: flex; align-items: center; justify-content: center; font-family: 'KT Quantum Light'; font-weight: 400; font-size: 15px; letter-spacing: 0.05em; text-transform: uppercase; color: rgba(255, 255, 255, 0.5); background-size: cover; background-position: center; }
+.cs-room-card { scroll-snap-align: start; flex: 0 0 384px; background: rgba(255, 255, 255, 0.88); backdrop-filter: blur(18px); -webkit-backdrop-filter: blur(18px); border: 1px solid rgba(255, 255, 255, 0.6); border-radius: 4px; overflow: hidden; box-shadow: 0 20px 50px rgba(0, 0, 0, 0.08); }
+.cs-room-photo { height: 190px; display: flex; align-items: center; justify-content: center; font-family: 'KT Quantum Light'; font-weight: 400; font-size: 15px; letter-spacing: 0.05em; text-transform: uppercase; color: rgba(0, 0, 0, 0.4); background-size: cover; background-position: center; }
 .cs-room-body { padding: 24px 24px 28px; }
-.cs-room-name { font-family: 'KT Quantum Light'; font-weight: 400; font-size: 20px; color: #FFF; margin: 0 0 10px; }
-.cs-room-name-note { font-family: 'DM Sans'; font-weight: 300; font-size: 13px; color: rgba(255, 255, 255, 0.75); }
-.cs-room-tags { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; margin: 0 0 14px; font-family: 'DM Sans'; font-weight: 300; font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: rgba(255, 255, 255, 0.85); }
-.cs-room-tag::after { content: '\00b7'; margin-left: 10px; font-size: 18px; line-height: 0; color: rgba(255, 255, 255, 0.7); position: relative; top: 2px; }
+.cs-room-name { font-family: 'KT Quantum Light'; font-weight: 400; font-size: 20px; color: #000; margin: 0 0 10px; }
+.cs-room-name-note { font-family: 'DM Sans'; font-weight: 300; font-size: 13px; color: rgba(0, 0, 0, 0.6); }
+.cs-room-tags { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; margin: 0 0 14px; font-family: 'DM Sans'; font-weight: 300; font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: #3D6B8E; }
+.cs-room-tag::after { content: '\00b7'; margin-left: 10px; font-size: 18px; line-height: 0; color: rgba(0, 0, 0, 0.3); position: relative; top: 2px; }
 .cs-room-tag:last-child::after { content: ''; margin: 0; }
-.cs-room-desc { font-family: 'DM Sans'; font-weight: 300; font-size: 17px; line-height: 1.6; color: rgba(255, 255, 255, 0.85); margin: 0; }
+.cs-room-desc { font-family: 'DM Sans'; font-weight: 300; font-size: 17px; line-height: 1.6; color: rgba(0, 0, 0, 0.75); margin: 0; }
 
 /* ---- FAQ accordion (index) ---------------------------------------
-   Native <details>/<summary> — no JS required for open/close. */
-.cs-faq-section { position: relative; padding: 120px 60px 140px; background: #F8F8F4; }
-.cs-faq-title { text-align: center; font-family: 'KT Quantum Light'; font-weight: 400; font-size: 110px; color: rgba(0, 0, 0, 0.06); line-height: 1; margin: 0 0 60px; }
-.cs-faq-list { max-width: 800px; margin: 0 auto; }
-.cs-faq-item { border-bottom: 1px solid rgba(0, 0, 0, 0.12); }
-.cs-faq-item:first-child { border-top: 1px solid rgba(0, 0, 0, 0.12); }
-.cs-faq-item summary { list-style: none; cursor: pointer; display: flex; align-items: center; justify-content: space-between; gap: 24px; padding: 26px 0; font-family: 'KT Quantum Light'; font-weight: 400; font-size: 20px; color: #000; }
+   Native <details>/<summary> — no JS required for open/close. Styled
+   to match Additional Support's bold-label list (same photo-strip
+   row layout, same 17px DM Sans type) instead of the old oversized
+   110px ghost-text title treatment. */
+.cs-faq-list { margin: 0; }
+.cs-faq-list-scroll { max-height: 400px; overflow-y: auto; padding-right: 12px; }
+.cs-faq-item { border-bottom: 1px solid rgba(0, 0, 0, 0.1); }
+.cs-faq-item:first-child { border-top: 1px solid rgba(0, 0, 0, 0.1); }
+.cs-faq-item summary { list-style: none; cursor: pointer; display: flex; align-items: center; justify-content: space-between; gap: 24px; padding: 14px 0; font-family: 'DM Sans'; font-weight: 700; font-size: 17px; color: #000; }
 .cs-faq-item summary::-webkit-details-marker { display: none; }
-.cs-faq-icon { flex: 0 0 auto; position: relative; width: 16px; height: 16px; }
+.cs-faq-icon { flex: 0 0 auto; position: relative; width: 14px; height: 14px; }
 .cs-faq-icon::before, .cs-faq-icon::after { content: ''; position: absolute; background: rgba(0, 0, 0, 0.6); transition: transform 0.25s ease; }
-.cs-faq-icon::before { top: 50%; left: 0; width: 16px; height: 1px; transform: translateY(-50%); }
-.cs-faq-icon::after { left: 50%; top: 0; width: 1px; height: 16px; transform: translateX(-50%); }
+.cs-faq-icon::before { top: 50%; left: 0; width: 14px; height: 1px; transform: translateY(-50%); }
+.cs-faq-icon::after { left: 50%; top: 0; width: 1px; height: 14px; transform: translateX(-50%); }
 .cs-faq-item[open] .cs-faq-icon::after { transform: translateX(-50%) rotate(90deg); opacity: 0; }
-.cs-faq-answer { padding: 0 0 26px; margin: 0; max-width: 680px; font-family: 'DM Sans'; font-weight: 300; font-size: 17px; line-height: 1.65; color: #000; }
+.cs-faq-answer { padding: 0 0 14px; margin: 0; font-family: 'DM Sans'; font-weight: 300; font-size: 17px; line-height: 1.7; color: rgba(0, 0, 0, 0.7); }
+.cs-faq-cta { display: inline-block; margin: 0 0 14px; font-family: 'DM Sans'; font-weight: 700; font-size: 15px; color: #3D6B8E; text-decoration: none; transition: opacity 0.3s ease; }
+.cs-faq-cta:hover { opacity: 0.7; }
 
 /* ---- Parallax image bands ----------------------------------------
    Background photo drifts slower than page scroll. See js/main.js. */
@@ -396,11 +451,6 @@ a { color: inherit; }
    Tighter padding/gap than the original version so 5 rows don't add
    up to a huge section. */
 .cs-values-section { position: relative; background: #EDE7DC; padding: 70px 60px 80px; }
-.cs-values-list { max-width: 1220px; margin: 0 auto; }
-.cs-value-row { display: flex; align-items: baseline; gap: 50px; padding: 18px 0; border-bottom: 1px solid rgba(0, 0, 0, 0.12); text-align: left; }
-.cs-value-row:first-child { border-top: 1px solid rgba(0, 0, 0, 0.12); }
-.cs-value-name { flex: 0 0 180px; font-family: 'KT Quantum Light'; font-weight: 400; font-size: 18px; color: #000; margin: 0; }
-.cs-value-desc { flex: 1 1 auto; max-width: 880px; font-family: 'DM Sans'; font-weight: 300; font-size: 17px; line-height: 1.7; color: rgba(0, 0, 0, 0.75); margin: 0; text-wrap: pretty; }
 
 /* ---- Team (about) ---------------------------------------------------
    Section wrapper — see .cs-team-pair/.cs-team-col above for the
@@ -471,7 +521,20 @@ button.cs-gform-submit:disabled { opacity: 0.6; cursor: default; }
 .cs-gform-status.cs-gform-status-success { color: #2a6a3a; }
 
 /* ---- CTA band (every page) ------------------------------------------ */
-.cs-cta { position: relative; z-index: 20; text-align: center; background: #D0C9BD; padding: 130px 40px; }
+/* CTA band: same recipe as Get in Touch's form section — light
+   seashell photo + light wash gradient behind a near-opaque white
+   card, instead of the old flat solid-tan background. */
+.cs-cta { position: relative; z-index: 20; overflow: hidden; text-align: center; background: #EDE7DC; padding: 130px 40px; }
+.cs-cta-bg { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.35; }
+.cs-cta::before { content: ''; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(248, 248, 244, 0.7), rgba(237, 231, 220, 0.8)); }
+.cs-cta-card {
+  position: relative; z-index: 1; max-width: 680px; margin: 0 auto;
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(18px); -webkit-backdrop-filter: blur(18px);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  border-radius: 6px; box-shadow: 0 30px 70px rgba(0, 0, 0, 0.1);
+  padding: 56px 56px 48px;
+}
 .cs-cta-eyebrow { font-family: 'DM Sans'; font-weight: 300; font-size: 13px; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(0, 0, 0, 0.6); margin: 0 0 20px; }
 .cs-cta-text { font-family: 'KT Quantum Light'; font-weight: 400; font-size: 31px; line-height: 1.35; color: #000; margin: 0 auto 40px; max-width: 680px; }
 .cs-btn-row { display: flex; gap: 18px; flex-wrap: wrap; justify-content: center; }
@@ -498,6 +561,8 @@ button.cs-gform-submit:disabled { opacity: 0.6; cursor: default; }
 .site-footer-contact p { margin: 0; }
 .site-footer-contact a { text-decoration: none; color: #000; transition: opacity 0.3s ease; }
 .site-footer-contact a:hover { opacity: 0.6; }
+.site-footer-contact-line { display: flex; align-items: center; gap: 8px; }
+.site-footer-icon { flex: 0 0 auto; width: 14px; height: 14px; color: rgba(0, 0, 0, 0.55); }
 .site-footer-bottom { max-width: 1200px; margin: 40px auto 0; padding-top: 24px; border-top: 1px solid rgba(0, 0, 0, 0.12); text-align: center; font-family: 'DM Sans'; font-weight: 300; font-size: 12px; color: rgba(0, 0, 0, 0.6); }
 
 /* ============================================================
@@ -640,16 +705,15 @@ button.cs-gform-submit:disabled { opacity: 0.6; cursor: default; }
 }
 
 @media (min-width: 744px) and (max-width: 1400px) {
-  /* Category rows: same overlap-card treatment as mobile — the 50/50
-     desktop split gets cramped at iPad width with the wide 90px side
-     padding, so stack it here too. */
-  .cs-cat-row, .cs-cat-row:nth-child(even) { display: block; height: auto; padding: 0 50px; margin-bottom: 24px; }
-  .cs-cat-image { position: relative; width: 100%; height: 220px; border-radius: 10px 10px 0 0; }
-  .cs-h2-overlay { font-size: 30px; align-items: center; padding: 26px 30px; }
-  .cs-cat {
-    position: relative; width: 100%; margin-top: -40px; padding: 40px 50px 44px;
-    border-radius: 14px; box-shadow: 0 -12px 30px rgba(0, 0, 0, 0.08);
-  }
+  /* Service rows: stack photo above text at iPad width — the wide
+     90px side padding gets cramped once the split narrows. */
+  .svc-row, .svc-row:nth-child(even) { flex-direction: column; height: auto; }
+  .svc-photo { flex: 0 0 auto; width: 100%; height: 240px; }
+  .svc-text { padding: 40px 50px; }
+  .svc-home-grid, .svc-home-grid-3col { grid-template-columns: 1fr; grid-auto-flow: row; grid-template-rows: none; }
+  .svc-home-photo { width: 100%; height: 260px; }
+  .svc-row-tan .svc-support-desc, .svc-row-tan .svc-support-label { white-space: normal; font-size: 17px; }
+  .svc-photo-placeholder { height: 200px; }
 
   /* Our Story: stack photo above text at iPad width — the 437px blob
      + text side-by-side has no room to breathe once the 1200px
@@ -777,7 +841,7 @@ button.cs-gform-submit:disabled { opacity: 0.6; cursor: default; }
   .cs-approach-text { padding-left: 24px; padding-right: 24px; }
   .cs-h2-left { text-align: center; }
   .cs-approach-text .cs-body { text-align: center; }
-  .cs-house-stats { align-items: center; text-align: center; }
+  .cs-approach-text .cs-btn { margin-left: auto; margin-right: auto; display: table; }
   .cs-house-rotator { flex: 1 1 auto; width: 100%; height: 300px; }
 
   .cs-services-section { padding: 70px 24px; }
@@ -785,28 +849,21 @@ button.cs-gform-submit:disabled { opacity: 0.6; cursor: default; }
   .cs-services-grid { grid-template-columns: 1fr; gap: 40px; }
   .cs-service-card-photo { height: 220px; }
 
-  /* Category rows: photo becomes a full-bleed backdrop, the text
-     card overlaps its lower portion (negative margin pulls it up),
-     rounded top corners and a shadow read as one unified card rather
-     than two stacked blocks. Standard mobile pattern for photo +
-     detail content. */
-  .cs-cat-row, .cs-cat-row:nth-child(even) { display: block; height: auto; padding: 0 16px; margin-bottom: 16px; }
-  .cs-cat-image { position: relative; width: 100%; height: 180px; border-radius: 10px 10px 0 0; }
-  .cs-h2-overlay { font-size: 24px; align-items: center; padding: 20px 22px; }
-  .cs-cat {
-    position: relative; width: 100%; margin-top: -32px; padding: 32px 24px 36px;
-    border-radius: 14px; box-shadow: 0 -12px 30px rgba(0, 0, 0, 0.08);
-  }
+  /* Service rows: stack photo above text, simple padding — no
+     overlap-card treatment needed since photos no longer carry text. */
+  .svc-row, .svc-row:nth-child(even) { flex-direction: column; height: auto; }
+  .svc-photo { flex: 0 0 auto; width: 100%; height: 200px; }
+  .svc-text { padding: 32px 24px; }
+  .svc-home-grid, .svc-home-grid-3col { grid-template-columns: 1fr; grid-auto-flow: row; grid-template-rows: none; }
+  .svc-home-photo { width: 100%; height: 260px; }
+  .svc-row-tan .svc-support-desc, .svc-row-tan .svc-support-label { white-space: normal; font-size: 17px; }
+  .svc-photo-placeholder { height: 180px; }
 
-  .cs-rooms-section { padding: 60px 0 80px; }
+  .cs-rooms-section { padding: 40px 0 50px; }
   .cs-rooms-title { font-size: 24px; }
   .cs-rooms-track { padding: 4px 24px 16px; gap: 16px; }
   .cs-room-card { flex: 0 0 260px; }
 
-  .cs-faq-section { padding: 70px 24px 90px; }
-  .cs-faq-title { font-size: 56px; margin-bottom: 40px; }
-  .cs-faq-item summary { font-size: 18px; padding: 20px 0; }
-  .cs-faq-answer { padding-bottom: 20px; }
 
   .cs-parallax-band { height: 400px; }
   /* The parallax drift math (see initParallax() in js/main.js) was
@@ -821,9 +878,8 @@ button.cs-gform-submit:disabled { opacity: 0.6; cursor: default; }
   .cs-parallax-band img { height: 220%; }
 
   .cs-values-section { padding: 50px 24px 60px; }
-  .cs-value-row { flex-direction: column; gap: 6px; padding: 14px 0; }
-  .cs-value-name { flex: 0 0 auto; }
-  .cs-value-desc { max-width: none; }
+  .svc-support-list-centered { padding: 0; grid-template-columns: 1fr; }
+  .svc-support-list-centered li:nth-child(2) { border-top: none; }
 
   .cs-team-section { padding: 60px 24px; }
   .cs-team-pair { flex-direction: column; gap: 48px; }
