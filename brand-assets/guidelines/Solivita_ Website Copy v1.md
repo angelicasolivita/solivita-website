@@ -86,7 +86,7 @@ Solivita is a licensed Residential Care Facility for the Elderly (RCFE) in Calif
 
 **Who is Solivita right for?**
 
-We serve ambulatory adults ages 59 and older who benefit from daily companionship, structured support, and personalized care plans in a safe home environment. Solivita is designed for aging in place, providing the support residents need while respecting their independence. We do not currently accept residents with advanced dementia or who are non-ambulatory.
+We serve ambulatory adults ages 60 and older who benefit from daily companionship, structured support, and personalized care plans in a safe home environment. Solivita is designed for aging in place, providing the support residents need while respecting their independence. We do not currently accept residents with advanced dementia.
 
 **How many residents live at Solivita?**
 
